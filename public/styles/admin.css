@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap&subset=cyrillic');
+
+* {
+	font-family: 'Montserrat', sans-serif;
+	color: #1F1D1D;
+}
+input {
+	outline:none;
+}
+button, 
+button:active, 
+button:focus {
+    outline: none;
+}
+p, h6 {
+	margin: 0;
+}
+button.btn-delete {
+	width: 40px;
+	height: 40px;
+	border-radius: 0px;
+	background: url('../images/delete.png');
+	background-size: cover;
+	border: none;	
+}
+button.btn-edit {
+	width: 30px;
+	height: 30px;
+	border-radius: 0px;
+	background: url('../images/edit.png');
+	background-size: cover;
+	border: none;
+}
+button.btn-add {
+	width: 40px;
+	height: 40px;
+	border-radius: 0px;
+	background: url('../images/add.png');
+	background-size: cover;
+	border: none;
+}
+.cursor-default {
+	cursor: default;
+}
+.textarea-style {
+	border-color: #ecf2f3;
+	width: 100%;
+	padding: 15px;
+}
+
+
+/*modal open*/
+.modal-content {
+	border: none;
+	border-radius: 30px;
+}
+.modal-content .modal-footer button {
+	width: 45%;
+	height: 56px;
+	background: #FFD600;
+	border: none;
+	border-radius: 30px;
+	color: #1F1D1D;
+	font-size: 14px;
+	font-weight: 700;
+	transition: 0.15s;
+}
+.modal-content .modal-footer button:hover {
+	color: white;
+	-moz-box-shadow:0 0 5px #FFD600; 
+	-webkit-box-shadow:0 0 5px #FFD600; 
+	box-shadow:0 0 5px #FFD600;
+}
+.modal-content h5 {
+	font-weight: 700;
+}
+.modal-content h6 {
+	font-weight: 600;
+}
+.modal-content .file {
+	width: 100%;
+}
+/*modal close*/
+
+
+/******login open***/
+.main-screen {
+	width: 100%;
+	height: 600px;
+	margin: 0;
+	padding: 0;
+}
+.main-screen .logo {
+	width: 200px;
+	height: 100px;
+	margin-bottom: 70px;
+}
+form .username, .password {
+	width: 262px;
+	height: 51px;
+	margin-bottom: 30px;
+}
+form button {
+	width: 51px;
+	height: 130px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #888B8C;
+	border: none;
+	transition: 0.30s;
+}
+form button:hover {
+	background: #222222;
+}
+form .inputs {
+	width: 262px;
+	margin-right: 30px;
+}
+form input {
+	background: #F1F1F1;
+	border: none;
+	padding-left: 20px;
+	font-weight: 500;
+	font-size: 16px;
+}
+button img.login-logo {
+	width: 32px;
+	height: 32px;
+}
+/*******login close**/
+
+
+
+
+
+
+/*navbar open*/
+.navbar {
+	width: 100%;
+	height: 100px;
+	padding-left: 15px;
+	padding-right: 15px;
+	font-weight: 600;
+}
+.navbar img {
+	width: 176px;
+	height: 69px;
+}
+/*navbar close*/
+
+
+
+/*profile open*/
+.navbar .profile button {
+	border-radius: 20px;
+	width: 30px;
+	height: 30px;
+	background: #222;
+	margin-left: 10px;
+}
+/*profile close*/
+
+
+
+
+
+/*menu open*/
+.menu {
+	margin-top: 80px;
+}
+.menu .nav {
+	width: 100%;
+}
+.menu .nav a.nav-link {
+	color: #1F1D1D;
+	transition: 0.15s;
+}
+.menu .nav a.nav-link.active {
+	background: #222222;
+	color: #fff;
+}
+.menu .nav a.nav-link:hover {
+	background: #222222;
+	color: #fff;	
+}
+.menu .tab-content {
+	width: 100%;
+}
+.menu .tab-content .complex {
+	margin-top: 40px;
+}
+/*menu close*/
+
+
+
+
+/*cards*/
+.card {
+	border-color: #222222;
+	margin-right: 15px;
+	height: 300px;
+	margin-bottom: 20px;
+}
+.card:hover {
+	background: #ecf2f3;
+	transition: 0.15s;
+}
+/*cards*/
+
+
+
+/*opportunities open*/
+.opportunities .row {
+	padding: 0;
+	margin: 0;
+}
+.opportunities .image {
+	width: 100px;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+}
+.opportunities .image img {
+	height: 100%;
+}
+.opportunities .row p.card-text {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	cursor: default;
+}
+/*opportunities close*/
+
+
+
+
+
+/*complex open*/
+.complex-item {
+	margin-bottom: 20px;
+}
+.complex-item a {
+	color: #a4a4a4;
+	text-decoration: none;
+	transition: 0.15s;
+}
+.complex-item a:hover {
+	color: #696969;
+}
+/*complex close*/
