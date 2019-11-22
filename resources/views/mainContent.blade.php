@@ -13,11 +13,11 @@
 				<div class="container">
 					<div class="col d-flex justify-content-between align-items-center">
 						
-						<a class="navbar-brand" href="index.html"> <img src="images/logowhite.png" alt="logo"> </a>
+						<a class="navbar-brand" href="/"> <img src="images/logowhite.png" alt="logo"> </a>
 					
 						<div class="navbar-link">
 							<ul class="navbar-nav d-flex flex-row">
-								<li class="nav-item"> <a class="nav-link active-link" href="#">Main</a> </li>
+								<li class="nav-item"> <a class="nav-link active-link" href="/">Main</a> </li>
 								<li class="nav-item"> <a class="nav-link" href="/home-pets">Home dogs</a> </li>
 								<li class="nav-item"> <a class="nav-link" href="/pet-workers">Duty dogs</a> </li>
 								<li class="nav-item"> <a class="nav-link" href="/gover-pets">For government structures</a> </li>

@@ -15,7 +15,7 @@
 				<div class="container">
 					<div class="col d-flex justify-content-between align-items-center">
 						
-						<a class="navbar-brand" href="index.html"> <img src="images/logowhite.png" alt="logo"> </a>
+						<a class="navbar-brand" href="/"> <img src="images/logowhite.png" alt="logo"> </a>
 					
 						<div class="navbar-link">
 							<ul class="navbar-nav d-flex flex-row">
