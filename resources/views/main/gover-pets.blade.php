@@ -47,7 +47,7 @@
 
 
     <!-- footer open -->
-    <footer>
+    <footer style="margin: 0;">
         <div class="container">
             <div class="row">
                 <div class="col d-flex justify-content-between align-items-end">

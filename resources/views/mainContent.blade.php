@@ -35,7 +35,7 @@
 				<div class="col-9">
 					<h1 class="cursor-default">Monitoring and communication complex for dogs</h1>
 					<p class="cursor-default">Voice communication providing between you and your dog, physical condition and location tracking of it, photo and video fixacion in a first-person, ability to send pre-recorded commands</p>
-					<button>See more</button>
+					<a class="anchor" href="#see-more"> <button >See more</button> </a>
 				</div>
 
 				<div class="col-1 p-0 d-flex justify-content-end align-items-end">
@@ -53,7 +53,7 @@
 
 
 		<!-- complex open -->
-		<div class="complex text-center">
+		<div id="see-more" class="complex text-center">
 			<div class="container">
 				<h2>Modules</h2>
 				<h3>Description of the main complex's parts</h3>

@@ -37,7 +37,7 @@
 				<div class="col-9">
 					<h1 class="cursor-default">For duty dogs</h1>
 					<p class="cursor-default">The solution for business on interaction of the cynologist with the duty dog</p>
-					<button>Contact us</button>
+					<a class="anchor" href="#feedback"> <button >Contact us</button> </a>
 				</div>
 			</div>
 			<!-- description close -->
@@ -78,7 +78,7 @@
 
 
 		<!-- feedback open -->
-		<div class="feedback text-center">
+		<div id="feedback" class="feedback text-center">
 			<div class="container">
 				<h2>Feed back</h2>
 				<h3>Leave your email down below, so we can contact you</h3>

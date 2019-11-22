@@ -32,7 +32,10 @@ input {
 .cursor-default {
 	cursor: default;
 }
-
+a.anchor {
+	width: 274px;
+	height: 56px;
+}
 
 
 /*modal open*/
