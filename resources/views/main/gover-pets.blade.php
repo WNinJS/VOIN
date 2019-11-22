@@ -1,6 +1,6 @@
 @extends('mainLayout')
 
-@section('title', 'Государственные структуры')
+@section('title', 'Government structures')
 
 
 @section('content')
@@ -18,10 +18,10 @@
 
                     <div class="navbar-link">
                         <ul class="navbar-nav d-flex flex-row">
-                            <li class="nav-item"> <a class="nav-link" href="/">Главная</a></li>
-                            <li class="nav-item"> <a class="nav-link" href="/home-pets">Для домашних</a></li>
-                            <li class="nav-item"> <a class="nav-link" href="/pet-workers">Для служебных</a></li>
-                            <li class="nav-item"> <a class="nav-link active-link" href="/">Для государственных структур</a> </li>
+                            <li class="nav-item"> <a class="nav-link " href="/">Main</a> </li>
+                            <li class="nav-item"> <a class="nav-link" href="/home-pets">Home dogs</a> </li>
+                            <li class="nav-item"> <a class="nav-link" href="/pet-workers">Duty dogs</a> </li>
+                            <li class="nav-item"> <a class="nav-link active-link" href="/gover-pets">For government structures</a> </li>
                         </ul>
                     </div>
 
@@ -34,9 +34,9 @@
         <!-- description open -->
         <div class="container description d-flex justify-content-between">
             <div class="col-9">
-                <h1 class="cursor-default">Для государственных структур</h1>
-                <p class="cursor-default">Решение для бизнеса по взаимодействию кинолога со своей служебной собакой</p>
-                <button disabled>Подать заявку на информацию</button>
+                <h1 class="cursor-default">For government structures</h1>
+                <p class="cursor-default">The solution for business on interaction of the cynologist with the duty dog</p>
+                <button disabled>Apply for information</button>
             </div>
         </div>
         <!-- description close -->
@@ -54,10 +54,10 @@
                     <div class="links d-flex">
 
                         <div class="left-block d-flex flex-column">
-                            <a href="/">Главная</a>
-                            <a href="/home-pets">Для домашних</a>
-                            <a href="/pet-workers">Для служебных</a>
-                            <a href="/gover-pets">Для государственных структур</a>
+                            <a href="/">Main</a>
+                            <a href="/home-pets">Home dogs</a>
+                            <a href="/pet-workers">Duty dogs</a>
+                            <a href="/gover-pets">For government strusctures</a>
                         </div>
 
                         <div class="right-block d-flex flex-column justify-content-end mx-3">

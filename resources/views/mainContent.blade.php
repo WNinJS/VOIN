@@ -2,6 +2,8 @@
 
 @section('content')
 
+@section('title', 'Main')
+
 <div class="container-fluid">
 		
 		<div class="main-screen">
@@ -31,10 +33,8 @@
 			<!-- description open -->
 			<div class="container description d-flex justify-content-between">	
 				<div class="col-9">
-					<h1 class="cursor-default">Комплекс мониторинга и связи для собак</h1>
-					<p class="cursor-default">Обеспечение голосового взаимодействия между собакой и вами,
-					отслеживание физического состояния и местонахождения собаки, фото
-					и видеофиксация происходящих действий от первого лица собаки, возможность передачи предварительно записанных команд</p>
+					<h1 class="cursor-default">Monitoring and communication complex for dogs</h1>
+					<p class="cursor-default">Voice communication providing between you and your dog, physical condition and location tracking of it, photo and video fixacion in a first-person, ability to send pre-recorded commands</p>
 					<button>See more</button>
 				</div>
 
@@ -129,9 +129,10 @@
 						<div class="links d-flex">
 
 							<div class="left-block d-flex flex-column">
-								<a href="#">Главная</a>
-								<a href="/home-pets">Для домашних</a>
-								<a href="/pet-workers">Для боевых</a>
+								<a href="#">Main</a>
+								<a href="/home-pets">Home dogs</a>
+								<a href="/pet-workers">Duty dogs</a>
+								<a href="/gover-pets">For government strusctures</a>
 							</div>
 
 							<div class="right-block d-flex flex-column justify-content-end mx-3">
