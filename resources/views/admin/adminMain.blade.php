@@ -140,7 +140,7 @@
 
 	<!-- edit opportunites modal open -->
 	@foreach ($home[0]->capabilities as $hom)
-	<div class="modal fade" id="edit-opportunites-modal-{{$hom->id}}" tabindex="-1" role="dialog" aria-labelledby="edit-opportunites-modalLabel" aria-hidden="true">
+		<div class="modal fade" id="edit-opportunites-modal-{{$hom->id}}" tabindex="-1" role="dialog" aria-labelledby="edit-opportunites-modalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -173,6 +173,41 @@
 		</div>
 	@endforeach
 
+	{{-- edit capabilities for war dogs  --}}
+
+	@foreach ($warDogs[0]->capabilities as $war)
+		<div class="modal fade" id="edit-opportunites-modal-{{$war->id}}" tabindex="-1" role="dialog" aria-labelledby="edit-opportunites-modalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="edit-opportunites-modalLabel">Редактирование возможности</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+
+					<form method="POST" action="adminpanel/cap/update/{{$war->id}}" enctype="multipart/form-data">
+						{{ csrf_field() }}
+						<div class="modal-body">
+							<div class="complex-description">
+								<h6>Описание</h6>
+								<textarea class="textarea-style" required name="desc">{{$war->desc}}></textarea>
+							</div>
+							<div class="file">
+								<h6>Иконка</h6>
+								<input class="file" type="file" placeholder="Выберите изображение" name="icon"  required>
+							</div>
+						</div>
+
+						<div class="modal-footer d-flex justify-content-between">
+							<button type="button" class="btn" data-dismiss="modal">Закрыть</button>
+							<button type="submit" class="btn">Сохранить изменения</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	@endforeach
 	<!-- edit opportunites open -->
 
 
