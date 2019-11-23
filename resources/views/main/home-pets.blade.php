@@ -48,7 +48,7 @@
 			<div class="container">
 				<h2>Capabilities</h2>
 				<h3>What can the complex do?</h3>
-				<div class="row d-flex justify-content-around align-items-center">
+				<div class="row d-flex justify-content-around align-items-start">
                     @foreach ($homeCap[0]->capabilities as $cap)
                         <div class="col-4 flex-column d-flex justify-content-center align-items-center">
 							<div class="image">

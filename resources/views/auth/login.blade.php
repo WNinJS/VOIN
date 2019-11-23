@@ -13,6 +13,9 @@
 	<!-- My CSS -->
 	<link rel="stylesheet" href="styles/admin.css">
 
+	<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicon.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicon.png')}}">
+
 </head>
 <body>
 
