@@ -35,7 +35,7 @@
         <div class="container description d-flex justify-content-between">
             <div class="col-9">
                 <h1 class="cursor-default">For government structures</h1>
-                <p class="cursor-default">The solution for business on interaction of the cynologist with the duty dog</p>
+                <p class="cursor-default">One of the possible options for using the complex in law enforcement, to reduce the death of animals. To be able to view this page, you must register and submit a document form.</p>
                 <button disabled>Apply for information</button>
             </div>
         </div>
