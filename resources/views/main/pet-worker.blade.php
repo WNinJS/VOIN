@@ -18,12 +18,18 @@
 						<a class="navbar-brand" href="/"> <img src="images/logowhite.png" alt="logo"> </a>
 					
 						<div class="navbar-link">
-							<ul class="navbar-nav d-flex flex-row">
+							<ul class="navbar-nav d-flex flex-row nav-links">
 								<li class="nav-item"> <a class="nav-link" href="/">Main</a> </li>
 								<li class="nav-item"> <a class="nav-link" href="/home-pets">Home dogs</a> </li>
 								<li class="nav-item"> <a class="nav-link active-link" href="/pet-workers">Duty dogs</a> </li>
 								<li class="nav-item"> <a class="nav-link" href="/gover-pets">For government structures</a> </li>
 							</ul>
+						</div>
+
+						<div class="burger">
+							<div class="line1"></div>
+							<div class="line2"></div>
+							<div class="line3"></div>
 						</div>
 
 					</div>
@@ -34,7 +40,7 @@
 
 			<!-- description open -->
 			<div class="container description d-flex justify-content-between">	
-				<div class="col-9">
+				<div class="col-12">
 					<h1 class="cursor-default">For duty dogs</h1>
 					<p class="cursor-default">The solution for business on interaction of the cynologist with the duty dog</p>
 					<a class="anchor" href="#feedback"> <button >Contact us</button> </a>
@@ -61,7 +67,7 @@
 
 				<div class="row d-flex justify-content-around align-items-start">
                         @foreach ($petWorker[0]->capabilities as $cap)
-                            <div class="col-4 flex-column d-flex justify-content-center align-items-center">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 flex-column d-flex justify-content-center align-items-center icon-block">
 								<div class="image">
 									<img src="{{asset('storage/'.$cap->icon)}}" alt="record">
 								</div>
@@ -87,7 +93,6 @@
 					<input type="email" required placeholder="example@gmail.com" name="mail">
 					<button type="submit">Send</button>
 				</form>
-				<hr>
 			</div>
 		</div>
 	
@@ -100,7 +105,7 @@
 		<footer>
 			<div class="container">
 				<div class="row">
-					<div class="col d-flex justify-content-between align-items-end">
+					<div class="col d-flex justify-content-between align-items-end footer-general-block">
 						<div class="links d-flex">
 
 							<div class="left-block d-flex flex-column">
@@ -112,7 +117,7 @@
 
 							<div class="right-block d-flex flex-column justify-content-end mx-3">
 								<h5>Voice Intercommunication</h5>
-								<h5>eduardkarimov.rb@gmail.com</h5>
+								<h5>voiceintercommunication@gmail.com</h5>
 							</div>
 						</div>
 

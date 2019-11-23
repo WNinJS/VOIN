@@ -17,12 +17,18 @@
                     <a class="navbar-brand" href="/"> <img src="images/logowhite.png" alt="logo"> </a>
 
                     <div class="navbar-link">
-                        <ul class="navbar-nav d-flex flex-row">
+                        <ul class="navbar-nav d-flex flex-row nav-links">
                             <li class="nav-item"> <a class="nav-link " href="/">Main</a> </li>
                             <li class="nav-item"> <a class="nav-link" href="/home-pets">Home dogs</a> </li>
                             <li class="nav-item"> <a class="nav-link" href="/pet-workers">Duty dogs</a> </li>
                             <li class="nav-item"> <a class="nav-link active-link" href="/gover-pets">For government structures</a> </li>
                         </ul>
+                    </div>
+
+                    <div class="burger">
+                        <div class="line1"></div>
+                        <div class="line2"></div>
+                        <div class="line3"></div>
                     </div>
 
                 </div>
@@ -50,7 +56,7 @@
     <footer style="margin: 0;">
         <div class="container">
             <div class="row">
-                <div class="col d-flex justify-content-between align-items-end">
+                <div class="col d-flex justify-content-between align-items-end footer-general-block">
                     <div class="links d-flex">
 
                         <div class="left-block d-flex flex-column">
@@ -62,7 +68,7 @@
 
                         <div class="right-block d-flex flex-column justify-content-end mx-3">
                             <h5>Voice Intercommunication</h5>
-                            <h5>eduardkarimov.rb@gmail.com</h5>
+                            <h5>voiceintercommunication@gmail.com</h5>
                         </div>
                     </div>
 

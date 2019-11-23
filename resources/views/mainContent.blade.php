@@ -16,12 +16,18 @@
 						<a class="navbar-brand" href="/"> <img src="images/logowhite.png" alt="logo"> </a>
 					
 						<div class="navbar-link">
-							<ul class="navbar-nav d-flex flex-row">
+							<ul class="navbar-nav d-flex flex-row nav-links">
 								<li class="nav-item"> <a class="nav-link active-link" href="/">Main</a> </li>
 								<li class="nav-item"> <a class="nav-link" href="/home-pets">Home dogs</a> </li>
 								<li class="nav-item"> <a class="nav-link" href="/pet-workers">Duty dogs</a> </li>
 								<li class="nav-item"> <a class="nav-link" href="/gover-pets">For government structures</a> </li>
 							</ul>
+						</div>
+
+						<div class="burger">
+							<div class="line1"></div>
+							<div class="line2"></div>
+							<div class="line3"></div>
 						</div>
 
 					</div>
@@ -32,7 +38,7 @@
 
 			<!-- description open -->
 			<div class="container description d-flex justify-content-between">	
-				<div class="col-9">
+				<div class="col-11">
 					<h1 class="cursor-default">Monitoring and communication complex for dogs</h1>
 					<p class="cursor-default">Voice communication providing between you and your dog, physical condition and location tracking of it, photo and video fixacion in a first-person, ability to send pre-recorded commands</p>
 					<a class="anchor" href="#see-more"> <button >See more</button> </a>
@@ -60,7 +66,7 @@
 				<div class="row">
 
 					@foreach ($complexes as $complex)
-						<div class="first-left col-6 ">
+						<div class="first-left col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 ">
 							<img src="{{asset('storage/'. $complex->img)}}" alt="{{$complex->name}}">
 							<h4>{{$complex->name}}</h4>
 							{{-- <button>Подробнее</button> --}}
@@ -89,15 +95,15 @@
 				<h3>The directions we work with</h3>
 				<div class="row justify-content-around">
 
-					<div class="col-4">
-						<div class="second-block">
+					<div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
+						<div class="third-block">
 							<img src="images/homedogs.jpg" alt="homedogs">
 							<h4>For home dogs</h4>
 							<a href="/home-pets">See more</a>
 						</div>
 					</div>
 
-					<div class="col-4">
+					<div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
 						<div class="third-block">
 							<img src="images/buisnessdogs.jpg" alt="buisnessdogs">
 							<h4>For duty dogs</h4>
@@ -105,7 +111,7 @@
 						</div>
 					</div>
 
-					<div class="col-4">
+					<div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
 						<div class="third-block">
 							<img src="images/wardogs.jpg" alt="wardogs">
 							<h4>For government structures</h4>
@@ -125,7 +131,7 @@
 		<footer>
 			<div class="container">
 				<div class="row">
-					<div class="col d-flex justify-content-between align-items-end">
+					<div class="col d-flex justify-content-between align-items-end footer-general-block">
 						<div class="links d-flex">
 
 							<div class="left-block d-flex flex-column">
