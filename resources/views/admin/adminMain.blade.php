@@ -39,7 +39,7 @@
 			<div class="row w-100">
 
 				<!-- menu -->
-				<div class="col-2">
+				<div class="col-4 col-sm-4 col-md-3 col-xl-3 col-lg-4">
 					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 						<a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Главная</a>
 						<a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Для домашних</a>
@@ -49,7 +49,7 @@
 				<!-- menu -->
 
 				<!-- content -->
-				<div class="col-10">
+				<div class="col-8 col-sm-8 col-md-9 cl-xl-9 col-lg-8">
 					<div class="tab-content" id="v-pills-tabContent">
 						<div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
 
@@ -79,7 +79,7 @@
 								<div class="row align-items-center">
 									@foreach ($home[0]->capabilities as $hom)
 										
-										<div class="card col-xl-3 col-6 d-flex text-center flex-column align-items-center justify-content-center">
+										<div class="card col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 d-flex text-center flex-column align-items-center justify-content-center">
 											<div class="image">
 												<img src="{{asset('storage/'.$hom->icon)}}" alt="Card image cap">
 											</div>
@@ -109,7 +109,7 @@
 								<div class="row align-items-center">
 									@foreach ($warDogs[0]->capabilities as $war)
 										
-										<div class="card col-xl-3 col-6 text-center flex-column align-items-center d-flex justify-content-center">
+										<div class="card col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 text-center flex-column align-items-center d-flex justify-content-center">
 											<div class="image">
 												<img src="{{asset('storage/'.$war->icon)}}" alt="Card image cap">
 											</div>

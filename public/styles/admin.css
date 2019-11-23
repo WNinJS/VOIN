@@ -199,8 +199,8 @@ button img.login-logo {
 .card {
 	border-color: #222222;
 	margin-right: 15px;
-	height: 300px;
 	margin-bottom: 20px;
+	height: 300px;
 }
 .card:hover {
 	background: #ecf2f3;
