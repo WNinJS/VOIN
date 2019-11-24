@@ -115,7 +115,7 @@
 						<div class="third-block">
 							<img src="images/wardogs.jpg" alt="wardogs">
 							<h4>For government structures</h4>
-							<a href="buisness.html">See more</a>
+							<a href="/gover-pets">See more</a>
 						</div>
 					</div>
 				</div>

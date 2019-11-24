@@ -42,7 +42,7 @@
             <div class="col-9">
                 <h1 class="cursor-default">For government structures</h1>
                 <p class="cursor-default">One of the possible options for using the complex in law enforcement, to reduce the death of animals. To be able to view this page, you must register and submit a document form.</p>
-                <button disabled>Apply for information</button>
+                <button data-toggle="modal" data-target="#gover-info-modal">Apply for information</button>
             </div>
         </div>
         <!-- description close -->
@@ -85,5 +85,24 @@
 
 </div>
 
+<!-- gover info modal -->
+<div class="modal fade" id="gover-info-modal" tabindex="-1" role="dialog" aria-labelledby="gover-info-modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="complex-modalLabel">Apply for information</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Coming soon</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 @endsection
