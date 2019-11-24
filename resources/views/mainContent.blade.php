@@ -46,9 +46,9 @@
 
 				<div class="col-1 p-0 d-flex justify-content-end align-items-end">
 					<div class="social-media d-flex flex-column justify-content-end">
-						<a href="https://vk.com/edvardkarimov96"><img src="images/whitevk.png" alt="vk"></a>
-						<a href="https://www.facebook.com/woody.jakson"><img src="images/whitefacebook.png" alt="facebook"></a>
-						<a href="http://instagram.com/mrVol1/"><img src="images/whiteinst.png" alt="instagram"></a>
+						<a target="_blank" href="https://vk.com/edvardkarimov96"><img src="images/whitevk.png" alt="vk"></a>
+						<a target="_blank" href="https://www.facebook.com/woody.jakson"><img src="images/whitefacebook.png" alt="facebook"></a>
+						<a target="_blank" href="http://instagram.com/mrVol1/"><img src="images/whiteinst.png" alt="instagram"></a>
 					</div>
 				</div>
 			</div>
@@ -148,9 +148,9 @@
 						</div>
 
 						<div class="social-media">
-							<a href="https://vk.com/edvardkarimov96"><img src="images/whitevk.png" alt="vk"></a>
-							<a href="https://www.facebook.com/woody.jakson"><img src="images/whitefacebook.png" alt="facebook"></a>
-							<a href="http://instagram.com/mrVol1/"><img src="images/whiteinst.png" alt="instagram"></a>
+							<a target="_blank" href="https://vk.com/edvardkarimov96"><img src="images/whitevk.png" alt="vk"></a>
+							<a target="_blank" href="https://www.facebook.com/woody.jakson"><img src="images/whitefacebook.png" alt="facebook"></a>
+							<a target="_blank" href="http://instagram.com/mrVol1/"><img src="images/whiteinst.png" alt="instagram"></a>
 						</div>
 					</div>
 				</div>

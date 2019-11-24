@@ -117,9 +117,9 @@
 						</div>
 
 						<div class="social-media">
-							<a href="https://vk.com/edvardkarimov96"><img src="images/whitevk.png" alt="vk"></a>
-							<a href="https://www.facebook.com/woody.jakson"><img src="images/whitefacebook.png" alt="facebook"></a>
-							<a href="http://instagram.com/mrVol1/"><img src="images/whiteinst.png" alt="instagram"></a>
+							<a target="_blank" href="https://vk.com/edvardkarimov96"><img src="images/whitevk.png" alt="vk"></a>
+							<a target="_blank" href="https://www.facebook.com/woody.jakson"><img src="images/whitefacebook.png" alt="facebook"></a>
+							<a target="_blank" href="http://instagram.com/mrVol1/"><img src="images/whiteinst.png" alt="instagram"></a>
 						</div>
 					</div>
 				</div>

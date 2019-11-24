@@ -109,6 +109,9 @@ a.anchor {
 	margin: 0;
 	padding: 0;
 }
+footer.gover-footer {
+	margin: 0;
+}
 p {
 	margin: 0; 
 }
@@ -461,8 +464,10 @@ footer .social-media img {
 
 
 /*media lg open*/
-@media screen and (max-width: 1200px) {
-	
+@media screen and (min-width: 1400px) {
+	.main-screen-goverment {
+		height: 1010px;
+	}
 }
 /*media lg close*/
 
