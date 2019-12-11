@@ -20,7 +20,7 @@
 								<li class="nav-item"> <a class="nav-link active-link" href="/">Main</a> </li>
 								<li class="nav-item"> <a class="nav-link" href="/home-pets">Home dogs</a> </li>
 								<li class="nav-item"> <a class="nav-link" href="/pet-workers">Duty dogs</a> </li>
-								<li class="nav-item"> <a class="nav-link" href="/gover-pets">For government structures</a> </li>
+								<li class="nav-item"> <a class="nav-link" href="/gover-pets">Government structures</a> </li>
 							</ul>
 						</div>
 
@@ -40,7 +40,7 @@
 			<div class="container description d-flex justify-content-between">	
 				<div class="col-11">
 					<h1 class="cursor-default">Monitoring and communication complex for dogs</h1>
-					<p class="cursor-default">Voice communication providing between you and your dog, physical condition and location tracking of it, photo and video fixacion in a first-person, ability to send pre-recorded commands</p>
+					<p class="cursor-default">Voice communication providing between you and your dog, biometric index condition and location tracking of it, first-person (POV) photofixacion  and video recording, possibility of pre-recorded commands sending.</p>
 					<a class="anchor" href="#see-more"> <button >See more</button> </a>
 				</div>
 
@@ -92,13 +92,13 @@
 		<div class="directions text-center">
 			<div class="container">
 				<h2>Directions of work</h2>
-				<h3>The directions we work with</h3>
+				<h3>The directions of work</h3>
 				<div class="row justify-content-around">
 
 					<div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
 						<div class="third-block">
 							<img src="images/homedogs.jpg" alt="homedogs">
-							<h4>For home dogs</h4>
+							<h4>Home dogs</h4>
 							<a href="/home-pets">See more</a>
 						</div>
 					</div>
@@ -106,7 +106,7 @@
 					<div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
 						<div class="third-block">
 							<img src="images/buisnessdogs.jpg" alt="buisnessdogs">
-							<h4>For duty dogs</h4>
+							<h4>Duty dogs</h4>
 							<a href="/pet-workers">See more</a>
 						</div>
 					</div>
@@ -114,7 +114,7 @@
 					<div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
 						<div class="third-block">
 							<img src="images/wardogs.jpg" alt="wardogs">
-							<h4>For government structures</h4>
+							<h4>Government structures</h4>
 							<a href="/gover-pets">See more</a>
 						</div>
 					</div>
@@ -138,12 +138,15 @@
 								<a href="#">Main</a>
 								<a href="/home-pets">Home dogs</a>
 								<a href="/pet-workers">Duty dogs</a>
-								<a href="/gover-pets">For government strusctures</a>
+								<a href="/gover-pets">Government structures</a>
 							</div>
 
 							<div class="right-block d-flex flex-column justify-content-end mx-3">
+								<h5>ask@vo-in.com</h5>
+								<h5>info@vo-in.com</h5>
+								<h5>nda@vo-in.com</h5>
+								<h5>support@vo-in.com</h5>
 								<h5>Voice Intercommunication</h5>
-								<h5>eduardkarimov.rb@gmail.com</h5>
 							</div>
 						</div>
 

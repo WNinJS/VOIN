@@ -21,7 +21,7 @@
                             <li class="nav-item"> <a class="nav-link " href="/">Main</a> </li>
                             <li class="nav-item"> <a class="nav-link" href="/home-pets">Home dogs</a> </li>
                             <li class="nav-item"> <a class="nav-link" href="/pet-workers">Duty dogs</a> </li>
-                            <li class="nav-item"> <a class="nav-link active-link" href="/gover-pets">For government structures</a> </li>
+                            <li class="nav-item"> <a class="nav-link active-link" href="/gover-pets">Government structures</a> </li>
                         </ul>
                     </div>
 
@@ -40,8 +40,8 @@
         <!-- description open -->
         <div class="container description d-flex justify-content-between">
             <div class="col-9">
-                <h1 class="cursor-default">For government structures</h1>
-                <p class="cursor-default">One of the possible options for using the complex in law enforcement, to reduce the death of animals. To be able to view this page, you must register and submit a document form.</p>
+                <h1 class="cursor-default">Government structures</h1>
+                <p class="cursor-default">Monitoring and communication complex for dogs provides remote voice interaction between dog and a person without visual control, dog’s biometric indexes monitoring, POV photofixation and video recording of the actions around the dog, possibility of pre-recorded commands  sending</p>
                 <button data-toggle="modal" data-target="#gover-info-modal">Apply for information</button>
             </div>
         </div>
@@ -63,12 +63,15 @@
                             <a href="/">Main</a>
                             <a href="/home-pets">Home dogs</a>
                             <a href="/pet-workers">Duty dogs</a>
-                            <a href="/gover-pets">For government strusctures</a>
+                            <a href="/gover-pets">Government structures</a>
                         </div>
 
                         <div class="right-block d-flex flex-column justify-content-end mx-3">
+                            <h5>ask@vo-in.com</h5>
+                            <h5>info@vo-in.com</h5>
+                            <h5>nda@vo-in.com</h5>
+                            <h5>support@vo-in.com</h5>
                             <h5>Voice Intercommunication</h5>
-                            <h5>voiceintercommunication@gmail.com</h5>
                         </div>
                     </div>
 

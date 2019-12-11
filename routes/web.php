@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $categories = App\Category::all();
     $complexes = App\Complex::all();
-    return view('mainCOntent')->with(compact('complexes','categories'));
+    return view('mainContent')->with(compact('complexes','categories'));
 });
 
 Route::get('/login', function(){

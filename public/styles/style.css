@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap&subset=cyrillic');
-
+html {
+	overflow-x: hidden;
+}
 * {
 	font-family: 'Montserrat', sans-serif;
 	color: #1F1D1D;
@@ -499,16 +501,12 @@ footer .social-media img {
 /*media md close*/
 
 .container-fluid {
-	position: relative;
 }
 
 /*media md-half open*/
 @media screen and (max-width: 768px) {
 	.col-1 .social-media {
 		display: none!important;
-	}
-	body {
-		overflow-x: hidden;
 	}
 	.nav-links {
 		position: absolute;
@@ -520,7 +518,7 @@ footer .social-media img {
 		flex-direction: column!important;
 		justify-content: center!important;
 		align-items: center;
-		transform: translateX(200%);
+		transform: translateY(-600%);
 		transition: transform 0.5s ease-in;
 		z-index: 1000;
 	}
@@ -576,6 +574,9 @@ footer .social-media img {
 
 /*media sm open*/
 @media screen and (max-width: 570px) {
+	body {
+		overflow-x: hidden;
+	}
 	.description h1 {
 		font-weight: 700;
 		font-size: 40px;
@@ -591,16 +592,70 @@ footer .social-media img {
 		line-height: 1.8;
 	}
 	.complex .first-left {
-		height: 309px;
+		height: 250px;
+	}
+	.complex .first-left h4 {
+		font-size: 22px;
+	}
+	.complex .first-left button {
+		font-size: 12px;
+		width: 120px;
+		height: 40px;
 	}
 	.directions .third-block {
 		height: 280px;
+	}
+	.main-screen {
+		width: 100%;
+		height: 800px;
+		background: url(../images/bg_mobile.jpg) no-repeat;
+		background-size: cover;
+		margin: 0;
+		padding: 0;
+	}
+	.main-screen-buisness {
+		width: 100%;
+		height: 800px;
+		background: url(../images/buisnessdogs_blur_mobile.jpg) no-repeat center;
+		background-size: cover;
+		margin: 0;
+		padding: 0;
+	}
+	.main-screen-home {
+		width: 100%;
+		height: 800px;
+		background: url(../images/homedogs_blur_mobile.jpg) no-repeat center;
+		background-size: cover;
+		margin: 0;
+		padding: 0;
+	}
+	.main-screen-goverment {
+		width: 100%;
+		height: 800px;
+		background: url(../images/wardogs_blur_mobile.jpg) no-repeat center;
+		background-size: cover;
+		margin: 0;
+		padding: 0;
 	}
 }
 /*media sm close*/
 
 
 
+@media screen and (max-width: 400px) {
+	.directions .first-block, .second-block, .third-block {
+		margin-top: 40px;
+		height: 200px!important;
+		text-align: -webkit-center;
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.complex .first-left {
+		height: 210px;
+	}
+}
 
 
 
@@ -619,3 +674,6 @@ footer .social-media img {
 .toggle .line3 {
 	transform: rotate(45deg) translate(-5px, -6px);
 }
+
+
+

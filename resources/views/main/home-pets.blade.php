@@ -21,15 +21,15 @@
 								<li class="nav-item"> <a class="nav-link" href="/">Main</a> </li>
 								<li class="nav-item"> <a class="nav-link active-link" href="/home-pets">Home dogs</a> </li>
 								<li class="nav-item"> <a class="nav-link" href="/pet-workers">Duty dogs</a> </li>
-								<li class="nav-item"> <a class="nav-link" href="/gover-pets">For government structures</a> </li>
+								<li class="nav-item"> <a class="nav-link" href="/gover-pets">Government structures</a> </li>
 							</ul>
 						</div>
-
 						<div class="burger">
 							<div class="line1"></div>
 							<div class="line2"></div>
 							<div class="line3"></div>
 						</div>
+
 					</div>
 				</div>
 			</nav>
@@ -39,8 +39,8 @@
 			<!-- description open -->
 			<div class="container description d-flex justify-content-between">	
 				<div class="col-12">
-					<h1 class="cursor-default">For home dogs</h1>
-					<p class="cursor-default">The voice-intercommunication complex is created special for your home pets</p>
+					<h1 class="cursor-default">Home dogs</h1>
+					<p class="cursor-default">Created specially for your home pets</p>
 					<a class="anchor" href="#feedback"> <button >Contact us</button> </a>
 				</div>
 			</div>
@@ -51,8 +51,8 @@
 		<!-- opportunities open -->
 		<div class="opportunities text-center">
 			<div class="container">
-				<h2>Capabilities</h2>
-				<h3>What can the complex do?</h3>
+				<h2>Opportunities</h2>
+				<h3>The Voin complex provides</h3>
 				<div class="row d-flex justify-content-around align-items-start">
                     @foreach ($homeCap[0]->capabilities as $cap)
                         <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 flex-column d-flex justify-content-center align-items-center icon-block">
@@ -74,19 +74,20 @@
 
 
 		<!-- feedback open -->
+
 		<div id="feedback" class="feedback text-center">
 			<div class="container">
 				<h2>Feed back</h2>
-				<h3>Leave your email down below, so we can contact you</h3>
-                <form method="POST" action="/send-mail">
-                    {{ csrf_field() }}
-					<input type="email" required placeholder="example@gmail.com" name="mail">
-					<button type="submit">Send</button>
+				<h3>Leave your email below, we will contact you</h3>
+                <form method="POST">
+					{{ csrf_field() }}
+					<input type="email" required placeholder="example@gmail.com" name="mail" class="mail">
+					<button type="submit" class="btn-submit">Send</button>
 				</form>
-
+				<h2 class="text-center msg" style="display: none">Your email has been successfuly sent!</h2>
+				<hr>
 			</div>
-		</div>
-	
+		</div>	
 		<!-- feedback close -->
 
 
@@ -107,12 +108,15 @@
 								<a href="/">Main</a>
 								<a href="/home-pets">Home dogs</a>
 								<a href="/pet-workers">Duty dogs</a>
-								<a href="/gover-pets">For government strusctures</a>
+								<a href="/gover-pets">Government structures</a>
 							</div>
 
 							<div class="right-block d-flex flex-column justify-content-end mx-3">
+								<h5>ask@vo-in.com</h5>
+								<h5>info@vo-in.com</h5>
+								<h5>nda@vo-in.com</h5>
+								<h5>support@vo-in.com</h5>
 								<h5>Voice Intercommunication</h5>
-								<h5>voiceintercommunication@gmail.com</h5>
 							</div>
 						</div>
 
@@ -128,6 +132,7 @@
 		<!-- footer close -->
 
 	</div>
+
 
 	
 @endsection
