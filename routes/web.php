@@ -24,6 +24,10 @@ Route::get('/login', function(){
     return view('auth.login');
 });
 
+Route::get('/signup', function(){
+    return view('auth.signup');
+});
+
 Route::post('/login/tryLogin','AuthController@tryAuth');
 
 Route::get('/adminpanel','AdminController@index');

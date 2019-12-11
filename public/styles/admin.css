@@ -47,7 +47,9 @@ button.btn-add {
 	width: 100%;
 	padding: 15px;
 }
-
+.input-group {
+	width: 70%;
+}
 
 /*modal open*/
 .modal-content {
@@ -83,12 +85,14 @@ button.btn-add {
 /*modal close*/
 
 
+
+
 /******login open***/
 .container-fluid-login {
 	margin: 0;
 	padding: 0;
 }
-.main-screen {
+.main-screen-login {
 	width: 100%;
 	height: 700px;
 	background: url(../images/bg.jpg) no-repeat;
@@ -116,28 +120,28 @@ button.btn-add {
 	height: 100%;
 	border-radius: 0 30px 30px 0;
 }
-.main-screen .logo-login {
+.main-screen-login .logo-login {
 	width: 164px;
 	height: 74px;
 	margin-top: 40px;
 	margin-left: 100px;
 	margin-bottom: 40px;
 }
-.main-screen .text-login {
+.main-screen-login .text-login {
 	margin-left: 90px;
 }
-.main-screen .text-login h1 {
+.main-screen-login .text-login h1 {
 	font-weight: 700;
 	margin-bottom: 20px;
 	color: #fff;
 	font-size: 36px;
 }
-.main-screen .text-login h2 {
+.main-screen-login .text-login h2 {
 	font-weight: 500;
 	color: #7c7c7c;
 	font-size: 18px;
 }
-.main-screen .name-company-login {
+.main-screen-login .name-company-login {
 	font-weight: 500;
 	color: #fff;
 	font-size: 18px;
@@ -182,6 +186,128 @@ form input {
 /*******login close**/
 
 
+
+
+/*registration open*/
+.container-fluid-signup {
+	margin: 0;
+	padding: 0;
+}
+.main-screen-signup {
+	width: 100%;
+	height: 700px;
+	background: url(../images/bg.jpg) no-repeat;
+	background-size: cover;
+	text-decoration: none;
+	padding: 0;
+	margin: 0;
+}
+.general-block-signup {
+	width: 945px;
+	height: 600px;
+	border-radius: 30px;
+	background: #fff;
+	display: flex;
+}
+.left-block-signup {
+	width: 50%;
+	height: 100%;
+	background: #222222;
+	border-radius: 30px 0 0 30px;
+	position: relative;
+}
+.right-block-signup {
+	width: 50%;	
+	height: 100%;
+	border-radius: 0 30px 30px 0;
+}
+.main-screen-signup .logo-signup {
+	width: 164px;
+	height: 74px;
+	margin-top: 40px;
+	margin-left: 100px;
+	margin-bottom: 40px;
+}
+.main-screen-signup .text-signup {
+	margin-left: 90px;
+}
+.main-screen-signup .text-signup h1 {
+	font-weight: 700;
+	margin-bottom: 20px;
+	color: #fff;
+	font-size: 36px;
+}
+.main-screen-signup .text-signup h2 {
+	font-weight: 500;
+	color: #7c7c7c;
+	font-size: 18px;
+}
+.main-screen-signup .name-company-signup {
+	font-weight: 500;
+	color: #fff;
+	font-size: 18px;
+	margin-left: 100px;
+	position: absolute;
+	bottom: 40px;
+}
+
+
+form .username, .password, .name, .secondname, .email {
+	width: 70%;
+	height: 40px;
+	background: none;
+	margin-bottom: 30px;
+	border-bottom:solid 1px;
+}
+form .radio {
+	width: 70%;
+	height: 40px;
+	background: none;
+	margin-bottom: -10px;
+}
+form .radio input {
+	width: 20px;
+	height: 20px;
+	background: #fff;
+}
+form .radio p {
+	font-size: 14px;
+	font-weight: 700;
+	margin-left: 10px;
+}
+form button {
+	width: 70%;
+	height: 56px;
+	background: #FFD600;
+	border: none;
+	border-radius: 30px;
+	color: #1F1D1D;
+	font-size: 14px;
+	font-weight: 700;
+	margin-top: 30px;
+	transition: 0.15s;
+}
+form button:hover {
+	-moz-box-shadow:0 0 5px #FFD600; 
+	-webkit-box-shadow:0 0 5px #FFD600; 
+	box-shadow:0 0 5px #FFD600;
+	color: white;
+}
+form input {
+	background: #F1F1F1;
+	border: none;
+	padding-left: 20px;
+	font-weight: 500;
+	font-size: 16px;
+}
+form #goverment-document-add {
+	display: none;
+	background: none;
+	width: 50%;
+}
+
+
+/*registration close*/
 
 
 
@@ -305,8 +431,14 @@ form input {
 
 /*media sm*/
 @media screen and (max-width: 570px) {
+	/*login*/
+	.main-screen-login {
+		height: 1100px!important;
+		padding: 40px;
+	}
 	.general-block-login {
 		width: 300px;
+		height: 100%;
 		border-radius: 30px;
 		background: #fff;
 		display: flex;
@@ -314,7 +446,7 @@ form input {
 	}
 	.left-block-login {
 		width: 100%;
-		height: 100%;
+		height: 50%;
 		background: #222222;
 		display: flex;
 		flex-direction: column;
@@ -325,32 +457,33 @@ form input {
 	}
 	.right-block-login {
 		width: 100%;	
-		height: 100%;
+		height: 50%;
 		border-radius: 0 0 30px 30px;
 	}
-	.main-screen .logo-login {
+	.main-screen-login .logo-login {
 		width: 164px;
 		height: 74px;
 		margin-top: -90px;
 		margin-left: 0px;
 		margin-bottom: 20px;
 	}
-	.main-screen .text-login {
+	.main-screen-login .text-login {
 		margin-left: 0px;
+		text-align: center;
 	}
-	.main-screen .text-login h1 {
+	.main-screen-login .text-login h1 {
 		font-weight: 700;
 		margin-top: 0px;
 		margin-bottom: 20px;
 		color: #fff;
 		font-size: 24px;
 	}
-	.main-screen .text-login h2 {
+	.main-screen-login .text-login h2 {
 		font-weight: 500;
 		color: #7c7c7c;
 		font-size: 16px;
 	}
-	.main-screen .name-company-login {
+	.main-screen-login .name-company-login {
 		font-weight: 500;
 		color: #fff;
 		font-size: 16px;
@@ -358,7 +491,74 @@ form input {
 		position: absolute;
 		bottom: 20px;
 	}
+	/*login*/
 
+
+
+	/*reg*/
+	.main-screen-signup {
+		height: 1100px!important;
+		padding: 40px;
+	}
+	.general-block-signup {
+		width: 300px;
+		height: 100%;
+		border-radius: 30px;
+		background: #fff;
+		display: flex;
+		flex-direction: column;
+	}
+	.left-block-signup {
+		width: 100%;
+		height: 40%;
+		background: #222222;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		border-radius: 30px 30px 0 0;
+		position: relative;
+	}
+	.right-block-signup {
+		width: 100%;
+		height: 60%;	
+		border-radius: 0 0 30px 30px;
+	}
+	.main-screen-signup .logo-signup {
+		width: 164px;
+		height: 74px;
+		margin-top: -90px;
+		margin-left: 0px;
+		margin-bottom: 20px;
+	}
+	.main-screen-signup .text-signup {
+		margin-left: 0px;
+		text-align: center;
+	}
+	.main-screen-signup .text-signup h1 {
+		font-weight: 700;
+		margin-top: 0px;
+		margin-bottom: 20px;
+		color: #fff;
+		font-size: 24px;
+	}
+	.main-screen-signup .text-signup h2 {
+		font-weight: 500;
+		color: #7c7c7c;
+		font-size: 16px;
+	}
+	.main-screen-signup .name-company-signup {
+		font-weight: 500;
+		color: #fff;
+		font-size: 16px;
+		margin-left: 0px;
+		position: absolute;
+		bottom: 20px;
+	}
+	form .radio {
+		margin-bottom: 20px;
+	}
+	/*reg*/
 
 }
 /*media sm*/
@@ -366,6 +566,12 @@ form input {
 
 /*media md*/
 @media (min-width: 570px) and (max-width: 768px) {
+
+	/*login*/
+	.main-screen-login {
+		height: 1100px!important;
+		padding: 40px;
+	}
 	.general-block-login {
 		border-radius: 30px;
 		background: #fff;
@@ -378,7 +584,7 @@ form input {
 		position: relative;
 		text-align: center;
 	}
-	.main-screen .logo-login {
+	.main-screen-login .logo-login {
 		width: 164px;
 		height: 74px;
 		margin-left: 0px;
@@ -386,21 +592,21 @@ form input {
 		position: absolute;
 		top: 20px;
 	}
-	.main-screen .text-login {
+	.main-screen-login .text-login {
 		margin-left: 0px;
 	}
-	.main-screen .text-login h1 {
+	.main-screen-login .text-login h1 {
 		font-weight: 700;
 		margin-bottom: 20px;
 		color: #fff;
 		font-size: 36px;
 	}
-	.main-screen .text-login h2 {
+	.main-screen-login .text-login h2 {
 		font-weight: 500;
 		color: #7c7c7c;
 		font-size: 18px;
 	}
-	.main-screen .name-company-login {
+	.main-screen-login .name-company-login {
 		font-weight: 500;
 		color: #fff;
 		font-size: 18px;
@@ -408,14 +614,67 @@ form input {
 		position: absolute;
 		bottom: 40px;
 	}
+	/*login*/
 
+
+	/*reg*/
+	.main-screen-signup {
+		height: 1100px!important;
+		padding: 40px;
+	}
+	.general-block-signup {
+		border-radius: 30px;
+		background: #fff;
+	}
+	.left-block-signup {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		text-align: center;
+	}
+	.main-screen-signup .logo-signup {
+		width: 164px;
+		height: 74px;
+		margin-left: 0px;
+		margin-bottom: 40px;
+		position: absolute;
+		top: 20px;
+	}
+	.main-screen-signup .text-signup {
+		margin-left: 0px;
+	}
+	.main-screen-signup .text-signup h1 {
+		font-weight: 700;
+		margin-bottom: 20px;
+		color: #fff;
+		font-size: 36px;
+	}
+	.main-screen-signup .text-signup h2 {
+		font-weight: 500;
+		color: #7c7c7c;
+		font-size: 18px;
+	}
+	.main-screen-signup .name-company-signup {
+		font-weight: 500;
+		color: #fff;
+		font-size: 18px;
+		margin-left: 0px;
+		position: absolute;
+		bottom: 40px;
+	}
+	/*reg*/
 }
 /*media md*/
 
 
 
 @media screen and (min-width: 1400px) {
-	.container-fluid-login .main-screen {
+	.container-fluid-login .main-screen-login {
+		height: 1200px;
+	}
+	.container-fluid-signup .main-screen-signup {
 		height: 1200px;
 	}
 }

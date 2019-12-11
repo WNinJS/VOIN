@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Login</title>
+	<title>Sign Up</title>
 
 	<!-- Adaptive -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -23,27 +23,38 @@
 		<h1 class="text-center">{{Session::get('error')}}</h1>
 	@endif
 	<!-- MAIN SCREEEN OPEN -->
-	<div class="container-fluid-login">
-		<div class="main-screen-login d-flex justify-content-center align-items-center">
-			<div class="general-block-login">
-				<div class="left-block-login">
-					<img class="logo-login" src="{{asset('/images/logowhite.png')}}" alt="logo">
-					<div class="text-login d-flex flex-column">
-						<h1>Welcome Page</h1>
-						<h2>Sign in continue access</h2>
+	<div class="container-fluid-signup">
+		<div class="main-screen-signup d-flex justify-content-center align-items-center">
+			<div class="general-block-signup">
+				<div class="left-block-signup">
+					<img class="logo-signup" src="{{asset('/images/logowhite.png')}}" alt="logo">
+					<div class="text-signup d-flex flex-column">
+						<h1>Sign Up</h1>
+						<h2>Create account to get access</h2>
 					</div>
-					<p class="name-company-login">Voice Intercommunication</p>
+					<p class="name-company-signup">Voice Intercommunication</p>
 				</div>
 
-				<div class="right-block-login d-flex justify-content-center align-items-center">
-					<form method="POST" class="d-flex flex-column align-items-center w-100" action="login/tryLogin">
+				<div class="right-block-signup d-flex justify-content-center align-items-center">
+					<form method="POST" class="d-flex flex-column align-items-center w-100" action="">
 						{{ csrf_field() }}
 						<div class="inputs w-100 d-flex flex-column align-items-center justify-content-center">
 							<input class="username" type="text" placeholder="Username" required name="login">
 							<input class="password" type="password" placeholder="Password" required name="password">
+							<input class="name" type="text" placeholder="Name" required name="">
+							<input class="secondname" type="text" placeholder="Second name" required name="">
+							<input class="email" type="email" placeholder="E-mail" required name="">
+							<div class="radio d-flex">
+								<input id="radio-document-add" type="radio"
+								onChange="show()"
+								onMouseDown="this.isChecked=this.checked;" 
+								onClick="this.checked=!this.isChecked; hide()">
+								<p>If you police, add the document</p>
+							</div>
+							<input id="goverment-document-add" type="file">
 						</div>
 						<button type="submit">
-							Login
+							Sign Up
 						</button>
 					</form>
 				</div>
@@ -70,8 +81,12 @@
 	</div>
 
 	<script type="text/javascript">
-		function login() {
-			location.href="adminindex.html";
+		function show() {
+			document.getElementById('goverment-document-add').style.display='block';
+		}
+
+		function hide() {
+			document.getElementById('goverment-document-add').style.display='none';
 		}
 	</script>
 
