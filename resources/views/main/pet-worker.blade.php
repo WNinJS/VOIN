@@ -26,8 +26,8 @@
 								<li class="nav-item"> <a class="nav-link active-link" href="/pet-workers">Duty dogs</a> </li>
 								<li class="nav-item"> <a class="nav-link" href="/gover-pets">Government structures</a> </li>
 								<div class="signin-signup d-flex justify-content-center align-items-center">
-									<li class="d-flex justify-content-center align-items-center"> <a class="login-icon" href=""></a> </li>
-									<li class="nav-item signup-text"><a class="nav-link" href="">Not account?</a></li>
+									<li class="d-flex justify-content-center align-items-center"> <a class="login-icon" href="/login"></a> </li>
+									<li class="nav-item signup-text"><a class="nav-link" href="/signup">Not account?</a></li>
 								</div>
 							</ul>
 						</div>

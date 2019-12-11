@@ -44,6 +44,7 @@
 							<input class="name" type="text" placeholder="Name" required name="">
 							<input class="secondname" type="text" placeholder="Second name" required name="">
 							<input class="email" type="email" placeholder="E-mail" required name="">
+							<input class="phone" type="phone" placeholder="Phone" required name="">
 							<div class="radio d-flex">
 								<input id="radio-document-add" type="radio"
 								onChange="show()"

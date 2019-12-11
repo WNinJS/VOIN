@@ -15,21 +15,51 @@
                 <div class="col d-flex justify-content-between align-items-center">
 
                     <a class="navbar-brand" href="/"> <img src="images/logowhite.png" alt="logo"> </a>
+                    
 
-                    <div class="navbar-link">
-                        <ul class="navbar-nav d-flex flex-row nav-links">
-                            <li class="nav-item"> <a class="nav-link " href="/">Main</a> </li>
-                            <li class="nav-item"> <a class="nav-link" href="">About Us</a> </li>
-                            <li class="nav-item"> <a class="nav-link" href="">Materials</a> </li>
-                            <li class="nav-item"> <a class="nav-link" href="/home-pets">Home dogs</a> </li>
-                            <li class="nav-item"> <a class="nav-link" href="/pet-workers">Duty dogs</a> </li>
-                            <li class="nav-item"> <a class="nav-link active-link" href="/gover-pets">Government structures</a> </li>
-                           <div class="signin-signup d-flex justify-content-center align-items-center">
-                                <li class="d-flex justify-content-center align-items-center"> <a class="login-icon" href=""></a> </li>
-                                <li class="nav-item signup-text"><a class="nav-link" href="">Not account?</a></li>
+                    <!-- просто начиная отсюда копируй код и вставляй везде, либо я завтра сам ебану -->
+                    <div class="adaptive d-flex">
+                        <div class="navbar-link">
+                            <ul class="navbar-nav d-flex flex-row nav-links">
+                                <li class="nav-item"> <a class="nav-link " href="/">Main</a> </li>
+                                <li class="nav-item"> <a class="nav-link" href="">About Us</a> </li>
+                                <li class="nav-item"> <a class="nav-link" href="">Materials</a> </li>
+                                <li class="nav-item"> <a class="nav-link" href="/home-pets">Home dogs</a> </li>
+                                <li class="nav-item"> <a class="nav-link" href="/pet-workers">Duty dogs</a> </li>
+                                <li class="nav-item"> <a class="nav-link active-link" href="/gover-pets">Government structures</a> </li>
+
+                                <!-- Это если не вошел в личный кабинет -->
+                               <!-- <div class="signin-signup d-flex justify-content-center align-items-center">
+                                    <li class="d-flex justify-content-center align-items-center"> <a class="login-icon" href=""></a> </li>
+                                    <li class="nav-item signup-text"><a class="nav-link" href="">Not account?</a></li>
+                                </div> -->
+                                <!-- Это если не вошел в личный кабинет -->
+
+                            </ul>
+
+                        </div>
+
+                        <!-- Это если вошел в личный кабинет -->
+                        <div class="profile-menu d-flex justify-content-center align-items-center"> 
+                            <img class="img-profile" src="images/teamleader.jpg" alt="profile">
+            
+                            <div class="btn-group d-flex flex-column">
+                                <button class="btn dropdown-toggle account-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Eduard</button>
+                                <div class="dropdown-menu dropdown-menu-left">
+                                    <a class="dropdown-item" data-toggle="modal" data-target="#account-info-modal">Account info</a>
+                                    <a class="dropdown-item" data-toggle="modal" data-target="#change-password-modal">Change Password</a>
+                                    <a class="dropdown-item" href="#">Logout</a>
+                                </div> 
                             </div>
-                        </ul>
+                        </div>
+                        <!-- Это если вошел в личный кабинет -->
+
+
                     </div>
+                    <!-- тут конец отрезка который нужно копировать -->
+              
+
+
 
                     <div class="burger">
                         <div class="line1"></div>
@@ -115,5 +145,66 @@
         </div>
     </div>
 </div>
+<!-- gover info modal -->
+
+<!-- account info modal -->
+<div class="modal fade" id="account-info-modal" tabindex="-1" role="dialog" aria-labelledby="account-info-modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="account-info-modalLabel">Account Info</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body d-flex flex-column">
+                <p>Name: </p>
+                <p>Second name: </p>
+                <p>Email: </p>
+                <p>Phone: </p>
+                <p>Username: </p>
+                <p>Password: </p>
+
+                <!-- Если это госслужащий -->
+                <div class="docs"></div>
+                <!-- Если это госслужащий -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- account info modal -->
+
+
+<!-- change password modal -->
+<div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog" aria-labelledby="change-password-modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="change-password-modalLabel">Change password</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body d-flex flex-column">
+                <form class="change-password-form">
+                    <input type="password" placeholder="New password">
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn" data-dismiss="modal">Close</button>
+                <button type="button" class="btn" data-dismiss="modal">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- change password modal -->
+
+
+
+
 
 @endsection

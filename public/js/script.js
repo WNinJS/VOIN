@@ -12,10 +12,10 @@ const navSlide = () => {
 
 	// toggle nav
 	const burger = document.querySelector('.burger');
-	const nav =  document.querySelector('.nav-links');
+	const nav =  document.querySelector('.adaptive');
 	
 	burger.addEventListener('click', () => {
-		nav.classList.toggle('nav-active');
+		nav.classList.toggle('adaptive-active');
 
 		// burger animation
 		burger.classList.toggle('toggle');

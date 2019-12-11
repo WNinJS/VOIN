@@ -204,7 +204,7 @@ form input {
 }
 .general-block-signup {
 	width: 945px;
-	height: 600px;
+	height: 700px;
 	border-radius: 30px;
 	background: #fff;
 	display: flex;
@@ -252,7 +252,7 @@ form input {
 }
 
 
-form .username, .password, .name, .secondname, .email {
+form .username, .password, .name, .secondname, .email, .phone {
 	width: 70%;
 	height: 40px;
 	background: none;
@@ -613,6 +613,9 @@ form #goverment-document-add {
 		margin-left: 0px;
 		position: absolute;
 		bottom: 40px;
+	}
+	.radio {
+		margin-bottom: 20px!important;
 	}
 	/*login*/
 
