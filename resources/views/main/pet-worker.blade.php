@@ -20,9 +20,15 @@
 						<div class="navbar-link">
 							<ul class="navbar-nav d-flex flex-row nav-links">
 								<li class="nav-item"> <a class="nav-link" href="/">Main</a> </li>
+								<li class="nav-item"> <a class="nav-link" href="">About Us</a> </li>
+								<li class="nav-item"> <a class="nav-link" href="">Materials</a> </li>
 								<li class="nav-item"> <a class="nav-link" href="/home-pets">Home dogs</a> </li>
 								<li class="nav-item"> <a class="nav-link active-link" href="/pet-workers">Duty dogs</a> </li>
 								<li class="nav-item"> <a class="nav-link" href="/gover-pets">Government structures</a> </li>
+								<div class="signin-signup d-flex justify-content-center align-items-center">
+									<li class="d-flex justify-content-center align-items-center"> <a class="login-icon" href=""></a> </li>
+									<li class="nav-item signup-text"><a class="nav-link" href="">Not account?</a></li>
+								</div>
 							</ul>
 						</div>
 						<div class="burger">
@@ -94,7 +100,6 @@
 					<button type="submit" class="btn-submit">Send</button>
 				</form>
 				<h2 class="text-center msg" style="display: none;">Your email has been successfuly sent!</h2>
-				<hr>
 			</div>
 		</div>
 
@@ -114,6 +119,8 @@
 
 							<div class="left-block d-flex flex-column">
 								<a href="/">Main</a>
+								<a href="#">About Us</a>
+								<a href="#">Materials</a>
 								<a href="/home-pets">Home dogs</a>
 								<a href="/pet-workers">Duty dogs</a>
 								<a href="/gover-pets">Government structures</a>

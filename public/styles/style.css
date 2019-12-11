@@ -50,6 +50,16 @@ a.anchor {
 	margin: 5px;
 	transition: all 0.3s ease;
 }
+.signin-signup a.login-icon {
+	width: 24px;
+	height: 24px;
+	background: url(../images/login_icon.png) no-repeat;
+	background-size: cover;
+	text-decoration: none;
+}
+.signin-signup li.signup-text {
+	margin-left: 10px!important;
+}
 
 
 /*modal open*/
@@ -144,10 +154,10 @@ p {
 .navbar li {
 	margin-left: 40px;
 }
-.navbar .navbar-link a.active-link {
+.navbar .navbar-link a.nav-link.active-link {
 	border-bottom: 2px solid;
 }
-.navbar .navbar-link a:hover {
+.navbar .navbar-link a.nav-link:hover {
 	border-bottom: 2px solid;
 }
 /*navbar close*/

@@ -23,9 +23,33 @@
 		<h1 class="text-center">{{Session::get('error')}}</h1>
 	@endif
 	<!-- MAIN SCREEEN OPEN -->
-	<div class="container-fluid">
+	<div class="container-fluid-login">
 		<div class="main-screen d-flex justify-content-center align-items-center">
-			<div class="container">
+			<div class="general-block-login">
+				<div class="left-block-login">
+					<img class="logo-login" src="{{asset('/images/logowhite.png')}}" alt="logo">
+					<div class="text-login d-flex flex-column">
+						<h1>Welcome Page</h1>
+						<h2>Sign in continue access</h2>
+					</div>
+					<p class="name-company-login">Voice Intercommunication</p>
+				</div>
+
+				<div class="right-block-login d-flex justify-content-center align-items-center">
+					<form method="POST" class="d-flex flex-column align-items-center w-100" action="login/tryLogin">
+						{{ csrf_field() }}
+						<div class="inputs w-100 d-flex flex-column align-items-center justify-content-center">
+							<input class="username" type="text" placeholder="Username" required name="login">
+							<input class="password" type="password" placeholder="Password" required name="password">
+						</div>
+						<button type="submit">
+							Sign In
+						</button>
+					</form>
+				</div>
+				
+			</div>
+			<!-- <div class="container">
 				<div class="row d-flex justify-content-center align-items-center">
 					<div class="col-12 d-flex flex-column justify-content-center align-items-center">
 						<img class="logo" src="{{asset('/images/logodark.png')}}" alt="logo">
@@ -41,7 +65,7 @@
 						</form>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 
