@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 	<!-- My CSS -->
 	<link rel="stylesheet" href="{{asset('styles/admin.css')}}">
@@ -159,7 +159,16 @@
 							</div>
 							<div class="file">
 								<h6>Иконка</h6>
-								<input class="file" type="file" placeholder="Выберите изображение" name="icon"  required>
+								<div class="input-group">
+			                        <div class="input-group-prepend">
+			                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+			                        </div>
+			                        <div class="custom-file">
+			                            <input type="file" class="file custom-file-input" id="inputGroupFile01"
+			                            aria-describedby="inputGroupFileAddon01" required name="icon">
+			                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+			                        </div>
+			                    </div>
 							</div>
 						</div>
 	
@@ -195,7 +204,16 @@
 							</div>
 							<div class="file">
 								<h6>Иконка</h6>
-								<input class="file" type="file" placeholder="Выберите изображение" name="icon"  required>
+								<div class="input-group">
+			                        <div class="input-group-prepend">
+			                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+			                        </div>
+			                        <div class="custom-file">
+			                            <input type="file" class="file custom-file-input" id="inputGroupFile01"
+			                            aria-describedby="inputGroupFileAddon01" required name="icon">
+			                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+			                        </div>
+			                    </div>
 							</div>
 						</div>
 
@@ -232,7 +250,18 @@
 						</div>
 						<div class="file">
 							<h6>Иконка</h6>
-							<input class="file" type="file" required placeholder="Выберите изображение" name="homeDogIcon">
+
+							<div class="input-group">
+		                        <div class="input-group-prepend">
+		                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+		                        </div>
+		                        <div class="custom-file">
+		                            <input type="file" class="file custom-file-input" id="inputGroupFile01"
+		                            aria-describedby="inputGroupFileAddon01" required name="homeDogIcon">
+		                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+		                        </div>
+		                    </div>
+
 						</div>
 					</div>
 
@@ -264,7 +293,15 @@
 						</div>
 						<div class="file">
 							<h6>Иконка</h6>
-							<input class="file" type="file" required placeholder="Выберите изображение" name="homeDogIcon">
+		                    <div class="input-group">
+		                        <div class="input-group-prepend">
+		                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+		                        </div>
+		                        <div class="custom-file">
+		                            <input type="file" class="file custom-file-input" name="homeDogIcon" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" required>
+		                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+		                        </div>
+		                    </div>
 						</div>
 					</div>
 
@@ -303,8 +340,17 @@
 								<textarea class="textarea-style" name="description" required>{{$complex->description}}</textarea>
 							</div>
 							<div class="file" >
-								<h6>Картинка(горизонтальная)</h6>
-								<input class="file" type="file" name="img" placeholder="Выберите изображение">
+								<h6>Картинка</h6>
+			                    <div class="input-group">
+			                        <div class="input-group-prepend">
+			                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+			                        </div>
+			                        <div class="custom-file">
+			                            <input type="file" class="file custom-file-input" name="img" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" required>
+			                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+			                        </div>
+			                    </div>
+
 							</div>
 						</div>
 	
@@ -331,11 +377,9 @@
 	</script>
 
 	<!-- Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
-	<script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
-	<script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
-
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>
 

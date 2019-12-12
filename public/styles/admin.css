@@ -47,9 +47,7 @@ button.btn-add {
 	width: 100%;
 	padding: 15px;
 }
-.input-group {
-	width: 70%;
-}
+
 
 /*modal open*/
 .modal-content {
@@ -85,7 +83,26 @@ button.btn-add {
 .disabled-btn {
 	opacity: 0.5;
 }
+.modal-open {
+	padding: 0;
+}
 /*modal close*/
+
+
+
+.complex-header {
+	margin-bottom: 40px;
+}
+.complex-description {
+	margin-bottom: 40px;
+}
+.input-group {
+	width: 100%;
+}
+.opportunity-description {
+	margin-bottom: 40px;
+}
+
 
 
 
@@ -378,10 +395,10 @@ form #goverment-document-add {
 
 /*cards*/
 .card {
-	border-color: #222222;
 	margin-right: 15px;
 	margin-bottom: 20px;
 	height: 300px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 .card:hover {
 	background: #ecf2f3;

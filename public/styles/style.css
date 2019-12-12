@@ -18,6 +18,14 @@ button:active,
 button:focus {
     outline: none;
 }
+button.btn-edit {
+	width: 30px;
+	height: 30px;
+	border-radius: 0px;
+	background: url('../images/edit.png');
+	background-size: cover;
+	border: none;
+}
 .pointer {
 	cursor: pointer;
 }
@@ -103,10 +111,18 @@ form.change-password-form input {
 
 
 
+.input-group {
+	margin-top: 20px;
+}
+
+
 /*modal open*/
 .modal-content {
 	border: none;
 	border-radius: 30px;
+}
+body.modal-open {
+	padding-right: 0!important;
 }
 .modal-content .modal-footer button {
 	width: 45%;
@@ -129,6 +145,53 @@ form.change-password-form input {
 	font-weight: 700;
 }
 /*modal close*/
+
+
+
+
+
+/*modal account info*/
+.block-account-info {
+	width: 100%;
+	height: 70px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 10px;
+	transition: 0.15s;
+}
+.block-account-info:hover {
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+
+
+
+
+/*.card-docs {
+	margin-top: 20px;
+	margin-right: 15px;
+	margin-bottom: 20px;
+	padding: 20px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.card-docs:hover {
+	background: #ecf2f3;
+	transition: 0.15s;
+}
+p.card-text {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	cursor: default;
+}
+.card-docs .image img {
+	height: 100px;
+}*/
+/*modal account info*/
+
+
+
+
+
 
 .main-screen {
 	width: 100%;

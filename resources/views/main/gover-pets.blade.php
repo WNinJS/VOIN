@@ -47,7 +47,6 @@
                                 <button class="btn dropdown-toggle account-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Eduard</button>
                                 <div class="dropdown-menu dropdown-menu-left">
                                     <a class="dropdown-item" data-toggle="modal" data-target="#account-info-modal">Account info</a>
-                                    <a class="dropdown-item" data-toggle="modal" data-target="#change-password-modal">Change Password</a>
                                     <a class="dropdown-item" href="#">Logout</a>
                                 </div> 
                             </div>
@@ -78,7 +77,7 @@
             <div class="col-9">
                 <h1 class="cursor-default">Government structures</h1>
                 <p class="cursor-default">Monitoring and communication complex for dogs provides remote voice interaction between dog and a person without visual control, dog’s biometric indexes monitoring, POV photofixation and video recording of the actions around the dog, possibility of pre-recorded commands  sending</p>
-                <button data-toggle="modal" data-target="#gover-info-modal">Apply for information</button>
+                <button data-toggle="modal" data-target="#gover-info-modal">Request for access</button>
             </div>
         </div>
         <!-- description close -->
@@ -136,12 +135,25 @@
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <p>Coming soon</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn" data-dismiss="modal">Close</button>
-            </div>
+            <form method="POST">
+                <div class="modal-body">
+                    <p>Для получения доступа к данному разделу нужно прикрепить 2 файла: сопроводительное письмо и карту партнера.</p>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                        </div>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="inputGroupFile01"
+                            aria-describedby="inputGroupFileAddon01">
+                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer d0flex justify-content-between">
+                    <button type="button" class="btn" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn">Request access</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -157,17 +169,33 @@
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body d-flex flex-column">
-                <p>Name: </p>
-                <p>Second name: </p>
-                <p>Email: </p>
-                <p>Phone: </p>
-                <p>Username: </p>
-                <p>Password: </p>
+            <div class="modal-body d-flex flex-column align-items-center">
+                <div class="block-account-info d-flex justify-content-between align-items-center">
+                    <p><strong>Name:  </strong>Tape </p>
+                    <button class="btn-edit"></button>
+                </div>
+                <div class="block-account-info d-flex justify-content-between align-items-center">
+                    <p><strong>Surname:  </strong>Na babkax </p>
+                    <button class="btn-edit"></button>
+                </div>
+                <div class="block-account-info d-flex justify-content-between align-items-center">
+                    <p><strong>Email:  </strong>eduardkarimov@gmail.com </p>
+                    <button class="btn-edit"></button>
+                </div>
+                <div class="block-account-info d-flex justify-content-between align-items-center">
+                    <p><strong>Phone:  </strong>+ 7 987 115 22 22 </p>
+                    <button class="btn-edit"></button>
+                </div>
+                <div class="block-account-info d-flex justify-content-between align-items-center">
+                    <p><strong>Username:  </strong>EdAdmin </p>
+                    <button class="btn-edit"></button>
+                </div>
+                <div class="block-account-info d-flex justify-content-between align-items-center">
+                    <p><strong>Password:  </strong>********* </p>
+                    <button class="btn-edit"></button>
+                </div>
+                
 
-                <!-- Если это госслужащий -->
-                <div class="docs"></div>
-                <!-- Если это госслужащий -->
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn" data-dismiss="modal">Close</button>
@@ -176,33 +204,6 @@
     </div>
 </div>
 <!-- account info modal -->
-
-
-<!-- change password modal -->
-<div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog" aria-labelledby="change-password-modalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="change-password-modalLabel">Change password</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body d-flex flex-column">
-                <form class="change-password-form">
-                    <input type="password" placeholder="New password">
-                </form>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn" data-dismiss="modal">Close</button>
-                <button type="button" class="btn" data-dismiss="modal">Save</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- change password modal -->
-
 
 
 
