@@ -19,9 +19,6 @@
 </head>
 <body>
 
-	@if(session('error'))
-		<h1 class="text-center">{{Session::get('error')}}</h1>
-	@endif
 	<!-- MAIN SCREEEN OPEN -->
 	<div class="container-fluid-login">
 		<div class="main-screen-login d-flex justify-content-center align-items-center">
@@ -35,16 +32,19 @@
 					<p class="name-company-login">Voice Intercommunication</p>
 				</div>
 
-				<div class="right-block-login d-flex justify-content-center align-items-center">
-					<form method="POST" class="d-flex flex-column align-items-center w-100" action="login/tryLogin">
+				<div class="right-block-login d-flex justify-content-center align-items-center flex-column">
+					@if(session('roleError'))
+						<h4 class="text-center">{{Session::get('roleError')}}</h4>
+					@elseif(session('error'))
+						<h4 class="text-center">{{Session::get('error')}}</h4>
+					@endif
+					<form method="POST" class="d-flex flex-column align-items-center w-100" action="{{Route('login')}}">
 						{{ csrf_field() }}
 						<div class="inputs w-100 d-flex flex-column align-items-center justify-content-center">
 							<input class="username" type="text" placeholder="Username" required name="login">
 							<input class="password" type="password" placeholder="Password" required name="password">
 						</div>
-						<button type="submit">
-							Login
-						</button>
+						<button type="submit">Login</button>
 					</form>
 				</div>
 				

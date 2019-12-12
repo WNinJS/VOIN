@@ -20,17 +20,18 @@ Route::get('/', function () {
     return view('mainContent')->with(compact('complexes','categories'));
 });
 
-Route::get('/login', function(){
-    return view('auth.login');
-});
-
-Route::get('/signup', function(){
-    return view('auth.signup');
-});
-
-Route::post('/login/tryLogin','AuthController@tryAuth');
-
-Route::get('/adminpanel','AdminController@index');
+//Роут для перехода на страницу авторизации
+Route::view('/login', 'auth.login');
+//Роут для осущетсвления атуентификации и авторизации
+Route::post('/login','AuthController@tryAuth')->name('login');
+//Роут для перехода на страницу регистрации
+Route::view('/signup', 'auth.signup')->name('signup');
+//Роут для осуществления регистрации
+Route::post('/signup','AuthController@register');
+//Это нужно переделать
+// Route::post('/login/tryLogin','AuthController@tryAuth');
+//
+Route::get('/adminpanel','AdminController@index')->middleware('checkAuth')->name('adminpanel');
 
 
 //обновляем данные компонента комплекса
