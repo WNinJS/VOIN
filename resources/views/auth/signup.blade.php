@@ -47,15 +47,13 @@
 						<input class="phone" type="phone" placeholder="Phone" required name="phoneNumber">
 						<div class="radio d-flex">
 							<input id="radio-document-add" type="radio"
-								onChange="show()"
 								onMouseDown="this.isChecked=this.checked;" 
-								onClick="this.checked=!this.isChecked; hide()">
-							<p>If you police, add the document</p>
+								onClick="this.checked=!this.isChecked; checkRules()">
+							<p>Accept the rules of privacy information</p>
 						</div>
-						<input id="goverment-document-add" type="file" >
 
 					</div>
-					<button type="submit">
+					<button id="accept-rules-button" class="disabled-btn" type="submit" disabled>
 						Sign Up
 					</button>
 				</form>
@@ -83,12 +81,26 @@
 </div>
 
 <script type="text/javascript">
-	function show() {
-		document.getElementById('goverment-document-add').style.display='block';
-	}
+	function checkRules() {
+		const regButton = document.querySelector('#accept-rules-button');
+		if (regButton.disabled) {
+			deletebtnclass();
+			regButton.disabled = this.checked;
+			
+		}
+		else {
+			addbtnclass();
+			regButton.disabled=!this.checked;	
+		}
 
-	function hide() {
-		document.getElementById('goverment-document-add').style.display='none';
+		function deletebtnclass() {
+			regButton.classList.remove('disabled-btn')
+		}
+
+		function addbtnclass() {
+			regButton.classList.add('disabled-btn')
+		}
+		
 	}
 </script>
 
