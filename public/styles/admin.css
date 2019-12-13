@@ -23,6 +23,14 @@ button.btn-delete {
 	background-size: cover;
 	border: none;	
 }
+button.btn-accept {
+	width: 40px;
+	height: 40px;
+	border-radius: 0px;
+	background: url('../images/accept.png');
+	background-size: cover;
+	border: none;	
+}
 button.btn-edit {
 	width: 30px;
 	height: 30px;
@@ -39,6 +47,20 @@ button.btn-add {
 	background-size: cover;
 	border: none;
 }
+.btns-save {
+	margin-bottom: 20px;
+}
+a.save-link {
+	color: #a4a4a4;
+	text-decoration: none;
+	font-weight: 600;
+	transition: 0.15s;
+}
+a.save-link:hover {
+	color: #222222;
+}
+
+
 .cursor-default {
 	cursor: default;
 }
@@ -404,6 +426,11 @@ form #goverment-document-add {
 	background: #ecf2f3;
 	transition: 0.15s;
 }
+.gov-employes .card {
+	height: 100%;
+	padding: 20px;
+}
+.gov-employes .image
 /*cards*/
 
 
