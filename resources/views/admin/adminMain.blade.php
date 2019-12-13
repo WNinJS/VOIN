@@ -25,7 +25,7 @@
 	<div class="container-fluid">
 		<!-- navbar -->
 		<nav class="navbar d-flex justify-content-between align-items-center">
-			<a class="navbar-brand" href="adminindex.html"> <img src="{{asset('images/logodark.png')}}" alt="logo"></a>
+			<a class="navbar-brand" href="/"> <img src="{{asset('images/logodark.png')}}" alt="logo"></a>
 			<div class="profile d-flex align-items-center justify-content-center">
 
 				<p> {{Session::get('login')}}</p>
@@ -160,15 +160,15 @@
 							<div class="file">
 								<h6>Иконка</h6>
 								<div class="input-group">
-			                        <div class="input-group-prepend">
-			                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-			                        </div>
-			                        <div class="custom-file">
-			                            <input type="file" class="file custom-file-input" id="inputGroupFile01"
-			                            aria-describedby="inputGroupFileAddon01" required name="icon">
-			                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-			                        </div>
-			                    </div>
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                  </div>
+                  <div class="custom-file">
+                    <input type="file" class="file custom-file-input" id="inputGroupFile01"
+                     aria-describedby="inputGroupFileAddon01" required name="icon">
+                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                  </div>
+                </div>
 							</div>
 						</div>
 	

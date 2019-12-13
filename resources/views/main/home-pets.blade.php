@@ -10,35 +10,7 @@
 		<div class="main-screen-home">
 
 			<!-- navbar open -->
-			<nav class="navbar">
-				<div class="container h-100">
-					<div class="col d-flex justify-content-between align-items-center h-100">
-						
-						<a class="navbar-brand" href="/"> <img src="images/logowhite.png" alt="logo"> </a>
-					
-						<div class="navbar-link">
-							<ul class="navbar-nav d-flex flex-row nav-links">
-								<li class="nav-item"> <a class="nav-link" href="/">Main</a> </li>
-								<li class="nav-item"> <a class="nav-link" href="">About Us</a> </li>
-								<li class="nav-item"> <a class="nav-link" href="">Materials</a> </li>
-								<li class="nav-item"> <a class="nav-link active-link" href="/home-pets">Home dogs</a> </li>
-								<li class="nav-item"> <a class="nav-link" href="/pet-workers">Duty dogs</a> </li>
-								<li class="nav-item"> <a class="nav-link" href="/gover-pets">Government structures</a> </li>
-								<div class="signin-signup d-flex justify-content-center align-items-center">
-									<li class="d-flex justify-content-center align-items-center"> <a class="login-icon" href="/login"></a> </li>
-									<li class="nav-item signup-text"><a class="nav-link" href="/signup">Not account?</a></li>
-								</div>
-							</ul>
-						</div>
-						<div class="burger">
-							<div class="line1"></div>
-							<div class="line2"></div>
-							<div class="line3"></div>
-						</div>
-
-					</div>
-				</div>
-			</nav>
+			@include('partials.header')
 			<!-- navbar close -->
 				
 

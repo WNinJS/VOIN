@@ -19,9 +19,6 @@
 </head>
 <body>
 
-@if(session('error'))
-	<h1 class="text-center">{{Session::get('error')}}</h1>
-@endif
 <!-- MAIN SCREEEN OPEN -->
 <div class="container-fluid-signup">
 	<div class="main-screen-signup d-flex justify-content-center align-items-center">
@@ -38,6 +35,11 @@
 			<div class="right-block-signup d-flex justify-content-center align-items-center">
 				<form enctype="multipart/form-data" method="POST" class="d-flex flex-column align-items-center w-100" action="/signup" >
 					{{ csrf_field() }}
+					@if(session('roleError'))
+						<div class="alert alert-danger" role="alert">{{Session::get('roleError')}}</div>
+					@elseif(session('error'))
+						<div class="alert alert-danger" role="alert">{{Session::get('error')}}</div>
+					@endif
 					<div class="inputs w-100 d-flex flex-column align-items-center justify-content-center">
 						<input class="username" type="text" placeholder="Username" required name="login">
 						<input class="password" type="password" placeholder="Password" required name="password">

@@ -10,37 +10,28 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-  public function tryAuth(Request $request){
+  public function login(Request $request){
 
-    $all = $request->all();
-    //get login
-    $login = $all['login'];
-    //get password from $all
-    $pass = $all['password'];
+    //получаем пользователья по логину из БД
+    $user = User::where('username',$request->login)->first();
 
-    $result = User::where('username', $login)->count();
-
-
-
-    $currentUser = User::where('username', $login)->get();
-    echo password_hash($pass, PASSWORD_DEFAULT)."-----".$currentUser[0]['password'];
-    $role = User::where('username', $login)->where('password',$pass)->get();
-    //cheking if there is a user with $login and $password 
-
-    if ($result<1)
-    { 
-        return $this->error404();
+    //Если такого пользователя не существет, возвращаем ошибку 
+    if(!$user){
+      return $this->error404();
     }
-    else if (($role[0]['id_role'] == 1) && $result==1)
-    {
-        $request->session()->put('login',$login);
+    //Сверяем пароль с формы с захешированным паролем пользователя
+    if(Hash::check($request->password,$user->password)){
+      if($user->role === 'admin'){
+        $request->session()->put('login',$request->login);
         return redirect('/adminpanel');
+      }else if($user->role === 'user'){
+        $request->session()->put('login',$request->login);
+        $request->session()->put('user', $user);
+        return redirect('/');
+      }
     }
-    else{
-        return $this->error404();
-    }  
   }
-
+  //Рег
   public function register(Request $request){
     try{
       $user = new User();
@@ -57,9 +48,13 @@ class AuthController extends Controller
     }
 
   }
+  public function logout(Request $request){
+    $request->session()->flush();
+    return redirect()->back();
+  }
 
   private function error404(){
-    return redirect()->back()->with('error','This user does not exist!');
+    return redirect()->back()->with('error','There is no user with this cridetials!');
 
   }
 }

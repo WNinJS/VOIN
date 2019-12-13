@@ -34,9 +34,9 @@
 
 				<div class="right-block-login d-flex justify-content-center align-items-center flex-column">
 					@if(session('roleError'))
-						<h4 class="text-center">{{Session::get('roleError')}}</h4>
+						<div class="alert alert-danger" role="alert">{{Session::get('roleError')}}</div>
 					@elseif(session('error'))
-						<h4 class="text-center">{{Session::get('error')}}</h4>
+						<div class="alert alert-danger" role="alert">{{Session::get('error')}}</div>
 					@endif
 					<form method="POST" class="d-flex flex-column align-items-center w-100" action="{{Route('login')}}">
 						{{ csrf_field() }}
