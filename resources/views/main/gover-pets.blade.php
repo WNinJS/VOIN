@@ -24,9 +24,51 @@
       </div>
       <!-- description close -->
 
-
   </div>
 
+
+
+
+<!-- Этот контент виден только тем, кто прошел аутистификацию на документы от Эдика, Начало -->
+
+
+<!-- opportunities open -->
+<div class="opportunities text-center">
+    <div class="container">
+        <h2>Opportunities</h2>
+        <h3>The Voin complex provides</h3>
+
+        <div class="row d-flex justify-content-around align-items-start">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 flex-column d-flex justify-content-center align-items-center icon-block">
+                <div class="image">
+                  <img src="" alt="record">
+                </div>
+                                   
+                <p></p>
+            </div>    
+            <hr>
+        </div>
+    </div>
+</div>
+    <!-- opportunities close -->
+
+
+<!-- feedback open -->
+<div id="feedback" class="feedback text-center">
+    <div class="container">
+        <h2>Feed back</h2>
+        <h3>Leave your email below, we will contact you</h3>
+        <form method="POST" action="/send-mail">
+                  {{ csrf_field() }}
+            <input type="email" required placeholder="example@gmail.com" name="mail" class="mail">
+            <button type="submit" class="btn-submit">Send</button>
+        </form>
+        <h2 class="text-center msg" style="display: none;">Your email has been successfuly sent!</h2>
+    </div>
+</div>
+<!-- feedback close -->
+
+<!-- Этот контент виден только тем, кто прошел аутистификацию на документы от Эдика, КОНЕЦ -->
 
 
   <!-- footer open -->
@@ -87,7 +129,7 @@
                          </div>
                          <div class="custom-file">
                             <input type="file" class="custom-file-input" id="inputGroupFile01"
-                             aria-describedby="inputGroupFileAddon01">
+                             aria-describedby="inputGroupFileAddon01" multiple>
                             <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                         </div>
                     </div>
@@ -108,9 +150,6 @@
 </div>
 <!-- gover info modal -->
 
-<!-- account info modal -->
-
-<!-- account info modal -->
 
 
 

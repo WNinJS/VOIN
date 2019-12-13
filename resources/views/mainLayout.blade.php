@@ -111,27 +111,27 @@
 				<div class="modal-body d-flex flex-column align-items-center">
 					<div class="block-account-info d-flex justify-content-between align-items-center">
 						<p><strong>Name:  </strong>{{Session::get('user')->username}}</p>
-						<button class="btn-edit"></button>
+						<button data-dismiss="modal" data-toggle="modal" data-target="#account-edit-name-modal" class="btn-edit"></button>
 					</div>
 					<div class="block-account-info d-flex justify-content-between align-items-center">
 						<p><strong>Surname:  </strong>{{Session::get('user')->surname}} </p>
-						<button class="btn-edit"></button>
+						<button data-dismiss="modal" data-toggle="modal" data-target="#account-edit-surname-modal"  class="btn-edit"></button>
 					</div>
 					<div class="block-account-info d-flex justify-content-between align-items-center">
 						<p><strong>Email:  </strong>{{Session::get('user')->email}} </p>
-						<button class="btn-edit"></button>
+						<button data-dismiss="modal" data-toggle="modal" data-target="#account-edit-email-modal" class="btn-edit"></button>
 					</div>
 					<div class="block-account-info d-flex justify-content-between align-items-center">
 						<p><strong>Phone:  </strong>{{Session::get('user')->phone}} </p>
-						<button class="btn-edit"></button>
+						<button data-dismiss="modal" data-toggle="modal" data-target="#account-edit-phone-modal" class="btn-edit"></button>
 					</div>
 					<div class="block-account-info d-flex justify-content-between align-items-center">
 						<p><strong>Username:  </strong>{{Session::get('user')->username}} </p>
-						<button class="btn-edit"></button>
+						<button data-dismiss="modal" data-toggle="modal" data-target="#account-edit-username-modal" class="btn-edit"></button>
 					</div>
 					<div class="block-account-info d-flex justify-content-between align-items-center">
 						<p><strong>Password:  </strong>********* </p>
-						<button class="btn-edit"></button>
+						<button data-dismiss="modal" data-toggle="modal" data-target="#account-edit-password-modal" class="btn-edit"></button>
 					</div>
 					
 	  
@@ -141,7 +141,193 @@
 				</div>
 			</div>
 		</div>
-	  </div>
+  	</div>
+
+
+	<!-- edit name modal -->
+	<div class="modal fade edit-info-modal" id="account-edit-name-modal" tabindex="-1" role="dialog" aria-labelledby="account-edit-name-modalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="account-edit-name-modalLabel">Edit Name</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<form method="POST">
+					<div class="modal-body d-flex flex-column align-items-center">
+		  				<div class="block-account-info d-flex justify-content-between align-items-center">
+							<p><strong>Old name:  </strong>{{Session::get('user')->username}}</p>
+							<input type="text" class="account-info-input" placeholder="New name" required>
+						</div>
+					</div>
+
+					<div class="modal-footer d-flex justify-content-between">
+						<button type="button" data-toggle="modal" data-target="#account-info-modal" class="btn" data-dismiss="modal">Back</button>
+						<button type="submit" class="btn">Save changes</button>
+					</div>
+				</form>
+			</div>
+		</div>
+  	</div>
+  	<!-- edit name modal -->
+
+
+
+
+  	<!-- edit name modal -->
+	<div class="modal fade edit-info-modal" id="account-edit-surname-modal" tabindex="-1" role="dialog" aria-labelledby="account-edit-surname-modalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="account-edit-surname-modalLabel">Edit Surname</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<form method="POST">
+					<div class="modal-body d-flex flex-column align-items-center">
+		  				<div class="block-account-info d-flex justify-content-between align-items-center">
+							<p><strong>Old surname:  </strong>{{Session::get('user')->surname}}</p>
+							<input type="text" class="account-info-input" placeholder="New surname" required>
+						</div>
+					</div>
+
+					<div class="modal-footer d-flex justify-content-between">
+						<button type="button" data-toggle="modal" data-target="#account-info-modal" class="btn" data-dismiss="modal">Back</button>
+						<button type="submit" class="btn">Save changes</button>
+					</div>
+				</form>
+			</div>
+		</div>
+  	</div>
+  	<!-- edit name modal -->
+
+
+
+  	<!-- edit email modal -->
+	<div class="modal fade edit-info-modal" id="account-edit-email-modal" tabindex="-1" role="dialog" aria-labelledby="account-edit-email-modalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="account-edit-email-modalLabel">Edit Email</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<form method="POST">
+					<div class="modal-body d-flex flex-column align-items-center">
+		  				<div class="block-account-info d-flex justify-content-between align-items-center">
+							<p><strong>Old email:  </strong>{{Session::get('user')->email}}</p>
+							<input type="email" class="account-info-input" placeholder="New email" required>
+						</div>
+					</div>
+
+					<div class="modal-footer d-flex justify-content-between">
+						<button type="button" data-toggle="modal" data-target="#account-info-modal" class="btn" data-dismiss="modal">Back</button>
+						<button type="submit" class="btn">Save changes</button>
+					</div>
+				</form>
+			</div>
+		</div>
+  	</div>
+  	<!-- edit email modal -->
+
+
+  	<!-- edit phone modal -->
+	<div class="modal fade edit-info-modal" id="account-edit-phone-modal" tabindex="-1" role="dialog" aria-labelledby="account-edit-phone-modalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="account-edit-phone-modalLabel">Edit Phone</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<form method="POST">
+					<div class="modal-body d-flex flex-column align-items-center">
+		  				<div class="block-account-info d-flex justify-content-between align-items-center">
+							<p><strong>Old phone:  </strong>{{Session::get('user')->phone}}</p>
+							<input type="phone" class="account-info-input" placeholder="New phone" required>
+						</div>
+					</div>
+
+					<div class="modal-footer d-flex justify-content-between">
+						<button type="button" data-toggle="modal" data-target="#account-info-modal" class="btn" data-dismiss="modal">Back</button>
+						<button type="submit" class="btn">Save changes</button>
+					</div>
+				</form>
+			</div>
+		</div>
+  	</div>
+  	<!-- edit phone modal -->
+
+
+
+
+  	<!-- edit username modal -->
+	<div class="modal fade edit-info-modal" id="account-edit-username-modal" tabindex="-1" role="dialog" aria-labelledby="account-edit-username-modalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="account-edit-username-modalLabel">Edit Username</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<form method="POST">
+					<div class="modal-body d-flex flex-column align-items-center">
+		  				<div class="block-account-info d-flex justify-content-between align-items-center">
+							<p><strong>Old username:  </strong>{{Session::get('user')->username}}</p>
+							<input type="text" class="account-info-input" placeholder="New username" required>
+						</div>
+					</div>
+
+					<div class="modal-footer d-flex justify-content-between">
+						<button type="button" data-toggle="modal" data-target="#account-info-modal" class="btn" data-dismiss="modal">Back</button>
+						<button type="submit" class="btn">Save changes</button>
+					</div>
+				</form>
+			</div>
+		</div>
+  	</div>
+  	<!-- edit username modal -->
+
+
+
+  	<!-- edit password modal -->
+	<div class="modal fade edit-info-modal" id="account-edit-password-modal" tabindex="-1" role="dialog" aria-labelledby="account-edit-password-modalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="account-edit-password-modalLabel">Edit Password</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<form method="POST">
+					<div class="modal-body d-flex flex-column align-items-center">
+		  				<div class="block-account-info d-flex justify-content-between align-items-center">
+							<p><strong>Old password:  </strong>****</p>
+							<input type="password" class="account-info-input" placeholder="New password" required>
+						</div>
+					</div>
+
+					<div class="modal-footer d-flex justify-content-between">
+						<button type="button" data-toggle="modal" data-target="#account-info-modal" class="btn" data-dismiss="modal">Back</button>
+						<button type="submit" class="btn">Save changes</button>
+					</div>
+				</form>
+			</div>
+		</div>
+  	</div>
+  	<!-- edit password modal -->
+
+
+
+
+
+
 	@endif
 
 	  <!-- account info modal -->
