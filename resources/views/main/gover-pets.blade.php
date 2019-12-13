@@ -72,28 +72,35 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
           <div class="modal-header">
-              <h5 class="modal-title" id="complex-modalLabel">Apply for information</h5>
+              <h5 class="modal-title" id="complex-modalLabel">Request for access</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
               </button>
           </div>
           <form method="POST">
               <div class="modal-body">
-                  <p>Для получения доступа к данному разделу нужно прикрепить 2 файла: сопроводительное письмо и карту партнера.</p>
-                  <div class="input-group">
-                      <div class="input-group-prepend">
-                          <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-                      </div>
-                      <div class="custom-file">
-                          <input type="file" class="custom-file-input" id="inputGroupFile01"
-                          aria-describedby="inputGroupFileAddon01">
-                          <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                      </div>
-                  </div>
+                  @if(session('user'))
+                         <p>Для получения доступа к данному разделу нужно прикрепить 2 файла: сопроводительное письмо и карту партнера.</p>
+                        <div class="input-group">
+                         <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                         </div>
+                         <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="inputGroupFile01"
+                             aria-describedby="inputGroupFileAddon01">
+                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                        </div>
+                    </div>
+                  @else
+                  <p>Please signup</p>
+                  @endif
+
               </div>
               <div class="modal-footer d0flex justify-content-between">
                   <button type="button" class="btn" data-dismiss="modal">Close</button>
+                  @if(session('user'))
                   <button type="submit" class="btn">Request access</button>
+                  @endif
               </div>
           </form>
       </div>
@@ -102,49 +109,7 @@
 <!-- gover info modal -->
 
 <!-- account info modal -->
-<div class="modal fade" id="account-info-modal" tabindex="-1" role="dialog" aria-labelledby="account-info-modalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-          <div class="modal-header">
-              <h5 class="modal-title" id="account-info-modalLabel">Account Info</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-              </button>
-          </div>
-          <div class="modal-body d-flex flex-column align-items-center">
-              <div class="block-account-info d-flex justify-content-between align-items-center">
-                  <p><strong>Name:  </strong>Tape </p>
-                  <button class="btn-edit"></button>
-              </div>
-              <div class="block-account-info d-flex justify-content-between align-items-center">
-                  <p><strong>Surname:  </strong>Na babkax </p>
-                  <button class="btn-edit"></button>
-              </div>
-              <div class="block-account-info d-flex justify-content-between align-items-center">
-                  <p><strong>Email:  </strong>eduardkarimov@gmail.com </p>
-                  <button class="btn-edit"></button>
-              </div>
-              <div class="block-account-info d-flex justify-content-between align-items-center">
-                  <p><strong>Phone:  </strong>+ 7 987 115 22 22 </p>
-                  <button class="btn-edit"></button>
-              </div>
-              <div class="block-account-info d-flex justify-content-between align-items-center">
-                  <p><strong>Username:  </strong>EdAdmin </p>
-                  <button class="btn-edit"></button>
-              </div>
-              <div class="block-account-info d-flex justify-content-between align-items-center">
-                  <p><strong>Password:  </strong>********* </p>
-                  <button class="btn-edit"></button>
-              </div>
-              
 
-          </div>
-          <div class="modal-footer">
-              <button type="button" class="btn" data-dismiss="modal">Close</button>
-          </div>
-      </div>
-  </div>
-</div>
 <!-- account info modal -->
 
 
