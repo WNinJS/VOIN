@@ -230,6 +230,42 @@ form input {
 
 
 
+/*team open*/
+.member-block img.member-photo {
+	width: 100%;
+}
+.member-block .member-social-media {
+	width: 100px;
+	height: 30px;
+	margin-top: 25px;
+}
+.member-block {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin-bottom: 70px;
+	transition: 0.15s;
+}
+.member-block:hover {
+	background: #ecf2f3;
+}
+.member-block .member-social-media img {
+	height: 100%;
+}
+.member-block h4 {
+	font-size: 18px;
+	font-weight: 600;
+	margin-top: 20px;
+}
+.member-block h5 {
+	font-size: 14px;
+	font-weight: 500;
+	margin-top: 10px;
+	color: #7c7c7c;
+}
+/*team close*/
+
+
+
 /*registration open*/
 .container-fluid-signup {
 	margin: 0;
