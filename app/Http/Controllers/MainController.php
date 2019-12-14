@@ -28,4 +28,18 @@ class MainController extends Controller
 
         return view('main.gover-pets');
     }
+
+    public function renderAboutUsPage(Request $req)
+    {
+        # code...
+
+        return view('main.about-us');
+    }
+
+     public function renderMaterialsPage(Request $req)
+    {
+        # code...
+
+        return view('main.materials');
+    }
 }

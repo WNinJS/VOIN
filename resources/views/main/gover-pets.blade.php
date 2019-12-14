@@ -16,7 +16,7 @@
 
       <!-- description open -->
       <div class="container description d-flex justify-content-between">
-          <div class="col-9">
+          <div class="col-12">
               <h1 class="cursor-default">Government structures</h1>
               <p class="cursor-default">Monitoring and communication complex for dogs provides remote voice interaction between dog and a person without visual control, dog’s biometric indexes monitoring, POV photofixation and video recording of the actions around the dog, possibility of pre-recorded commands  sending</p>
               <button data-toggle="modal" data-target="#gover-info-modal">Request for access</button>
@@ -46,7 +46,7 @@
                                    
                 <p></p>
             </div>    
-            <hr>
+            <hr class="opportunities-hr">
         </div>
     </div>
 </div>
@@ -80,8 +80,8 @@
 
                       <div class="left-block d-flex flex-column">
                           <a href="/">Main</a>
-                          <a href="#">About Us</a>
-                          <a href="#">Materials</a>
+                          <a href="/about-us">About Us</a>
+                          <a href="/materials">Materials</a>
                           <a href="/home-pets">Home dogs</a>
                           <a href="/pet-workers">Duty dogs</a>
                           <a href="/gover-pets">Government structures</a>

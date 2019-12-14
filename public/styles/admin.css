@@ -421,6 +421,7 @@ form #goverment-document-add {
 	margin-bottom: 20px;
 	height: 300px;
 	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
 }
 .card:hover {
 	background: #ecf2f3;
