@@ -119,7 +119,8 @@
               <span aria-hidden="true">&times;</span>
               </button>
           </div>
-          <form method="POST">
+          <form method="POST" action="/accessrequest/user/{{Session::get('user')->id}}" enctype="multipart/form-data">
+            {{ csrf_field() }}
               <div class="modal-body">
                   @if(session('user'))
                          <p>Для получения доступа к данному разделу нужно прикрепить 2 файла: сопроводительное письмо и карту партнера.</p>
@@ -128,13 +129,13 @@
                             <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
                          </div>
                          <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="inputGroupFile01"
-                             aria-describedby="inputGroupFileAddon01" multiple>
+                            <input type="file"  name="docs[]" multiple=true class="custom-file-input" id="inputGroupFile01"
+                             aria-describedby="inputGroupFileAddon01">
                             <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                         </div>
                     </div>
                   @else
-                  <p>Please signup</p>
+                    <p>Please signup</p>
                   @endif
 
               </div>

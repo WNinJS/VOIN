@@ -35,7 +35,7 @@ Route::post('/signup','AuthController@register');
 Route::get('/logout','AuthController@logout');
 Route::get('/adminpanel','AdminController@index')->middleware('checkAuth')->name('adminpanel');
 
-//обновляем данные компонента комплекса
+//обновляем данные компонента комплекса Панель администратора
 Route::post('/adminpanel/complex/{complex_id}/update','AdminController@updateComplex');
 
 Route::post('adminpanel/caps/addNew','AdminController@addNewCapabilityHome');
@@ -46,6 +46,7 @@ Route::post('adminpanel/cap/update/{cap_id}','AdminController@updateCap');
 
 Route::post('adminpanel/caps/addNew-warDog','AdminController@addNewWar');
 
+//Маршруты для вывода контента на страницы сайта
 Route::get('/home-pets','MainController@renderHomePetPage');
 
 Route::get('/pet-workers','MainController@renderPetWorkers');
@@ -53,4 +54,8 @@ Route::get('/pet-workers','MainController@renderPetWorkers');
 Route::get('/gover-pets','MainController@renderGovermentPets');
 
 Route::post('/send-mail','MailController@send');
+
+//Маршрут для отправки запроса на доступ в Government structures
+Route::post('/accessrequest/user/{user_id}','AcessRrequest@getAccess');
+
 
