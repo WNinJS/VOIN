@@ -17,8 +17,17 @@ class AcessRrequest extends Controller
       $user = User::where('username', $request->session()->get('user')['username'])->first();
       $user->map = $path1;
       $user->doc = $path2;
+      $user->type ='pending';
       $user->save();
 
       return back()->with('success', 'Data Your files has been successfully added');
-    } 
+    }
+    
+    public function verifyUser(Request $request, $id){
+      $user = User::where('id', $id)->first();
+      $user->type = 'verified';
+      $user->save();
+      
+      return redirect()->back();
+    }
   }

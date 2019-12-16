@@ -246,79 +246,35 @@
 							<div class="gov-employes">
 								<h1>Проверка и подтверждение аккаунтов гос.структур</h1>
 								<div class="row align-items-center">
-									<div class="card col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 d-flex text-center flex-column align-items-center justify-content-center">
-										<div class="btns-save">
-											<!-- в href нужно засунуть файл, который можно будет скачать -->
-											<a class="save-link" href="{{asset('images/docs.png')}}" download>Карта</a>
-											<a class="save-link" href="{{asset('images/docs.png')}}" download>Письмо</a>
-											<!-- в href нужно засунуть файл, который можно будет скачать -->
-										</div>
-										<p class="card-text"><strong>Имя:</strong> Шойгу</p>
-										<p class="card-text"><strong>Фамилия:</strong> Шойгу</p>
-										<p class="card-text"><strong>Email</strong>: Шойгу@user</p>
-										<p class="card-text"><strong>Телефон</strong> 23414</p>
-										<div class="btns-opportunities d-flex flex-row justify-content-around align-items-center">
-											<form method="post">
-
-												<!-- удаление заявки -->
-												<button class="btn-delete" type="submit"></button>
-
-												<!-- по нажатию на эту кнопку аккаунт будет подтвержедн -->
-												<button class="btn-accept" type="submit"></button>
-												<!-- по нажатию на эту кнопку аккаунт будет подтвержедн -->
-
-											</form>
-										</div>
-									</div>	
-
-									<div class="card col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 d-flex text-center flex-column align-items-center justify-content-center">
-										<div class="btns-save">
-											<!-- в href нужно засунуть файл, который можно будет скачать -->
-											<a class="save-link" href="{{asset('images/docs.png')}}" download>Карта</a>
-											<a class="save-link" href="{{asset('images/docs.png')}}" download>Письмо</a>
-											<!-- в href нужно засунуть файл, который можно будет скачать -->
-										</div>
-										<p class="card-text"><strong>Имя:</strong> Шойгу</p>
-										<p class="card-text"><strong>Фамилия:</strong> Шойгу</p>
-										<p class="card-text"><strong>Email</strong>: Шойгу@user</p>
-										<p class="card-text"><strong>Телефон</strong> 23414</p>
-										<div class="btns-opportunities d-flex flex-row justify-content-around align-items-center">
-											<form method="post">
-
-												<!-- удаление заявки -->
-												<button class="btn-delete" type="submit"></button>
-
-												<!-- по нажатию на эту кнопку аккаунт будет подтвержедн -->
-												<button class="btn-accept" type="submit"></button>
-												<!-- по нажатию на эту кнопку аккаунт будет подтвержедн -->
-
-											</form>
-										</div>
-									</div>	
-
-									<div class="card col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 d-flex text-center flex-column align-items-center justify-content-center">
-										<div class="btns-save">
-											<!-- в href нужно засунуть файл, который можно будет скачать -->
-											<a class="save-link" href="{{asset('images/docs.png')}}" download>Карта</a>
-											<a class="save-link" href="{{asset('images/docs.png')}}" download>Письмо</a>
-											<!-- в href нужно засунуть файл, который можно будет скачать -->
-										</div>
-										<p class="card-text"><strong>Имя:</strong> Шойгу</p>
-										<p class="card-text"><strong>Фамилия:</strong> Шойгу</p>
-										<p class="card-text"><strong>Email</strong>: Шойгу@user</p>
-										<p class="card-text"><strong>Телефон</strong> 23414</p>
-										<div class="btns-opportunities d-flex flex-row justify-content-around align-items-center">
-											<form method="post">
-												<!-- удаление доступа -->
-												<button class="btn-delete" type="submit"></button>
-											</form>
-										</div>
-									</div>											
+									
+									@foreach ($giveAccess as $give)
+										<div class="card col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 d-flex text-center flex-column align-items-center justify-content-center">
+											<div class="btns-save">
+												<!-- в href нужно засунуть файл, который можно будет скачать -->
+												<a class="save-link" href="/storage/app/{{$give->map}}" download>Карта</a>
+												<a class="save-link" href="/storage/app/{{$give->doc}}" download>Письмо</a>
+												<!-- в href нужно засунуть файл, который можно будет скачать -->
+											</div>
+											<p class="card-text"><strong>Имя:</strong> {{$give->username}}</p>
+											<p class="card-text"><strong>Фамилия:</strong> {{$give->surname}}</p>
+											<p class="card-text"><strong>Email</strong>: {{$give->email}}</p>
+											<p class="card-text"><strong>Телефон</strong> {{$give->phone}}</p>
+											<div class="btns-opportunities d-flex flex-row justify-content-around align-items-center">
+												<form method="post" action="adminpanel/verifyUser/{{Session('user')->id}}">
+													{{ csrf_field() }}
+													<!-- удаление заявки -->
+													<button class="btn-delete" type="submit"></button>
+													<!-- по нажатию на эту кнопку аккаунт будет подтвержедн -->
+													<button class="btn-accept" type="submit"></button>
+													<!-- по нажатию на эту кнопку аккаунт будет подтвержедн -->
+												</form>
+											</div>
+										</div>	
+									@endforeach											
 								</div>
 							</div>
 						</div>
 						<!-- Проверка и подтверждение аккаунтов гос.структур -->
-
 					</div>
 				</div>
 				<!-- content -->

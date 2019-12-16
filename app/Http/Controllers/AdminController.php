@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 use App\Complex;
 use App\Category;
 use App\Capability;
@@ -20,10 +21,11 @@ class AdminController extends Controller
         $complexses = Complex::all();
         $home = Category::where('id','=', 1)->get('*');
         $warDogs = Category::where('id','=', 3)->get('*');
+        $giveAccess = User::where('type','pending')->get();
+
         
-        
-        
-        return view('admin.adminMain')->with('complexes',$complexses)->with('home',$home)->with('warDogs',$warDogs);
+                
+        return view('admin.adminMain')->with('complexes',$complexses)->with('home',$home)->with('warDogs',$warDogs)->with('giveAccess',$giveAccess);
     }
 
     //Метод для обновления нужного элемента комплекса

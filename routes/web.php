@@ -61,5 +61,6 @@ Route::post('/send-mail','MailController@send');
 
 //Маршрут для отправки запроса на доступ в Government structures
 Route::post('/accessrequest/user/{user_id}','AcessRrequest@getAccess');
+Route::post('adminpanel/verifyUser/{user_id}','AcessRrequest@verifyUser');
 
 
