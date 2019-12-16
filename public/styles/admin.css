@@ -230,6 +230,93 @@ form input {
 
 
 
+/*articles open*/
+
+.sub-article {
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-bottom: 15px;
+}
+.article-block {
+	padding: 20px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	text-align: left;
+}
+.article-block h4 {
+	font-size: 18px;
+	font-weight: 600;
+}
+.article-block h5 {
+	font-size: 14px;
+	font-weight: 500;
+	margin-top: 10px;
+	color: #7c7c7c;
+}
+.article-block p {
+	font-size: 14px;
+	font-weight: 300;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.article-block a {
+	text-decoration: none!important;
+	font-size: 14px;
+	font-weight: 700;
+	color: #FFD600!important;
+	transition: 0.15s;
+	cursor: pointer;
+}
+.article-block a:hover {
+	color: #222222!important;
+}
+h5.article-modal-date {
+	font-size: 14px;
+	font-weight: 500;
+	margin-top: 10px;
+	color: #7c7c7c;
+}
+p.article-modal-desc {
+	margin-bottom: 20px;
+}
+img.article-modal-img {
+	width: 100%;
+	margin-bottom: 20px;
+}
+/*articles close*/
+
+
+
+
+/*docs open*/
+.doc-block {
+	margin-bottom: 40px;
+}
+.doc-block img.doc-icon {
+	width: 70px;
+	height: 90px;
+	margin-bottom: 20px;
+}
+.doc-block h4 {
+	font-size: 18px;
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+.doc-block a {
+	text-decoration: none!important;
+	font-size: 14px;
+	font-weight: 700;
+	color: #FFD600!important;
+	transition: 0.15s;
+	cursor: pointer;
+}
+.doc-block a:hover {
+	color: #222222!important;
+}
+/*docs close*/
+
+
+
+
 /*team open*/
 .member-block img.member-photo {
 	width: 100%;
