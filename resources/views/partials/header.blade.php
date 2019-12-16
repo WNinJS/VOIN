@@ -11,8 +11,8 @@
             <div class="navbar-link">
                 <ul class="navbar-nav d-flex flex-row nav-links">
                     <li class="nav-item"> <a class="nav-link " href="/">Main</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="">About Us</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="">Materials</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="/about-us">About Us</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="/materials">Materials</a> </li>
                     <li class="nav-item"> <a class="nav-link" href="/home-pets">Home dogs</a> </li>
                     <li class="nav-item"> <a class="nav-link" href="/pet-workers">Duty dogs</a> </li>
                     <li class="nav-item"> <a class="nav-link" href="/gover-pets">Government structures</a> </li>

@@ -49,6 +49,10 @@ Route::post('adminpanel/caps/addNew-warDog','AdminController@addNewWar');
 //Маршруты для вывода контента на страницы сайта
 Route::get('/home-pets','MainController@renderHomePetPage');
 
+Route::get('/about-us','MainController@renderAboutUsPage');
+
+Route::get('/materials','MainController@renderMaterialsPage');
+
 Route::get('/pet-workers','MainController@renderPetWorkers');
 
 Route::get('/gover-pets','MainController@renderGovermentPets');

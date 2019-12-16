@@ -41,7 +41,7 @@
                             <p>{{$cap->desc}}</p>
                         </div>
                     @endforeach
-					<hr>
+					<hr class="opportunities-hr">
 				</div>
 			</div>
 		</div>
@@ -83,8 +83,8 @@
 
 							<div class="left-block d-flex flex-column">
 								<a href="/">Main</a>
-								<a href="#">About Us</a>
-								<a href="#">Materials</a>
+								<a href="/about-us">About Us</a>
+								<a href="/materials">Materials</a>
 								<a href="/home-pets">Home dogs</a>
 								<a href="/pet-workers">Duty dogs</a>
 								<a href="/gover-pets">Government structures</a>

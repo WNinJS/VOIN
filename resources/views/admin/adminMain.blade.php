@@ -44,17 +44,13 @@
 
 						<a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Главная</a>
 
+						<a class="nav-link" id="v-pills-about-tab" data-toggle="pill" href="#v-pills-about" role="tab" aria-controls="v-pills-about" aria-selected="true">О компании</a>
+
 						<a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Для домашних</a>
 
 						<a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Для боевых</a>
 
 						<a class="nav-link" id="v-pills-govs-tab" data-toggle="pill" href="#v-pills-govs" role="tab" aria-controls="v-pills-govs" aria-selected="false">Для государства</a>
-
-						<a class="nav-link" id="v-pills-hometickets-tab" data-toggle="pill" href="#v-pills-hometickets" role="tab" aria-controls="v-pills-hometickets" aria-selected="false">Заявки на комплекс для домашних</a>
-
-						<a class="nav-link" id="v-pills-wartickets-tab" data-toggle="pill" href="#v-pills-wartickets" role="tab" aria-controls="v-pills-wartickets" aria-selected="false">Заявки на комплекс для бизнеса</a>
-
-						<a class="nav-link" id="v-pills-govtickets-tab" data-toggle="pill" href="#v-pills-govtickets" role="tab" aria-controls="v-pills-govtickets" aria-selected="false">Заявки на комплекс для государства</a>
 
 						<a class="nav-link" id="v-pills-govemp-tab" data-toggle="pill" href="#v-pills-govemp" role="tab" aria-controls="v-pills-govemp" aria-selected="false">Подтвердить доступ госс. сотрудников</a>
 
@@ -65,6 +61,7 @@
 				<!-- content -->
 				<div class="col-8 col-sm-8 col-md-9 cl-xl-9 col-lg-8">
 					<div class="tab-content" id="v-pills-tabContent">
+
 						<div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
 							<div class="complex">
 								<h1>Комплекс</h1>
@@ -79,6 +76,32 @@
 							</div>
 						</div>
 
+						<!-- Раздел About -->
+						<div class="tab-pane fade" id="v-pills-about" role="tabpanel" aria-labelledby="v-pills-about-tab">
+							<div class="opportunities">
+								<h1>Команда</h1>
+						        <div class="row d-flex justify-content-around align-items-start">
+						            <div class="members-of-team d-flex flex-wrap justify-content-start align-items-center w-100">
+
+						                <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 member-block">
+						                    <img class="member-photo" src="images/dev.jpg" alt="member_logo">
+						                    <h4>Karimov Eduard</h4>
+						                    <h5>Team Leader</h5>
+						                    <div class="btns-opportunities d-flex flex-row justify-content-around align-items-center">
+							                    <form method="POST">
+							                    	<button class="btn-delete" type="submit"></button>
+							                    </form>
+							                    <button data-toggle="modal" data-target="#edit-team-modal" class="btn-edit"></button>
+						                    </div>
+						                </div>
+
+						                <button data-toggle="modal" data-target="#add-team-modal" class="btn-add"></button>
+
+					                </div>
+					            </div>
+					        </div>
+						</div>
+						<!-- Раздел About -->
 
 
 						<div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
@@ -164,156 +187,6 @@
 						<!-- Коля тут просто свой код измени чтобы выводилось все для государственных собак, удалять я старый не стал, потому что там просто тебе хуйня поменять как я понимаю -->
 
 
-
-						<!-- Заявки на заказ комплекса для домашних собак -->
-						<div class="tab-pane fade" id="v-pills-hometickets" role="tabpanel" aria-labelledby="v-pills-hometickets-tab">
-							<div class="complex">
-								<h1>Заявки на заказ комплекса для домашних собак</h1>
-								<div class="row align-items-center">
-									<div class="card col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 d-flex text-center flex-column align-items-center justify-content-center">
-										<p class="card-text"><strong>Имя:</strong> user</p>
-										<p class="card-text"><strong>Фамилия:</strong> user</p>
-										<p class="card-text"><strong>Email</strong>: user@user</p>
-										<p class="card-text"><strong>Телефон</strong> 35235235</p>
-										<div class="btns-opportunities d-flex flex-row justify-content-around align-items-center">
-											<form method="post">
-												<!-- удаление заявки -->
-												<button class="btn-delete" type="submit"></button>
-											</form>
-										</div>
-									</div>				
-
-									<div class="card col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 d-flex text-center flex-column align-items-center justify-content-center">
-										<p class="card-text"><strong>Имя:</strong> user</p>
-										<p class="card-text"><strong>Фамилия:</strong> user</p>
-										<p class="card-text"><strong>Email</strong>: user@user</p>
-										<p class="card-text"><strong>Телефон</strong> 35235235</p>
-										<div class="btns-opportunities d-flex flex-row justify-content-around align-items-center">
-											<form method="post">
-												<!-- удаление заявки -->
-												<button class="btn-delete" type="submit"></button>
-											</form>
-										</div>
-									</div>			
-
-									<div class="card col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 d-flex text-center flex-column align-items-center justify-content-center">
-										<p class="card-text"><strong>Имя:</strong> user</p>
-										<p class="card-text"><strong>Фамилия:</strong> user</p>
-										<p class="card-text"><strong>Email</strong>: user@user</p>
-										<p class="card-text"><strong>Телефон</strong> 35235235</p>
-										<div class="btns-opportunities d-flex flex-row justify-content-around align-items-center">
-											<form method="post">
-												<!-- удаление заявки -->
-												<button class="btn-delete" type="submit"></button>
-											</form>
-										</div>
-									</div>										
-								</div>
-							</div>
-						</div>
-						<!-- Заявки на заказ комплекса для домашних собак -->
-
-
-
-
-						<!-- Заявки на заказ комплекса для бизнеса собак -->
-						<div class="tab-pane fade" id="v-pills-wartickets" role="tabpanel" aria-labelledby="v-pills-wartickets-tab">
-							<div class="complex">
-								<h1>Заявки на заказ комплекса для бизнеса</h1>
-								<div class="row align-items-center">
-									<div class="card col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 d-flex text-center flex-column align-items-center justify-content-center">
-										<p class="card-text"><strong>Имя:</strong> new</p>
-										<p class="card-text"><strong>Фамилия:</strong> new</p>
-										<p class="card-text"><strong>Email</strong>: new@user</p>
-										<p class="card-text"><strong>Телефон</strong> 66666</p>
-										<div class="btns-opportunities d-flex flex-row justify-content-around align-items-center">
-											<form method="post">
-												<!-- удаление заявки -->
-												<button class="btn-delete" type="submit"></button>
-											</form>
-										</div>
-									</div>	
-
-									<div class="card col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 d-flex text-center flex-column align-items-center justify-content-center">
-										<p class="card-text"><strong>Имя:</strong> new</p>
-										<p class="card-text"><strong>Фамилия:</strong> new</p>
-										<p class="card-text"><strong>Email</strong>: new@user</p>
-										<p class="card-text"><strong>Телефон</strong> 66666</p>
-										<div class="btns-opportunities d-flex flex-row justify-content-around align-items-center">
-											<form method="post">
-												<!-- удаление заявки -->
-												<button class="btn-delete" type="submit"></button>
-											</form>
-										</div>
-									</div>	
-
-									<div class="card col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 d-flex text-center flex-column align-items-center justify-content-center">
-										<p class="card-text"><strong>Имя:</strong> new</p>
-										<p class="card-text"><strong>Фамилия:</strong> new</p>
-										<p class="card-text"><strong>Email</strong>: new@user</p>
-										<p class="card-text"><strong>Телефон</strong> 66666</p>
-										<div class="btns-opportunities d-flex flex-row justify-content-around align-items-center">
-											<form method="post">
-												<!-- удаление заявки -->
-												<button class="btn-delete" type="submit"></button>
-											</form>
-										</div>
-									</div>											
-								</div>
-							</div>
-						</div>
-						<!-- Заявки на заказ комплекса для бизнеса собак -->
-
-
-
-
-						<!-- Заявки на заказ комплекса для государства собак -->
-						<div class="tab-pane fade" id="v-pills-govtickets" role="tabpanel" aria-labelledby="v-pills-govtickets-tab">
-							<div class="complex">
-								<h1>Заявки на заказ комплекса для государства</h1>
-								<div class="row align-items-center">
-									<div class="card col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 d-flex text-center flex-column align-items-center justify-content-center">
-										<p class="card-text"><strong>Имя:</strong> Шойгу</p>
-										<p class="card-text"><strong>Фамилия:</strong> Шойгу</p>
-										<p class="card-text"><strong>Email</strong>: Шойгу@user</p>
-										<p class="card-text"><strong>Телефон</strong> 23414</p>
-										<div class="btns-opportunities d-flex flex-row justify-content-around align-items-center">
-											<form method="post">
-												<!-- удаление заявки -->
-												<button class="btn-delete" type="submit"></button>
-											</form>
-										</div>
-									</div>				
-
-									<div class="card col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 d-flex text-center flex-column align-items-center justify-content-center">
-										<p class="card-text"><strong>Имя:</strong> Шойгу</p>
-										<p class="card-text"><strong>Фамилия:</strong> Шойгу</p>
-										<p class="card-text"><strong>Email</strong>: Шойгу@user</p>
-										<p class="card-text"><strong>Телефон</strong> 23414</p>
-										<div class="btns-opportunities d-flex flex-row justify-content-around align-items-center">
-											<form method="post">
-												<!-- удаление заявки -->
-												<button class="btn-delete" type="submit"></button>
-											</form>
-										</div>
-									</div>			
-
-									<div class="card col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 d-flex text-center flex-column align-items-center justify-content-center">
-										<p class="card-text"><strong>Имя:</strong> Шойгу</p>
-										<p class="card-text"><strong>Фамилия:</strong> Шойгу</p>
-										<p class="card-text"><strong>Email</strong>: Шойгу@user</p>
-										<p class="card-text"><strong>Телефон</strong> 23414</p>
-										<div class="btns-opportunities d-flex flex-row justify-content-around align-items-center">
-											<form method="post">
-												<!-- удаление заявки -->
-												<button class="btn-delete" type="submit"></button>
-											</form>
-										</div>
-									</div>										
-								</div>
-							</div>
-						</div>
-						<!-- Заявки на заказ комплекса для государства собак -->
 
 
 
@@ -632,6 +505,106 @@
 
 	<!-- edit complex modal open -->
 
+
+	<!-- add team modal open -->
+	<div class="modal fade" id="add-team-modal" tabindex="-1" role="dialog" aria-labelledby="add-team-modalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="add-team-modalLabel">Добавление члена команды</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+
+				<form method="POST">
+					<div class="modal-body">
+						<div class="opportunity-description">
+							<h6>Имя</h6>
+							<textarea class="textarea-style" required></textarea>
+						</div>
+						<div class="opportunity-description">
+							<h6>Фамилия</h6>
+							<textarea class="textarea-style" required></textarea>
+						</div>
+						<div class="opportunity-description">
+							<h6>Должность</h6>
+							<textarea class="textarea-style" required></textarea>
+						</div>
+						<div class="file">
+							<h6>Фото</h6>
+		                    <div class="input-group">
+		                        <div class="input-group-prepend">
+		                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+		                        </div>
+		                        <div class="custom-file">
+		                            <input type="file" class="file custom-file-input" name="homeDogIcon" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" required>
+		                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+		                        </div>
+		                    </div>
+						</div>
+					</div>
+
+					<div class="modal-footer d-flex justify-content-between">
+						<button type="button" class="btn" data-dismiss="modal">Закрыть</button>
+						<button type="submit" class="btn">Добавить</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- add team modal close -->
+
+
+
+	<!-- edit team modal open -->
+	<div class="modal fade" id="edit-team-modal" tabindex="-1" role="dialog" aria-labelledby="edit-team-modalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="edit-team-modalLabel">Редактирование члена команды</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+
+				<form method="POST">
+					<div class="modal-body">
+						<div class="opportunity-description">
+							<h6>Имя</h6>
+							<textarea class="textarea-style" required></textarea>
+						</div>
+						<div class="opportunity-description">
+							<h6>Фамилия</h6>
+							<textarea class="textarea-style" required></textarea>
+						</div>
+						<div class="opportunity-description">
+							<h6>Должность</h6>
+							<textarea class="textarea-style" required></textarea>
+						</div>
+						<div class="file">
+							<h6>Фото</h6>
+		                    <div class="input-group">
+		                        <div class="input-group-prepend">
+		                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+		                        </div>
+		                        <div class="custom-file">
+		                            <input type="file" class="file custom-file-input" name="homeDogIcon" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" required>
+		                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+		                        </div>
+		                    </div>
+						</div>
+					</div>
+
+					<div class="modal-footer d-flex justify-content-between">
+						<button type="button" class="btn" data-dismiss="modal">Закрыть</button>
+						<button type="submit" class="btn">Сохранить изменения</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- edit team modal close -->
 
 
 
