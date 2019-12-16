@@ -3,22 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use app\User;
 
 class AcessRrequest extends Controller
   {
-    public function getAccess(Request $request, $id)    { 
+    public function getAccess(Request $request, $id){ 
 
-      if($request->hasfile('docs'))
-      {   
-          foreach($request->file('docs') as $file)
-          {
-              $name = time().'.'.$file->extension();
-              echo $name.'<br>';
-          }
-      }
-      else{
-        return 'false';
-      }
+      $filesArray = $request->file('docs');
+
+      $path1 = $filesArray[0]->store('files');
+      $path2 = $filesArray[1]->store('files');
+
+      $user = User::where('username', $request->session()->get('user')['username'])->first();
+      $user->map = $path1;
+      $user->doc = $path2;
+      $user->save();
+
       return back()->with('success', 'Data Your files has been successfully added');
     } 
   }

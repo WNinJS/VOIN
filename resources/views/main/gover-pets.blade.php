@@ -33,7 +33,8 @@
 
 
 <!-- opportunities open -->
-<div class="opportunities text-center">
+
+  <div class="opportunities text-center">
     <div class="container">
         <h2>Opportunities</h2>
         <h3>The Voin complex provides</h3>
@@ -51,8 +52,6 @@
     </div>
 </div>
     <!-- opportunities close -->
-
-
 <!-- feedback open -->
 <div id="feedback" class="feedback text-center">
     <div class="container">
@@ -66,9 +65,12 @@
         <h2 class="text-center msg" style="display: none;">Your email has been successfuly sent!</h2>
     </div>
 </div>
-<!-- feedback close -->
 
+
+<!-- feedback close -->
 <!-- Этот контент виден только тем, кто прошел аутистификацию на документы от Эдика, КОНЕЦ -->
+
+
 
 
   <!-- footer open -->
@@ -110,45 +112,70 @@
 </div>
 
 <!-- gover info modal -->
+@if(Session('user'))
 <div class="modal fade" id="gover-info-modal" tabindex="-1" role="dialog" aria-labelledby="gover-info-modalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-          <div class="modal-header">
-              <h5 class="modal-title" id="complex-modalLabel">Request for access</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-              </button>
-          </div>
-          <form method="POST" action="/accessrequest/user/{{Session::get('user')->id}}" enctype="multipart/form-data">
-            {{ csrf_field() }}
-              <div class="modal-body">
-                  @if(session('user'))
-                         <p>Для получения доступа к данному разделу нужно прикрепить 2 файла: сопроводительное письмо и карту партнера.</p>
-                        <div class="input-group">
-                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-                         </div>
-                         <div class="custom-file">
-                            <input type="file"  name="docs[]" multiple=true class="custom-file-input" id="inputGroupFile01"
-                             aria-describedby="inputGroupFileAddon01">
-                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                        </div>
-                    </div>
-                  @else
-                    <p>Please signup</p>
-                  @endif
-
-              </div>
-              <div class="modal-footer d0flex justify-content-between">
-                  <button type="button" class="btn" data-dismiss="modal">Close</button>
-                  @if(session('user'))
-                  <button type="submit" class="btn">Request access</button>
-                  @endif
-              </div>
-          </form>
-      </div>
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="complex-modalLabel">Request for access</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="POST" action="/accessrequest/user/{{Session::get('user')->id}}" enctype="multipart/form-data">
+              {{ csrf_field() }}
+                <div class="modal-body">
+                    @if(session('user'))
+                           <p>Для получения доступа к данному разделу нужно прикрепить 2 файла: сопроводительное письмо и карту партнера.</p>
+                          <div class="input-group">
+                           <div class="input-group-prepend">
+                              <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                           </div>
+                           <div class="custom-file">
+                              <input type="file"  name="docs[]" multiple=true class="custom-file-input" id="inputGroupFile01"
+                               aria-describedby="inputGroupFileAddon01">
+                              <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                          </div>
+                      </div>
+                    @else
+                      <p>Please signup</p>
+                    @endif
+  
+                </div>
+                <div class="modal-footer d0flex justify-content-between">
+                    <button type="button" class="btn" data-dismiss="modal">Close</button>
+                    @if(session('user'))
+                    <button type="submit" class="btn">Request access</button>
+                    @endif
+                </div>
+            </form>
+        </div>
+    </div>
   </div>
-</div>
+@else
+<div class="modal fade" id="gover-info-modal" tabindex="-1" role="dialog" aria-labelledby="gover-info-modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="complex-modalLabel">Request for access</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="POST"  enctype="multipart/form-data">
+              {{ csrf_field() }}
+                <div class="modal-body">
+                      <p>Please signup</p>
+                </div>
+                <div class="modal-footer d0flex justify-content-between">
+                    <button type="button" class="btn" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+  </div>
+@endif
+
 <!-- gover info modal -->
 
 
