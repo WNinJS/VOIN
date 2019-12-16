@@ -46,6 +46,8 @@
 
 						<a class="nav-link" id="v-pills-about-tab" data-toggle="pill" href="#v-pills-about" role="tab" aria-controls="v-pills-about" aria-selected="true">О компании</a>
 
+						<a class="nav-link" id="v-pills-materials-tab" data-toggle="pill" href="#v-pills-materials" role="tab" aria-controls="v-pills-materials" aria-selected="true">Материалы</a>
+
 						<a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Для домашних</a>
 
 						<a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Для боевых</a>
@@ -102,6 +104,54 @@
 					        </div>
 						</div>
 						<!-- Раздел About -->
+
+
+						<!-- Раздел Materials -->
+						<div class="tab-pane fade" id="v-pills-materials" role="tabpanel" aria-labelledby="v-pills-materials-tab">
+							<!-- Статьи -->
+							<div class="opportunities">
+								<h1>Статьи</h1>
+								<div class="row d-flex justify-content-around align-items-start">
+								  	<div class="general-articles d-flex flex-wrap justify-content-start align-items-center w-100">
+								      	<div class="sub-article col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
+								          	<div class="article-block">
+								              	<h4>How to care</h4>
+								              	<h5>25.11.2019</h5>
+								              	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis voluptatum saepe assumenda, fugit illo dolorum expedita odit!</p>
+								              	<a data-toggle="modal" data-target="#article-modal">See more</a>
+								          	</div>
+								      	</div>
+									<button data-toggle="modal" data-target="#add-article-modal" class="btn-add"></button>
+								  	</div>
+								</div>  
+					        </div>
+					        <!-- Статьи -->
+
+							<!-- Документы -->
+							<div class="opportunities" style="margin-top: 40px">
+								<h1>Документы</h1>
+								<div class="row d-flex justify-content-around align-items-start">
+					               	<div class="general-docs d-flex flex-wrap justify-content-start align-items-center w-100">
+
+					                  	<div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 doc-block d-flex flex-column justify-content-center align-items-center">
+					                      	<img class="doc-icon" src="images/docs.png" alt="docs_png">
+					                      	<h4>Presentation</h4>
+					                      	<a href="images/dev.jpg" download>Save</a>
+
+					                      	<!-- удаление документа -->
+					                      	<a>Delete doc</a>
+					                      	<!-- удаление документа -->
+					                  	</div>
+
+										<button data-toggle="modal" data-target="#add-doc-modal" class="btn-add"></button>
+
+					              	</div>
+					          	</div>           
+					        </div>
+					        <!-- Документы -->
+
+						</div>
+						<!-- Раздел Materials -->
 
 
 						<div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
@@ -606,6 +656,169 @@
 	</div>
 	<!-- edit team modal close -->
 
+
+
+	<!-- articles modal open -->
+	<div class="modal fade" id="article-modal" tabindex="-1" role="dialog" aria-labelledby="article-modalLabel" aria-hidden="true">
+	    <div class="modal-dialog modal-dialog-centered" role="document">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <h5 class="modal-title" id="article-modalLabel">How to care</h5>
+	                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	                    <span aria-hidden="true">&times;</span>
+	                </button>
+	            </div>
+		        <div class="modal-body">
+		            <p class="article-modal-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas dicta magnam assumenda tenetur, asperiores. Vitae vero, deleniti quis sit, nisi est minima vel ut eveniet, excepturi nam similique aliquam itaque tempora harum sunt cumque! Possimus numquam magnam ipsum, reprehenderit vero blanditiis itaque perspiciatis fugit sapiente rerum esse adipisci eveniet nulla!</p>
+		            <img class="article-modal-img" src="images/dev.jpg" alt="article_img">
+		            <h5 class="article-modal-date">Public date: 25.11.2019</h5>
+		        </div>
+		        <div class="modal-footer">
+		        	<button type="button" class="btn">Удалить</button>
+	          		<button type="button" class="btn" data-toggle="modal" data-target="#edit-article-modal
+	          		" data-dismiss="modal">Редактировать</button>
+		            <button type="button" class="btn" data-dismiss="modal">Закрыть</button>
+		        </div>
+	        </div>
+	    </div>
+	</div>
+	<!-- articles modal close -->
+
+
+
+
+	<!-- edit article modal open -->
+	<div class="modal fade" id="edit-article-modal" tabindex="-1" role="dialog" aria-labelledby="edit-article-modalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="edit-article-modalLabel">Редактирование статьи</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+
+				<form method="POST">
+					<div class="modal-body">
+						<div class="opportunity-description">
+							<h6>Заголовок</h6>
+							<textarea class="textarea-style" required></textarea>
+						</div>
+						<div class="opportunity-description">
+							<h6>Содержание</h6>
+							<textarea class="textarea-style" required></textarea>
+						</div>
+						<div class="file">
+							<h6>Фото</h6>
+		                    <div class="input-group">
+		                        <div class="input-group-prepend">
+		                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+		                        </div>
+		                        <div class="custom-file">
+		                            <input type="file" class="file custom-file-input" name="homeDogIcon" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" required>
+		                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+		                        </div>
+		                    </div>
+						</div>
+					</div>
+
+					<div class="modal-footer d-flex justify-content-between">
+						<button type="button" class="btn" data-toggle="modal" data-target="#article-modal" data-dismiss="modal">Назад</button>
+						<button type="submit" class="btn">Сохранить изменения</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- edit article modal close -->
+
+
+	<!-- add article modal open -->
+	<div class="modal fade" id="add-article-modal" tabindex="-1" role="dialog" aria-labelledby="add-article-modalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="add-article-modalLabel">Добавление статьи</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+
+				<form method="POST">
+					<div class="modal-body">
+						<div class="opportunity-description">
+							<h6>Заголовок</h6>
+							<textarea class="textarea-style" required></textarea>
+						</div>
+						<div class="opportunity-description">
+							<h6>Содержание</h6>
+							<textarea class="textarea-style" required></textarea>
+						</div>
+						<div class="file">
+							<h6>Фото</h6>
+		                    <div class="input-group">
+		                        <div class="input-group-prepend">
+		                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+		                        </div>
+		                        <div class="custom-file">
+		                            <input type="file" class="file custom-file-input" name="homeDogIcon" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" required>
+		                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+		                        </div>
+		                    </div>
+						</div>
+					</div>
+
+					<div class="modal-footer d-flex justify-content-between">
+						<button type="button" class="btn" data-dismiss="modal">Закрыть</button>
+						<button type="submit" class="btn">Добавить</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- add article modal close -->
+
+
+	<!-- add doc modal open -->
+	<div class="modal fade" id="add-doc-modal" tabindex="-1" role="dialog" aria-labelledby="add-doc-modalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="add-doc-modalLabel">Добавление документа</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+
+				<form method="POST">
+					<div class="modal-body">
+						<div class="opportunity-description">
+							<h6>Заголовок</h6>
+							<textarea class="textarea-style" required></textarea>
+						</div>
+						<div class="file">
+							<h6>Фото</h6>
+		                    <div class="input-group">
+		                        <div class="input-group-prepend">
+		                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+		                        </div>
+		                        <div class="custom-file">
+		                            <input type="file" class="file custom-file-input" name="homeDogIcon" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" required>
+		                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+		                        </div>
+		                    </div>
+						</div>
+					</div>
+
+					<div class="modal-footer d-flex justify-content-between">
+						<button type="button" class="btn" data-dismiss="modal">Закрыть</button>
+						<button type="submit" class="btn">Добавить</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- add doc modal close -->
 
 
 
