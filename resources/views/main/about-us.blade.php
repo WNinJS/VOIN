@@ -19,7 +19,7 @@
           <div class="col-12">
               <h1 class="cursor-default">Voice Intercommunication</h1>
               <p class="cursor-default">Doers. Dreamers. Creators</p>
-              <button>See more</button>
+              <a class="anchor" href="#about-info"> <button >See more</button> </a>  
           </div>
       </div>
       <!-- description close -->
@@ -29,7 +29,7 @@
 
 
 <!-- about us open -->
-<div class="aboutus text-center">
+<div id="about-info" class="aboutus text-center">
     <div class="container">
         <h2>About Us</h2>
         <h3>Who we are</h3>

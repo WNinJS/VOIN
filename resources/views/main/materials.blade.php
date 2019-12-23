@@ -20,8 +20,8 @@
               <h1 class="cursor-default">Materials</h1>
               <p class="cursor-default">Articles about dog, how to train it and care it. 
               Presentation materials of the complex</p>
-              <button>See more</button>
-          </div>
+              <a class="anchor" href="#articles"> <button >See more</button> </a>          
+            </div>
       </div>
       <!-- description close -->
 
@@ -30,13 +30,13 @@
 
 
   <!-- articles open -->
-  <div class="articles text-center">
+  <div id="articles" class="articles text-center">
       <div class="container">
           <h2>Articles</h2>
           <h3>Information about dogs for homie</h3>
 
           <div class="row d-flex justify-content-around align-items-start">
-              <div class="general-articles d-flex flex-wrap justify-content-between">
+              <div class="general-articles d-flex flex-wrap justify-content-between w-100">
               	    @foreach($articles as $article)
 	                  <div class="sub-article col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
 	                      <div class="article-block">

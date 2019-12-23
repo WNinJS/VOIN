@@ -526,6 +526,7 @@ img.article-modal-img {
 }
 .member-block img.member-photo {
 	width: 100%;
+	height: 200px;
 }
 .member-block .member-social-media {
 	width: 100px;

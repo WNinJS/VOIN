@@ -140,13 +140,16 @@
 						                  	<div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 doc-block d-flex flex-column justify-content-center align-items-center">
 						                      	<img class="doc-icon" src="images/docs.png" alt="docs_png">
 						                      	<h4>{{$document->name}}</h4>
-						                      	<a href="{{asset('storage/'.$document->file)}}" download>Save</a>
+						                      	<div class="btns-actions d-flex justify-content-around w-100">
+						                      		<a class="d-flex justify-content-center align-items-center" href="{{asset('storage/'.$document->file)}}" download>Save</a>
 
-						                      	<!-- удаление документа -->
-						                      	<form method="post" action="adminpanel/deletedocument/{{$document->id}}">
-						                      		{{csrf_field()}}
-						                      		<button type="submit">Delete doc</button>
-						                      	</form>
+							                      	<!-- удаление документа -->
+							                      	<form method="post" action="adminpanel/deletedocument/{{$document->id}}">
+							                      		{{csrf_field()}}
+							                      		<button class="btn-delete" type="submit" style="margin: 0!important"></button>
+							                      	</form>
+						                      	</div>
+						                      	
 
 						                      	<!-- удаление документа -->
 						                  	</div>
@@ -719,14 +722,14 @@
 			            <img class="article-modal-img" src="{{asset('storage/'.$article->img)}}" alt="article_img">
 			            <h5 class="article-modal-date">Дата публикации: {{mb_substr($article->created_at,0,10)}}</h5>
 			        </div>
-			        <div class="modal-footer">
-			        	<form method="post" action='adminpanel/detelearticle/{{$article->id}}'>
+			        <div class="modal-footer d-flex align-items-center justify-content-between">
+			        	<form style="width: 33%;" method="post" action='adminpanel/detelearticle/{{$article->id}}'>
 			        		{{csrf_field()}}
-			        		<button type="submit" class="btn">Удалить</button>
+			        		<button type="submit" class="btn" style="margin: 0!important; width: 100%;">Удалить</button>
 			        	</form>
-		          		<button type="button" class="btn" data-toggle="modal" data-target="#edit-article-modal-{{$article->id}}
+		          		<button type="button" style="width: 33%;" class="btn" data-toggle="modal" data-target="#edit-article-modal-{{$article->id}}
 		          		" data-dismiss="modal">Редактировать</button>
-			            <button type="button" class="btn" data-dismiss="modal">Закрыть</button>
+			            <button type="button" style="width: 33%;" class="btn" data-dismiss="modal">Закрыть</button>
 			        </div>
 		        </div>
 		    </div>
