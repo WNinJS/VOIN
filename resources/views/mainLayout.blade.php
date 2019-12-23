@@ -110,7 +110,7 @@
 				</div>
 				<div class="modal-body d-flex flex-column align-items-center">
 					<div class="block-account-info d-flex justify-content-between align-items-center">
-						<p><strong>Name:  </strong>{{Session::get('user')->username}}</p>
+						<p><strong>Name:  </strong>{{Session::get('user')->name}}</p>
 						<button data-dismiss="modal" data-toggle="modal" data-target="#account-edit-name-modal" class="btn-edit"></button>
 					</div>
 					<div class="block-account-info d-flex justify-content-between align-items-center">
@@ -154,11 +154,12 @@
 					<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<form method="POST">
+				<form method="POST" action="/changename">
+					{{csrf_field()}}
 					<div class="modal-body d-flex flex-column align-items-center">
 		  				<div class="block-account-info d-flex justify-content-between align-items-center">
-							<p><strong>Old name:  </strong>{{Session::get('user')->username}}</p>
-							<input type="text" class="account-info-input" placeholder="New name" required>
+							<p><strong>Old name:  </strong>{{Session::get('user')->name}}</p>
+							<input type="text" class="account-info-input" placeholder="New name" required name="new_name">
 						</div>
 					</div>
 
@@ -185,11 +186,12 @@
 					<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<form method="POST">
+				<form method="POST" action="/editsurname">
+					{{csrf_field()}}
 					<div class="modal-body d-flex flex-column align-items-center">
 		  				<div class="block-account-info d-flex justify-content-between align-items-center">
 							<p><strong>Old surname:  </strong>{{Session::get('user')->surname}}</p>
-							<input type="text" class="account-info-input" placeholder="New surname" required>
+							<input name="new_surname" type="text" class="account-info-input" placeholder="New surname" required>
 						</div>
 					</div>
 
@@ -215,11 +217,12 @@
 					<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<form method="POST">
+				<form method="POST" action="/changeemail">
+					{{csrf_field()}}
 					<div class="modal-body d-flex flex-column align-items-center">
 		  				<div class="block-account-info d-flex justify-content-between align-items-center">
 							<p><strong>Old email:  </strong>{{Session::get('user')->email}}</p>
-							<input type="email" class="account-info-input" placeholder="New email" required>
+							<input name="new_email "type="email" class="account-info-input" placeholder="New email" required>
 						</div>
 					</div>
 
@@ -244,11 +247,12 @@
 					<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<form method="POST">
+				<form method="POST" action="/changephone">
+					{{csrf_field()}}
 					<div class="modal-body d-flex flex-column align-items-center">
 		  				<div class="block-account-info d-flex justify-content-between align-items-center">
 							<p><strong>Old phone:  </strong>{{Session::get('user')->phone}}</p>
-							<input type="phone" class="account-info-input" placeholder="New phone" required>
+							<input name="new_phone"type="phone" class="account-info-input" placeholder="New phone" required>
 						</div>
 					</div>
 
@@ -275,11 +279,12 @@
 					<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<form method="POST">
+				<form method="POST" action="/changeusername">
+					{{csrf_field()}}
 					<div class="modal-body d-flex flex-column align-items-center">
 		  				<div class="block-account-info d-flex justify-content-between align-items-center">
 							<p><strong>Old username:  </strong>{{Session::get('user')->username}}</p>
-							<input type="text" class="account-info-input" placeholder="New username" required>
+							<input name="new_username" type="text" class="account-info-input" placeholder="New username" required>
 						</div>
 					</div>
 
@@ -305,11 +310,12 @@
 					<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<form method="POST">
+				<form method="POST" action="changepassword">
+					{{csrf_field()}}
 					<div class="modal-body d-flex flex-column align-items-center">
 		  				<div class="block-account-info d-flex justify-content-between align-items-center">
 							<p><strong>Old password:  </strong>****</p>
-							<input type="password" class="account-info-input" placeholder="New password" required>
+							<input type="password" class="account-info-input" placeholder="New password" required name="new_password">
 						</div>
 					</div>
 

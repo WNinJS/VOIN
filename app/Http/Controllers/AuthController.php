@@ -30,6 +30,9 @@ class AuthController extends Controller
         $request->session()->put('user', $user);
         return redirect('/');
       }
+
+    }else{
+    	return $this->error404();
     }
   }
   //Рег

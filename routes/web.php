@@ -89,3 +89,10 @@ Route::post('adminpanel/addnewdocument','AdminController@addDocument');
 //Для удаления документа
 Route::post('adminpanel/deletedocument/{doc_id}','AdminController@deleteDocument');
 
+//редактирование имени пользователя
+Route::post('/changename','EditCredentials@editName');
+Route::post('/editsurname','EditCredentials@editSurname');
+Route::post('/changeusername','EditCredentials@editUsername');
+Route::post('/changepassword','EditCredentials@editPassword');
+Route::post('/changephone','EditCredentials@editNumber');
+Route::post('/changeemail','EditCredentials@editEmail');

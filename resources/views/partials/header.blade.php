@@ -29,12 +29,12 @@
             </div>
 
             <!-- Это если вошел в личный кабинет -->
-            @if(session('login'))
+            @if(session('user'))
             <div class="profile-menu d-flex justify-content-center align-items-center"> 
                 <img class="img-profile" src="images/teamleader.jpg" alt="profile">
 
                 <div class="btn-group d-flex flex-column">
-                    <button class="btn dropdown-toggle account-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{Session::get('login')}}</button>
+                    <button class="btn dropdown-toggle account-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{Session::get('user')->name}}</button>
                     <div class="dropdown-menu dropdown-menu-left">
                         <a class="dropdown-item" data-toggle="modal" data-target="#account-info-modal">Account info</a>
                         <a class="dropdown-item" href="/logout">Logout</a>

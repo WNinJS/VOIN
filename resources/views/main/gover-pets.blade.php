@@ -19,7 +19,12 @@
           <div class="col-12">
               <h1 class="cursor-default">Government structures</h1>
               <p class="cursor-default">Monitoring and communication complex for dogs provides remote voice interaction between dog and a person without visual control, dog’s biometric indexes monitoring, POV photofixation and video recording of the actions around the dog, possibility of pre-recorded commands  sending</p>
-              <button data-toggle="modal" data-target="#gover-info-modal">Request for access</button>
+              @if(Session('user') && Session('user')->type !== 'government')
+              	<button data-toggle="modal" data-target="#gover-info-modal">Request for access</button>
+              @elseif(!Session('user'))
+				<button data-toggle="modal" data-target="#gover-info-modal">Request for access</button>
+              @endif
+              
           </div>
       </div>
       <!-- description close -->
@@ -35,7 +40,7 @@
 <!-- opportunities open -->
 	
   
-  @if(Session('user'))
+  @if(Session('user') && Session('user')->type === 'government')
 	<div class="opportunities text-center">
 	<div class="container">
 	    <h2>Opportunities</h2>
@@ -132,20 +137,22 @@
             <form method="POST" action="/accessrequest/user/{{Session::get('user')->id}}" enctype="multipart/form-data">
               {{ csrf_field() }}
                 <div class="modal-body">
-                    @if(session('user'))
-                           <p>Для получения доступа к данному разделу нужно прикрепить 2 файла: сопроводительное письмо и карту партнера.</p>
-                          <div class="input-group">
-                           <div class="input-group-prepend">
-                              <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-                           </div>
-                           <div class="custom-file">
-                              <input type="file"  name="docs[]" multiple=true class="custom-file-input" id="inputGroupFile01"
-                               aria-describedby="inputGroupFileAddon01">
-                              <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                          </div>
-                      </div>
-                    @else
-                      <p>Please signup</p>
+                    @if(Session('user') && Session('user')->type === 'pending')
+                    	<p>Your request is being processing</p>
+                    @elseif(Session('user'))
+						<p>Для получения доступа к данному разделу нужно прикрепить 2 файла: сопроводительное письмо и карту партнера.</p>
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+							</div>
+							<div class="custom-file">
+								<input type="file"  name="docs[]" multiple=true class="custom-file-input" id="inputGroupFile01"
+								aria-describedby="inputGroupFileAddon01">
+								<label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+							</div>
+						</div>
+					@elseif(!Session('user'))
+						<p>Please sign up.</p>
                     @endif
   
                 </div>
@@ -169,10 +176,10 @@
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="POST"  enctype="multipart/form-data">
+            <form method="POST" enctype="multipart/form-data">
               {{ csrf_field() }}
                 <div class="modal-body">
-                      <p>Please signup</p>
+                    	<p>Please sign up</p>
                 </div>
                 <div class="modal-footer d0flex justify-content-between">
                     <button type="button" class="btn" data-dismiss="modal">Close</button>
@@ -181,6 +188,7 @@
         </div>
     </div>
   </div>
+
 @endif
 
 <!-- gover info modal -->

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Category;
 use App\Team;
+use App\Article;
+use App\Document;
 
 class MainController extends Controller
 {
@@ -42,7 +44,10 @@ class MainController extends Controller
      public function renderMaterialsPage(Request $req)
     {
         # code...
-
-        return view('main.materials');
+        $documents = Document::all();
+        $articles = Article::all();
+        return view('main.materials')
+        ->with('articles',$articles)
+        ->with('documents',$documents);
     }
 }
