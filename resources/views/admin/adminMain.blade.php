@@ -84,21 +84,21 @@
 								<h1>Команда</h1>
 						        <div class="row d-flex justify-content-around align-items-start">
 						            <div class="members-of-team d-flex flex-wrap justify-content-start align-items-center w-100">
-
-						                <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 member-block">
-						                    <img class="member-photo" src="images/dev.jpg" alt="member_logo">
-						                    <h4>Karimov Eduard</h4>
-						                    <h5>Team Leader</h5>
+										@foreach ($members as $member )
+										<div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 member-block">
+										<img class="member-photo" src="{{asset('storage/'.$member->photo)}}" alt="avatar">
+						                    <h4>{{$member->fullname}}</h4>
+						                    <h5>{{$member->position}}</h5>
 						                    <div class="btns-opportunities d-flex flex-row justify-content-around align-items-center">
-							                    <form method="POST">
+												<form method="POST" action="/adminpanel/deletemember/{{$member->id}}">
+													{{ csrf_field() }}
 							                    	<button class="btn-delete" type="submit"></button>
 							                    </form>
-							                    <button data-toggle="modal" data-target="#edit-team-modal" class="btn-edit"></button>
+												<button data-toggle="modal" data-target="#edit-team-modal-{{$member->id}}" class="btn-edit"></button>
 						                    </div>
 						                </div>
-
-						                <button data-toggle="modal" data-target="#add-team-modal" class="btn-add"></button>
-
+										@endforeach
+										<button data-toggle="modal" data-target="#add-team-modal" class="btn-add"></button>
 					                </div>
 					            </div>
 					        </div>
@@ -113,14 +113,17 @@
 								<h1>Статьи</h1>
 								<div class="row d-flex justify-content-around align-items-start">
 								  	<div class="general-articles d-flex flex-wrap justify-content-start align-items-center w-100">
-								      	<div class="sub-article col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
-								          	<div class="article-block">
-								              	<h4>How to care</h4>
-								              	<h5>25.11.2019</h5>
-								              	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis voluptatum saepe assumenda, fugit illo dolorum expedita odit!</p>
-								              	<a data-toggle="modal" data-target="#article-modal">See more</a>
-								          	</div>
-								      	</div>
+								  		@foreach($articles as $article)
+									      	<div class="sub-article col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
+									          	<div class="article-block">
+									              	<h4>{{$article->name}}</h4>
+									              	<h5>{{mb_substr($article->created_at,0,10)}}</h5>
+									              	<p>{{$article->description}}</p>
+									              	<a data-toggle="modal" data-target="#article-modal-{{$article->id}}">Подробнее</a>
+									          	</div>
+									      	</div>
+								  		@endforeach
+
 									<button data-toggle="modal" data-target="#add-article-modal" class="btn-add"></button>
 								  	</div>
 								</div>  
@@ -133,16 +136,21 @@
 								<div class="row d-flex justify-content-around align-items-start">
 					               	<div class="general-docs d-flex flex-wrap justify-content-start align-items-center w-100">
 
-					                  	<div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 doc-block d-flex flex-column justify-content-center align-items-center">
-					                      	<img class="doc-icon" src="images/docs.png" alt="docs_png">
-					                      	<h4>Presentation</h4>
-					                      	<a href="images/dev.jpg" download>Save</a>
+					               		@foreach($documents as $document)
+						                  	<div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 doc-block d-flex flex-column justify-content-center align-items-center">
+						                      	<img class="doc-icon" src="images/docs.png" alt="docs_png">
+						                      	<h4>{{$document->name}}</h4>
+						                      	<a href="{{asset('storage/'.$document->file)}}" download>Save</a>
 
-					                      	<!-- удаление документа -->
-					                      	<a>Delete doc</a>
-					                      	<!-- удаление документа -->
-					                  	</div>
+						                      	<!-- удаление документа -->
+						                      	<form method="post" action="adminpanel/deletedocument/{{$document->id}}">
+						                      		{{csrf_field()}}
+						                      		<button type="submit">Delete doc</button>
+						                      	</form>
 
+						                      	<!-- удаление документа -->
+						                  	</div>
+					               		@endforeach
 										<button data-toggle="modal" data-target="#add-doc-modal" class="btn-add"></button>
 
 					              	</div>
@@ -214,23 +222,23 @@
 							<div class="opportunities">
 								<h1>Возможности комплекса для госудаственных собак</h1>
 								<div class="row align-items-center">
-									@foreach ($warDogs[0]->capabilities as $war)
+									@foreach ($goverDogs[0]->capabilities as $gover)
 										<div class="card col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 text-center flex-column align-items-center d-flex justify-content-center">
 											<div class="image">
-												<img src="{{asset('storage/'.$war->icon)}}" alt="Card image cap">
+												<img src="{{asset('storage/'.$gover->icon)}}" alt="Card image cap">
 											</div>
-											<p class="card-text">{{$war->desc}}</p>
+											<p class="card-text">{{$gover->desc}}</p>
 											<div class="btns-opportunities d-flex flex-row justify-content-around align-items-center">
-												<form action="adminpanel/cap/delete/{{$war->id}}" method="post">
+												<form action="adminpanel/cap/delete/{{$gover->id}}" method="post">
 													{{ csrf_field() }}
 													<button class="btn-delete" type="submit"></button>
 												</form>
 												
-												<button data-toggle="modal" data-target="#edit-opportunites-modal-{{$war->id}}" class="btn-edit"></button>
+												<button data-toggle="modal" data-target="#edit-opportunites-modal-{{$gover->id}}" class="btn-edit"></button>
 											</div>
 										</div>											
 									@endforeach
-									<button data-toggle="modal" data-target="#add-opportunites-modal-war" class="btn-add"></button>
+									<button data-toggle="modal" data-target="#add-opportunites-modal-gover" class="btn-add"></button>
 								</div>
 							</div>
 						</div>
@@ -251,8 +259,8 @@
 										<div class="card col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 d-flex text-center flex-column align-items-center justify-content-center">
 											<div class="btns-save">
 												<!-- в href нужно засунуть файл, который можно будет скачать -->
-												<a class="save-link" href="/storage/app/{{$give->map}}" download>Карта</a>
-												<a class="save-link" href="/storage/app/{{$give->doc}}" download>Письмо</a>
+												<a class="save-link" href="{{asset('storage/'.$give->map)}}" download>Карта</a>
+												<a class="save-link" href="{{asset('storage/'.$give->doc)}}" download>Письмо</a>
 												<!-- в href нужно засунуть файл, который можно будет скачать -->
 											</div>
 											<p class="card-text"><strong>Имя:</strong> {{$give->username}}</p>
@@ -300,7 +308,7 @@
 						<div class="modal-body">
 							<div class="complex-description">
 								<h6>Описание</h6>
-								<textarea class="textarea-style" required name="desc">{{$hom->desc}}></textarea>
+								<textarea class="textarea-style" required name="desc">{{$hom->desc}}</textarea>
 							</div>
 							<div class="file">
 								<h6>Иконка</h6>
@@ -345,7 +353,7 @@
 						<div class="modal-body">
 							<div class="complex-description">
 								<h6>Описание</h6>
-								<textarea class="textarea-style" required name="desc">{{$war->desc}}></textarea>
+								<textarea class="textarea-style" required name="desc">{{$war->desc}}</textarea>
 							</div>
 							<div class="file">
 								<h6>Иконка</h6>
@@ -371,6 +379,51 @@
 			</div>
 		</div>
 	@endforeach
+
+	@foreach ($goverDogs[0]->capabilities as $gover)
+		<div class="modal fade" id="edit-opportunites-modal-{{$gover->id}}" tabindex="-1" role="dialog" aria-labelledby="edit-opportunites-modalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="edit-opportunites-modalLabel">Редактирование возможности</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+
+					<form method="POST" action="adminpanel/cap/update/{{$gover->id}}" enctype="multipart/form-data">
+						{{ csrf_field() }}
+						<div class="modal-body">
+							<div class="complex-description">
+								<h6>Описание</h6>
+								<textarea class="textarea-style" required name="desc">{{$gover->desc}}</textarea>
+							</div>
+							<div class="file">
+								<h6>Иконка</h6>
+								<div class="input-group">
+			                        <div class="input-group-prepend">
+			                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+			                        </div>
+			                        <div class="custom-file">
+			                            <input type="file" class="file custom-file-input" id="inputGroupFile01"
+			                            aria-describedby="inputGroupFileAddon01" required name="icon">
+			                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+			                        </div>
+			                    </div>
+							</div>
+						</div>
+
+						<div class="modal-footer d-flex justify-content-between">
+							<button type="button" class="btn" data-dismiss="modal">Закрыть</button>
+							<button type="submit" class="btn">Сохранить изменения</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	@endforeach
+
+
 	<!-- edit opportunites open -->
 
 
@@ -458,6 +511,46 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="modal fade" id="add-opportunites-modal-gover" tabindex="-1" role="dialog" aria-labelledby="add-opportunites-modalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="add-opportunites-modalLabel">Добавление возможности</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+
+				<form method="POST" action="adminpanel/caps/addNew-goverDog" enctype="multipart/form-data">
+					{{ csrf_field() }}
+					<div class="modal-body">
+						<div class="opportunity-description">
+							<h6>Описание</h6>
+							<textarea class="textarea-style" required name="desc"></textarea>
+						</div>
+						<div class="file">
+							<h6>Иконка</h6>
+		                    <div class="input-group">
+		                        <div class="input-group-prepend">
+		                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+		                        </div>
+		                        <div class="custom-file">
+		                            <input type="file" class="file custom-file-input" name="goverDogIcon" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" required>
+		                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+		                        </div>
+		                    </div>
+						</div>
+					</div>
+
+					<div class="modal-footer d-flex justify-content-between">
+						<button type="button" class="btn" data-dismiss="modal">Закрыть</button>
+						<button type="submit" class="btn">Добавить</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 	<!-- add opportunites modal open -->
 
 
@@ -523,19 +616,16 @@
 					</button>
 				</div>
 
-				<form method="POST">
+				<form method="POST" action="adminpanel/new_member" enctype="multipart/form-data">
+					{{ csrf_field() }}
 					<div class="modal-body">
 						<div class="opportunity-description">
-							<h6>Имя</h6>
-							<textarea class="textarea-style" required></textarea>
-						</div>
-						<div class="opportunity-description">
-							<h6>Фамилия</h6>
-							<textarea class="textarea-style" required></textarea>
+							<h6>Имя и Фамилия</h6>
+							<textarea class="textarea-style" required name='name'></textarea>
 						</div>
 						<div class="opportunity-description">
 							<h6>Должность</h6>
-							<textarea class="textarea-style" required></textarea>
+							<textarea class="textarea-style" required name="position"></textarea>
 						</div>
 						<div class="file">
 							<h6>Фото</h6>
@@ -544,7 +634,7 @@
 		                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
 		                        </div>
 		                        <div class="custom-file">
-		                            <input type="file" class="file custom-file-input" name="homeDogIcon" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" required>
+		                            <input type="file" class="file custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" required name="member_image">
 		                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
 		                        </div>
 		                    </div>
@@ -564,129 +654,138 @@
 
 
 	<!-- edit team modal open -->
-	<div class="modal fade" id="edit-team-modal" tabindex="-1" role="dialog" aria-labelledby="edit-team-modalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="edit-team-modalLabel">Редактирование члена команды</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
+	@foreach ($members as $member)
+		<div class="modal fade" id="edit-team-modal-{{$member->id}}" tabindex="-1" role="dialog" aria-labelledby="edit-team-modalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="edit-team-modalLabel">Редактирование члена команды</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+
+					<form method="POST" action="adminpanel/editmember/{{$member->id}}" enctype="multipart/form-data">
+						{{ csrf_field() }}
+						<div class="modal-body">
+							<div class="opportunity-description">
+								<h6>Имя и Фамилия</h6>
+								<textarea class="textarea-style" required name="fullname">{{$member->fullname}}</textarea>
+							</div>
+							<div class="opportunity-description">
+								<h6>Должность</h6>
+								<textarea class="textarea-style" required name="position">{{$member->position}}</textarea>
+							</div>
+							<div class="file">
+								<h6>Фото</h6>
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+									</div>
+									<div class="custom-file">
+										<input type="file" class="file custom-file-input" name="avatar" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" required>
+										<label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="modal-footer d-flex justify-content-between">
+							<button type="button" class="btn" data-dismiss="modal">Закрыть</button>
+							<button type="submit" class="btn">Сохранить изменения</button>
+						</div>
+					</form>
 				</div>
-
-				<form method="POST">
-					<div class="modal-body">
-						<div class="opportunity-description">
-							<h6>Имя</h6>
-							<textarea class="textarea-style" required></textarea>
-						</div>
-						<div class="opportunity-description">
-							<h6>Фамилия</h6>
-							<textarea class="textarea-style" required></textarea>
-						</div>
-						<div class="opportunity-description">
-							<h6>Должность</h6>
-							<textarea class="textarea-style" required></textarea>
-						</div>
-						<div class="file">
-							<h6>Фото</h6>
-		                    <div class="input-group">
-		                        <div class="input-group-prepend">
-		                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-		                        </div>
-		                        <div class="custom-file">
-		                            <input type="file" class="file custom-file-input" name="homeDogIcon" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" required>
-		                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-		                        </div>
-		                    </div>
-						</div>
-					</div>
-
-					<div class="modal-footer d-flex justify-content-between">
-						<button type="button" class="btn" data-dismiss="modal">Закрыть</button>
-						<button type="submit" class="btn">Сохранить изменения</button>
-					</div>
-				</form>
 			</div>
 		</div>
-	</div>
+	@endforeach
+
 	<!-- edit team modal close -->
 
 
-
 	<!-- articles modal open -->
-	<div class="modal fade" id="article-modal" tabindex="-1" role="dialog" aria-labelledby="article-modalLabel" aria-hidden="true">
-	    <div class="modal-dialog modal-dialog-centered" role="document">
-	        <div class="modal-content">
-	            <div class="modal-header">
-	                <h5 class="modal-title" id="article-modalLabel">How to care</h5>
-	                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	                    <span aria-hidden="true">&times;</span>
-	                </button>
-	            </div>
-		        <div class="modal-body">
-		            <p class="article-modal-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas dicta magnam assumenda tenetur, asperiores. Vitae vero, deleniti quis sit, nisi est minima vel ut eveniet, excepturi nam similique aliquam itaque tempora harum sunt cumque! Possimus numquam magnam ipsum, reprehenderit vero blanditiis itaque perspiciatis fugit sapiente rerum esse adipisci eveniet nulla!</p>
-		            <img class="article-modal-img" src="images/dev.jpg" alt="article_img">
-		            <h5 class="article-modal-date">Public date: 25.11.2019</h5>
+	@foreach($articles as $article)
+		<div class="modal fade" id="article-modal-{{$article->id}}" tabindex="-1" role="dialog" aria-labelledby="article-modalLabel" aria-hidden="true">
+		    <div class="modal-dialog modal-dialog-centered" role="document">
+		        <div class="modal-content">
+		            <div class="modal-header">
+		                <h5 class="modal-title" id="article-modalLabel">{{$article->name}}</h5>
+		                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		                    <span aria-hidden="true">&times;</span>
+		                </button>
+		            </div>
+			        <div class="modal-body">
+			            <p class="article-modal-desc">{{$article->description}}</p>
+			            <img class="article-modal-img" src="{{asset('storage/'.$article->img)}}" alt="article_img">
+			            <h5 class="article-modal-date">Дата публикации: {{mb_substr($article->created_at,0,10)}}</h5>
+			        </div>
+			        <div class="modal-footer">
+			        	<form method="post" action='adminpanel/detelearticle/{{$article->id}}'>
+			        		{{csrf_field()}}
+			        		<button type="submit" class="btn">Удалить</button>
+			        	</form>
+		          		<button type="button" class="btn" data-toggle="modal" data-target="#edit-article-modal-{{$article->id}}
+		          		" data-dismiss="modal">Редактировать</button>
+			            <button type="button" class="btn" data-dismiss="modal">Закрыть</button>
+			        </div>
 		        </div>
-		        <div class="modal-footer">
-		        	<button type="button" class="btn">Удалить</button>
-	          		<button type="button" class="btn" data-toggle="modal" data-target="#edit-article-modal
-	          		" data-dismiss="modal">Редактировать</button>
-		            <button type="button" class="btn" data-dismiss="modal">Закрыть</button>
-		        </div>
-	        </div>
-	    </div>
-	</div>
+		    </div>
+		</div>
+	@endforeach
+
 	<!-- articles modal close -->
 
 
 
 
 	<!-- edit article modal open -->
-	<div class="modal fade" id="edit-article-modal" tabindex="-1" role="dialog" aria-labelledby="edit-article-modalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="edit-article-modalLabel">Редактирование статьи</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
+	@foreach($articles as $article)
+		<div class="modal fade" id="edit-article-modal-{{$article->id}}" tabindex="-1" role="dialog" aria-labelledby="edit-article-modalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="edit-article-modalLabel">Редактирование статьи</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+
+					<form method="POST" action="adminpanel/editarticle/{{$article->id}}" enctype="multipart/form-data">
+						{{csrf_field()}}
+						<div class="modal-body">
+							<div class="opportunity-description">
+								<h6>Заголовок</h6>
+								<textarea class="textarea-style" required name="name">{{$article->name}}</textarea>
+							</div>
+							<div class="opportunity-description">
+								<h6>Содержание</h6>
+								<textarea class="textarea-style" required name="description">{{$article->description}}</textarea>
+							</div>
+							<div class="file">
+								<h6>Фото</h6>
+			                    <div class="input-group">
+			                        <div class="input-group-prepend">
+			                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+			                        </div>
+			                        <div class="custom-file">
+			                            <input type="file" class="file custom-file-input" name="article_image" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" required>
+			                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+			                        </div>
+			                    </div>
+							</div>
+						</div>
+
+						<div class="modal-footer d-flex justify-content-between">
+							<button type="button" class="btn" data-toggle="modal" data-target="#article-modal" data-dismiss="modal">Назад</button>
+							<button type="submit" class="btn">Сохранить изменения</button>
+						</div>
+					</form>
 				</div>
-
-				<form method="POST">
-					<div class="modal-body">
-						<div class="opportunity-description">
-							<h6>Заголовок</h6>
-							<textarea class="textarea-style" required></textarea>
-						</div>
-						<div class="opportunity-description">
-							<h6>Содержание</h6>
-							<textarea class="textarea-style" required></textarea>
-						</div>
-						<div class="file">
-							<h6>Фото</h6>
-		                    <div class="input-group">
-		                        <div class="input-group-prepend">
-		                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-		                        </div>
-		                        <div class="custom-file">
-		                            <input type="file" class="file custom-file-input" name="homeDogIcon" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" required>
-		                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-		                        </div>
-		                    </div>
-						</div>
-					</div>
-
-					<div class="modal-footer d-flex justify-content-between">
-						<button type="button" class="btn" data-toggle="modal" data-target="#article-modal" data-dismiss="modal">Назад</button>
-						<button type="submit" class="btn">Сохранить изменения</button>
-					</div>
-				</form>
 			</div>
 		</div>
-	</div>
 	<!-- edit article modal close -->
+	@endforeach
+
 
 
 	<!-- add article modal open -->
@@ -700,15 +799,16 @@
 					</button>
 				</div>
 
-				<form method="POST">
+				<form method="POST" action='adminpanel/addarticle' enctype="multipart/form-data">
+					{{ csrf_field() }}
 					<div class="modal-body">
 						<div class="opportunity-description">
 							<h6>Заголовок</h6>
-							<textarea class="textarea-style" required></textarea>
+							<textarea class="textarea-style" required name="name"></textarea>
 						</div>
 						<div class="opportunity-description">
 							<h6>Содержание</h6>
-							<textarea class="textarea-style" required></textarea>
+							<textarea class="textarea-style" required name="description"></textarea>
 						</div>
 						<div class="file">
 							<h6>Фото</h6>
@@ -717,7 +817,8 @@
 		                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
 		                        </div>
 		                        <div class="custom-file">
-		                            <input type="file" class="file custom-file-input" name="homeDogIcon" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" required>
+		                            <input type="file" class="file custom-file-input" 
+		                             id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" required name="article_image">
 		                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
 		                        </div>
 		                    </div>
@@ -746,11 +847,12 @@
 					</button>
 				</div>
 
-				<form method="POST">
+				<form method="POST" action="adminpanel/addnewdocument" enctype="multipart/form-data">
+					{{csrf_field()}}
 					<div class="modal-body">
 						<div class="opportunity-description">
 							<h6>Заголовок</h6>
-							<textarea class="textarea-style" required></textarea>
+							<textarea class="textarea-style" required name="name"></textarea>
 						</div>
 						<div class="file">
 							<h6>Фото</h6>
@@ -759,7 +861,7 @@
 		                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
 		                        </div>
 		                        <div class="custom-file">
-		                            <input type="file" class="file custom-file-input" name="homeDogIcon" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" required>
+		                            <input type="file" class="file custom-file-input" name="document" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" required>
 		                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
 		                        </div>
 		                    </div>

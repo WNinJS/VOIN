@@ -11,8 +11,8 @@ class AcessRrequest extends Controller
 
       $filesArray = $request->file('docs');
 
-      $path1 = $filesArray[0]->store('files');
-      $path2 = $filesArray[1]->store('files');
+      $path1 = $filesArray[0]->store('files','public');
+      $path2 = $filesArray[1]->store('files','public');
 
       $user = User::where('username', $request->session()->get('user')['username'])->first();
       $user->map = $path1;

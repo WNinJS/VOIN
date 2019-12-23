@@ -23,6 +23,7 @@ class AuthController extends Controller
     if(Hash::check($request->password,$user->password)){
       if($user->role === 'admin'){
         $request->session()->put('login',$request->login);
+        $request->session()->put('user', $user);
         return redirect('/adminpanel');
       }else if($user->role === 'user'){
         $request->session()->put('login',$request->login);

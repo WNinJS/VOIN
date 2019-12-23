@@ -45,6 +45,7 @@ Route::post('adminpanel/cap/delete/{cap_id}','AdminController@deleteCapability')
 Route::post('adminpanel/cap/update/{cap_id}','AdminController@updateCap');
 
 Route::post('adminpanel/caps/addNew-warDog','AdminController@addNewWar');
+Route::post('adminpanel/caps/addNew-goverDog','AdminController@addNewGover');
 
 //Маршруты для вывода контента на страницы сайта
 Route::get('/home-pets','MainController@renderHomePetPage');
@@ -57,10 +58,34 @@ Route::get('/pet-workers','MainController@renderPetWorkers');
 
 Route::get('/gover-pets','MainController@renderGovermentPets');
 
+
 Route::post('/send-mail','MailController@send');
 
 //Маршрут для отправки запроса на доступ в Government structures
 Route::post('/accessrequest/user/{user_id}','AcessRrequest@getAccess');
 Route::post('adminpanel/verifyUser/{user_id}','AcessRrequest@verifyUser');
 
+
+//Для работы с членами команды
+//для добовления нового члена команды
+Route::post('adminpanel/new_member','AdminController@addMemmber');
+//Для удаления члена команды
+Route::post('/adminpanel/deletemember/{member_id}','AdminController@deleteMember');
+//Для редактирования члена команды
+Route::post('/adminpanel/editmember/{member_id}','AdminController@editMember');
+
+
+//Для работы со стаьями
+//Для добавления новой статьи
+Route::post('adminpanel/addarticle','AdminController@addArticle');
+//Для удаления статьи
+Route::post('adminpanel/detelearticle/{article_id}','AdminController@deleteArticle');
+//Для редактирования статьи
+Route::post('adminpanel/editarticle/{article_id}','AdminController@editArticle');
+
+//Для работы с документами в админке
+//Для добавления нового документа
+Route::post('adminpanel/addnewdocument','AdminController@addDocument');
+//Для удаления документа
+Route::post('adminpanel/deletedocument/{doc_id}','AdminController@deleteDocument');
 

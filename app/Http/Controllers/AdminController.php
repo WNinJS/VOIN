@@ -7,6 +7,9 @@ use App\User;
 use App\Complex;
 use App\Category;
 use App\Capability;
+use App\Team;
+use App\Article;
+use App\Document;
 use Exception;
 
 class AdminController extends Controller
@@ -21,11 +24,23 @@ class AdminController extends Controller
         $complexses = Complex::all();
         $home = Category::where('id','=', 1)->get('*');
         $warDogs = Category::where('id','=', 3)->get('*');
+        $goverDogs = Category::where('id','=', 4)->get('*');
         $giveAccess = User::where('type','pending')->get();
+        $members = Team::all();
+        $articles = Article::all();
+        $documents = Document::all();
 
         
                 
-        return view('admin.adminMain')->with('complexes',$complexses)->with('home',$home)->with('warDogs',$warDogs)->with('giveAccess',$giveAccess);
+        return view('admin.adminMain')
+        ->with('complexes',$complexses)
+        ->with('home',$home)
+        ->with('warDogs',$warDogs)
+        ->with('giveAccess',$giveAccess)
+        ->with('members',$members)
+        ->with('articles', $articles)
+        ->with('documents',$documents)
+        ->with('goverDogs',$goverDogs);
     }
 
     //Метод для обновления нужного элемента комплекса
@@ -84,6 +99,24 @@ class AdminController extends Controller
 
     }
 
+
+    //Добавляем новую возможность в государственные структуры
+    public function addNewGover(Request $request)
+    {
+        $desc = $request->desc;
+        $icon = $request->file('goverDogIcon')->store('uploads','public');
+
+        $cap = new Capability;
+        $cap->name ="";
+        $cap->desc = $desc;
+        $cap->category_id = 4;
+        $cap->icon = $icon;
+        $cap->save();
+
+        return redirect()->back();
+
+    }
+
     public function deleteCapability($id)
     {
         try{
@@ -106,4 +139,93 @@ class AdminController extends Controller
 
         return redirect()->back();
     }
+
+    //метод для добавления нового члена команды
+    public function addMemmber(Request $request){
+        $img = $request->file('member_image')->store('members','public');
+
+        $member = new Team();
+        $member->fullname = $request->name;
+        $member->position = $request->position;
+        $member->photo = $img;
+        $member->save();
+
+        return redirect()->back();
+    }
+    //метод для удаления члена команды
+    public function deleteMember($id){
+        $member = Team::where('id',$id);
+        $member->delete();
+
+        return redirect()->back();
+    }
+
+    //метод для редактирования члена команды
+    public function editMember(Request $request, $id){
+        $img = $request->file('avatar')->store('members','public');
+
+        $member = Team::where('id',$id)->first();
+        $member->fullname = $request->fullname;
+        $member->position = $request->position;
+        $member->photo = $img;
+        $member->save();
+
+        return redirect()->back();
+    }
+
+    //метод для добавления новой статьи
+    public function addArticle(Request $request){
+        $img = $request->file('article_image')->store('articles','public');
+
+        $article = new Article();
+        $article->name = $request->name;
+        $article->description = $request->description;
+        $article->img = $img;
+        $article->save();
+
+        return redirect()->back();
+    }
+
+    //метод для удаления статьи
+    public function deleteArticle(Request $request, $id){
+
+        $article = Article::where('id',$id)->first();
+        $article->delete();
+
+        return redirect()->back();
+    }
+
+    //Для редактирования статьи 
+    public function editArticle(Request $request, $id){
+        $img = $request->file('article_image')->store('articles','public');
+
+        $article = Article::where('id',$id)->first();
+        $article->name = $request->name;
+        $article->description = $request->description;
+        $article->img = $img;
+        $article->save();
+
+        return redirect()->back();
+    }
+
+    //Для добавления нового документа
+    public function addDocument(Request $request){
+
+        $document = $request->file('document')->store('documents','public');
+
+        $doc = new Document();
+        $doc->name = $request->name;
+        $doc->file = $document;
+        $doc->save();
+        return redirect()->back();
+    }
+
+    //Для удаления документа
+    public function deleteDocument(Request $request, $id){
+
+        $doc = Document::where('id',$id);
+        $doc->delete();
+        return redirect()->back();
+    }
+
 }

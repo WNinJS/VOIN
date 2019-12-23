@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use App\Team;
 
 class MainController extends Controller
 {
@@ -25,15 +26,17 @@ class MainController extends Controller
     public function renderGovermentPets(Request $req)
     {
         # code...
+        $petGover =  Category::where('id','=', 4)->get();
 
-        return view('main.gover-pets');
+        return view('main.gover-pets')->with('petGover',$petGover);
     }
 
     public function renderAboutUsPage(Request $req)
     {
         # code...
-
-        return view('main.about-us');
+        $members = Team::all();
+        return view('main.about-us')
+        ->with('members',$members);
     }
 
      public function renderMaterialsPage(Request $req)

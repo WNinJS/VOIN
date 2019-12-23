@@ -49,73 +49,21 @@
         <h2>Project team</h2>
         <h3>Members</h3>
 
+
         <div class="row d-flex justify-content-around align-items-start">
              <div class="members-of-team d-flex flex-wrap justify-content-around">
-                <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 member-block">
-                    <img class="member-photo" src="images/dev.jpg" alt="member_logo">
-                    <h4>Karimov Eduard</h4>
-                    <h5>Team Leader</h5>
-                    <!-- <div class="member-social-media">
-                        <a target="_blank" href="https://vk.com/edvardkarimov96"><img src="images/whitevk.png" alt="vk"></a>
-                        <a target="_blank" href="https://www.facebook.com/woody.jakson"><img src="images/whitefacebook.png" alt="facebook"></a>
-                        <a target="_blank" href="http://instagram.com/mrVol1/"><img src="images/whiteinst.png" alt="instagram"></a>
-                    </div> -->
-                </div>
-
-                <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 member-block">
-                    <img class="member-photo" src="images/dev.jpg" alt="member_logo">
-                    <h4>Abdulov Roman</h4>
-                    <h5>Hardware Developer</h5>
-                    <!-- <div class="member-social-media">
-                        <a target="_blank" href="https://vk.com/edvardkarimov96"><img src="images/whitevk.png" alt="vk"></a>
-                        <a target="_blank" href="https://www.facebook.com/woody.jakson"><img src="images/whitefacebook.png" alt="facebook"></a>
-                        <a target="_blank" href="http://instagram.com/mrVol1/"><img src="images/whiteinst.png" alt="instagram"></a>
-                    </div> -->
-                </div>
-
-                <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 member-block">
-                    <img class="member-photo" src="images/dev.jpg" alt="member_logo">
-                    <h4>Tshelichev Oleg</h4>
-                    <h5>Project Manager</h5>
-                    <!-- <div class="member-social-media">
-                        <a target="_blank" href="https://vk.com/edvardkarimov96"><img src="images/whitevk.png" alt="vk"></a>
-                        <a target="_blank" href="https://www.facebook.com/woody.jakson"><img src="images/whitefacebook.png" alt="facebook"></a>
-                        <a target="_blank" href="http://instagram.com/mrVol1/"><img src="images/whiteinst.png" alt="instagram"></a>
-                    </div> -->
-                </div>
-
-                <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 member-block">
-                    <img class="member-photo" src="images/dev.jpg" alt="member_logo">
-                    <h4>Lukmanov Ilnar</h4>
-                    <h5>Software Developer</h5>
-                   <!--  <div class="member-social-media">
-                        <a target="_blank" href="https://vk.com/edvardkarimov96"><img src="images/whitevk.png" alt="vk"></a>
-                        <a target="_blank" href="https://www.facebook.com/woody.jakson"><img src="images/whitefacebook.png" alt="facebook"></a>
-                        <a target="_blank" href="http://instagram.com/mrVol1/"><img src="images/whiteinst.png" alt="instagram"></a>
-                    </div> -->
-                </div>
-
-                <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 member-block">
-                    <img class="member-photo" src="images/dev.jpg" alt="member_logo">
-                    <h4>Uscov Nicolay</h4>
-                    <h5>Software developer</h5>
-                    <!-- <div class="member-social-media">
-                        <a target="_blank" href="https://vk.com/edvardkarimov96"><img src="images/whitevk.png" alt="vk"></a>
-                        <a target="_blank" href="https://www.facebook.com/woody.jakson"><img src="images/whitefacebook.png" alt="facebook"></a>
-                        <a target="_blank" href="http://instagram.com/mrVol1/"><img src="images/whiteinst.png" alt="instagram"></a>
-                    </div> -->
-                </div>
-
-                <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 member-block">
-                    <img class="member-photo" src="images/dev.jpg" alt="member_logo">
-                    <h4>Kochkin Maxim</h4>
-                    <h5>Software developer</h5>
-                    <!-- <div class="member-social-media">
-                        <a target="_blank" href="https://vk.com/edvardkarimov96"><img src="images/whitevk.png" alt="vk"></a>
-                        <a target="_blank" href="https://www.facebook.com/woody.jakson"><img src="images/whitefacebook.png" alt="facebook"></a>
-                        <a target="_blank" href="http://instagram.com/mrVol1/"><img src="images/whiteinst.png" alt="instagram"></a>
-                    </div> -->
-                </div>
+                @foreach ($members as $member)
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 member-block">
+                        <img class="member-photo" src="{{asset('storage/'.$member->photo)}}" alt="member_logo">
+                        <h4>{{$member->fullname}}</h4>
+                        <h5>{{$member->position}}</h5>
+                        <!-- <div class="member-social-media">
+                            <a target="_blank" href="https://vk.com/edvardkarimov96"><img src="images/whitevk.png" alt="vk"></a>
+                            <a target="_blank" href="https://www.facebook.com/woody.jakson"><img src="images/whitefacebook.png" alt="facebook"></a>
+                            <a target="_blank" href="http://instagram.com/mrVol1/"><img src="images/whiteinst.png" alt="instagram"></a>
+                        </div> -->
+                    </div>
+                @endforeach
              </div>
         </div>
     </div>

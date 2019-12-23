@@ -33,38 +33,45 @@
 
 
 <!-- opportunities open -->
+	
+  
+  @if(Session('user'))
+	<div class="opportunities text-center">
+	<div class="container">
+	    <h2>Opportunities</h2>
+	    <h3>The Voin complex provides</h3>
 
-  <div class="opportunities text-center">
-    <div class="container">
-        <h2>Opportunities</h2>
-        <h3>The Voin complex provides</h3>
+	    <div class="row d-flex justify-content-around align-items-start">
+	        @foreach ($petGover[0]->capabilities as $cap)
+	            <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 flex-column d-flex justify-content-center align-items-center icon-block">
+					<div class="image">
+						<img src="{{asset('storage/'.$cap->icon)}}" alt="record">
+					</div>
+	               
+	                <p>{{$cap->desc}}</p>
+	            </div>
+	        @endforeach	
+	        <hr class="opportunities-hr">
+	    </div>
+	</div>
+	</div>
+	<!-- opportunities close -->
+	<!-- feedback open -->
+	<div id="feedback" class="feedback text-center">
+	<div class="container">
+	    <h2>Feed back</h2>
+	    <h3>Leave your email below, we will contact you</h3>
+	    <form method="POST" action="/send-mail">
+	              {{ csrf_field() }}
+	        <input type="email" required placeholder="example@gmail.com" name="mail" class="mail">
+	        <button type="submit" class="btn-submit">Send</button>
+	    </form>
+	    <h2 class="text-center msg" style="display: none;">Your email has been successfuly sent!</h2>
+	</div>
+	</div>
+  @endif
 
-        <div class="row d-flex justify-content-around align-items-start">
-            <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 flex-column d-flex justify-content-center align-items-center icon-block">
-                <div class="image">
-                  <img src="" alt="record">
-                </div>
-                                   
-                <p></p>
-            </div>    
-            <hr class="opportunities-hr">
-        </div>
-    </div>
-</div>
-    <!-- opportunities close -->
-<!-- feedback open -->
-<div id="feedback" class="feedback text-center">
-    <div class="container">
-        <h2>Feed back</h2>
-        <h3>Leave your email below, we will contact you</h3>
-        <form method="POST" action="/send-mail">
-                  {{ csrf_field() }}
-            <input type="email" required placeholder="example@gmail.com" name="mail" class="mail">
-            <button type="submit" class="btn-submit">Send</button>
-        </form>
-        <h2 class="text-center msg" style="display: none;">Your email has been successfuly sent!</h2>
-    </div>
-</div>
+
 
 
 <!-- feedback close -->
