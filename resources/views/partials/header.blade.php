@@ -10,12 +10,56 @@
         <div class="adaptive d-flex">
             <div class="navbar-link">
                 <ul class="navbar-nav d-flex flex-row nav-links">
-                    <li class="nav-item"> <a class="nav-link " href="/">Главная</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="/about-us">О нас</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="/materials">Материалы</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="/home-pets">Домашние собаки</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="/pet-workers">Военные собаки</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="/gover-pets">Гос. структуры</a> </li>
+                    @if(Request::url() === 'https://voin-ru')
+                        <li class="nav-item"> <a class="nav-link active-link" href="/">Главная</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="/about-us">О нас</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="/materials">Материалы</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="/home-pets">Домашние собаки</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="/pet-workers">Военные собаки</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="/gover-pets">Гос. структуры</a> </li>
+            
+                    @elseif(Request::url() === 'https://voin-ru/about-us')
+                        <li class="nav-item"> <a class="nav-link" href="/">Главная</a> </li>
+                        <li class="nav-item"> <a class="nav-link active-link" href="/about-us">О нас</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="/materials">Материалы</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="/home-pets">Домашние собаки</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="/pet-workers">Военные собаки</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="/gover-pets">Гос. структуры</a> </li>
+
+                    @elseif(Request::url() === 'https://voin-ru/materials')
+                        <li class="nav-item"> <a class="nav-link" href="/">Главная</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="/about-us">О нас</a> </li>
+                        <li class="nav-item"> <a class="nav-link active-link" href="/materials">Материалы</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="/home-pets">Домашние собаки</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="/pet-workers">Военные собаки</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="/gover-pets">Гос. структуры</a> </li>
+
+                    @elseif(Request::url() === 'https://voin-ru/home-pets')
+                        <li class="nav-item"> <a class="nav-link" href="/">Главная</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="/about-us">О нас</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="/materials">Материалы</a> </li>
+                        <li class="nav-item"> <a class="nav-link active-link" href="/home-pets">Домашние собаки</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="/pet-workers">Военные собаки</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="/gover-pets">Гос. структуры</a> </li>
+
+                    @elseif(Request::url() === 'https://voin-ru/pet-workers')
+                        <li class="nav-item"> <a class="nav-link" href="/">Главная</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="/about-us">О нас</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="/materials">Материалы</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="/home-pets">Домашние собаки</a> </li>
+                        <li class="nav-item"> <a class="nav-link active-link" href="/pet-workers">Военные собаки</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="/gover-pets">Гос. структуры</a> </li>
+
+                    @elseif(Request::url() === 'https://voin-ru/gover-pets')
+                        <li class="nav-item"> <a class="nav-link" href="/">Главная</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="/about-us">О нас</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="/materials">Материалы</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="/home-pets">Домашние собаки</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="/pet-workers">Военные собаки</a> </li>
+                        <li class="nav-item"> <a class="nav-link active-link" href="/gover-pets">Гос. структуры</a> </li>
+                    @endif
+
+                   
 
                     <!-- Это если не вошел в личный кабинет -->
                     @if(!session('login'))

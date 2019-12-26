@@ -128,12 +128,22 @@
 								<h5>Voice Intercommunication</h5>
 							</div>
 						</div>
+						
+						<!-- отсюда копируешь -->
+						<div class="lang-social h-100 d-flex flex-column align-items-center justify-content-between">
+							<div class="lang d-flex justify-content-between w-100">
+								<a href="">En</a>
+								<a href="">Ru</a>
+							</div>
 
-						<div class="social-media">
-							<a target="_blank" href="https://vk.com/edvardkarimov96"><img src="images/whitevk.png" alt="vk"></a>
-							<a target="_blank" href="https://www.facebook.com/woody.jakson"><img src="images/whitefacebook.png" alt="facebook"></a>
-							<a target="_blank" href="http://instagram.com/mrVol1/"><img src="images/whiteinst.png" alt="instagram"></a>
+							<div class="social-media">
+								<a target="_blank" href="https://vk.com/edvardkarimov96"><img src="images/whitevk.png" alt="vk"></a>
+								<a target="_blank" href="https://www.facebook.com/woody.jakson"><img src="images/whitefacebook.png" alt="facebook"></a>
+								<a target="_blank" href="http://instagram.com/mrVol1/"><img src="images/whiteinst.png" alt="instagram"></a>
+							</div>
 						</div>
+						<!-- до сюда -->
+
 					</div>
 				</div>
 			</div>

@@ -807,6 +807,16 @@ footer .right-block h5 {
 	color: #fff;
 }
 
+footer .lang a {
+	text-decoration: none;
+	color: #fff;
+	font-size: 10px;
+	font-weight: 500;
+	transition: 0.15s;
+}
+footer .lang a:hover {
+	font-weight: 700;
+}
 
 footer .social-media img {
 	width: 24px;
