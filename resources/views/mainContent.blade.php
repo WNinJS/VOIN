@@ -2,7 +2,7 @@
 
 @section('content')
 
-@section('title', 'Main')
+@section('title', 'Главная')
 
 <div class="container-fluid">
 		
@@ -17,7 +17,7 @@
 			<div class="container description d-flex justify-content-between">	
 				<div class="col-11">
 					<h1 class="cursor-default">Комплекс голосового взаимодействия для собак</h1>
-					<p class="cursor-default">					Комплекс обеспечивает голосове взаимодействие вас и вашей собаки, позволяет отслеживать ее физическое состояние, местоположение и действия вокруг животного</p>
+					<p class="cursor-default">Комплекс обеспечивает голосове взаимодействие вас и вашей собаки, позволяет отслеживать ее физическое состояние, местоположение и действия вокруг животного</p>
 					<a class="anchor" href="#see-more"> <button >Подробнее</button> </a>
 				</div>
 

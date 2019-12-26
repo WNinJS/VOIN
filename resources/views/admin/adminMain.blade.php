@@ -29,7 +29,7 @@
 			<div class="profile d-flex align-items-center justify-content-center">
 
 				<p> {{Session::get('login')}}</p>
-				<button class="profile-settings"></button>
+				<a class="logout-link-admin" href="/logout">Выйти</a>
 			</div>
 
 		</nav>
@@ -118,7 +118,7 @@
 									          	<div class="article-block">
 									              	<h4>{{$article->name}}</h4>
 									              	<h5>{{mb_substr($article->created_at,0,10)}}</h5>
-									              	<p>{{$article->description}}</p>
+									              	<p>{{mb_substr($article->description, 0, 200)}}...</p>
 									              	<a data-toggle="modal" data-target="#article-modal-{{$article->id}}">Подробнее</a>
 									          	</div>
 									      	</div>
