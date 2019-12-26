@@ -16,9 +16,9 @@
 			<!-- description open -->
 			<div class="container description d-flex justify-content-between">	
 				<div class="col-11">
-					<h1 class="cursor-default">Monitoring and communication complex for dogs</h1>
-					<p class="cursor-default">Voice communication providing between you and your dog, biometric index condition and location tracking of it, first-person (POV) photofixacion  and video recording, possibility of pre-recorded commands sending.</p>
-					<a class="anchor" href="#see-more"> <button >See more</button> </a>
+					<h1 class="cursor-default">Комплекс голосового взаимодействия для собак</h1>
+					<p class="cursor-default">					Комплекс обеспечивает голосове взаимодействие вас и вашей собаки, позволяет отслеживать ее физическое состояние, местоположение и действия вокруг животного</p>
+					<a class="anchor" href="#see-more"> <button >Подробнее</button> </a>
 				</div>
 
 				<div class="col-1 p-0 d-flex justify-content-end align-items-end">
@@ -38,8 +38,8 @@
 		<!-- complex open -->
 		<div id="see-more" class="complex text-center">
 			<div class="container">
-				<h2>Modules</h2>
-				<h3>Description of the main complex's parts</h3>
+				<h2>Модули</h2>
+				<h3>Описание основных частей комплекса</h3>
 				<div class="row">
 
 					@foreach ($complexes as $complex)
@@ -47,7 +47,7 @@
 							<img src="{{asset('storage/'. $complex->img)}}" alt="{{$complex->name}}">
 							<h4>{{$complex->name}}</h4>
 							{{-- <button>Подробнее</button> --}}
-							<button data-toggle="modal" data-target="#complex-modal-{{$complex->id}}">See more</button>
+							<button data-toggle="modal" data-target="#complex-modal-{{$complex->id}}">Подробнее</button>
 						</div>
 					@endforeach
 
@@ -68,31 +68,31 @@
 		<!-- directions open -->
 		<div class="directions text-center">
 			<div class="container">
-				<h2>Directions of work</h2>
-				<h3>The directions of work</h3>
+				<h2>Направления работы</h2>
+				<h3>Направления с которыми мы работаем</h3>
 				<div class="row justify-content-around">
 
 					<div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
 						<div class="third-block">
 							<img src="images/homedogs.jpg" alt="homedogs">
-							<h4>Home dogs</h4>
-							<a href="/home-pets">See more</a>
+							<h4>Домашние собаки</h4>
+							<a href="/home-pets">Подробнее</a>
 						</div>
 					</div>
 
 					<div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
 						<div class="third-block">
 							<img src="images/buisnessdogs.jpg" alt="buisnessdogs">
-							<h4>Duty dogs</h4>
-							<a href="/pet-workers">See more</a>
+							<h4>Военные собаки</h4>
+							<a href="/pet-workers">Подробнее</a>
 						</div>
 					</div>
 
 					<div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
 						<div class="third-block">
 							<img src="images/wardogs.jpg" alt="wardogs">
-							<h4>Government structures</h4>
-							<a href="/gover-pets">See more</a>
+							<h4>Государственные структуры</h4>
+							<a href="/gover-pets">Подробнее</a>
 						</div>
 					</div>
 				</div>
@@ -112,12 +112,12 @@
 						<div class="links d-flex">
 
 							<div class="left-block d-flex flex-column">
-								<a href="#">Main</a>
-								<a href="#">About Us</a>
-								<a href="#">Materials</a>
-								<a href="/home-pets">Home dogs</a>
-								<a href="/pet-workers">Duty dogs</a>
-								<a href="/gover-pets">Government structures</a>
+								<a href="#">Главная</a>
+								<a href="#">О нас</a>
+								<a href="#">Материалы</a>
+								<a href="/home-pets">Домашние собаки</a>
+								<a href="/pet-workers">Военные собаки</a>
+								<a href="/gover-pets">Государственные структуры</a>
 							</div>
 
 							<div class="right-block d-flex flex-column justify-content-end mx-3">
@@ -158,7 +158,7 @@
 						<p>{{$complex->description}}</p>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn" data-dismiss="modal">Close</button>
+						<button type="button" class="btn" data-dismiss="modal">Закрыть</button>
 					</div>
 				</div>
 			</div>
@@ -170,7 +170,7 @@
 		
 	<!-- MAIN SCREEEN OPEN -->
 
-		<!-- FOOTER CLOSE -->
+	<!-- FOOTER CLOSE -->
 
 	
 @endsection

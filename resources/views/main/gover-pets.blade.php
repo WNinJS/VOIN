@@ -1,58 +1,43 @@
 @extends('mainLayout')
 
-@section('title', 'Government structures')
-
+@section('title', 'Государственные структуры')
 
 @section('content')
 
 <div class="container-fluid">
-
   <div class="main-screen-goverment">
-
       <!-- navbar open -->
       @include('partials.header')
       <!-- navbar close -->
-
-
       <!-- description open -->
       <div class="container description d-flex justify-content-between">
           <div class="col-12">
-              <h1 class="cursor-default">Government structures</h1>
+              <h1 class="cursor-default">Государственные структуры</h1>
               <p class="cursor-default">Monitoring and communication complex for dogs provides remote voice interaction between dog and a person without visual control, dog’s biometric indexes monitoring, POV photofixation and video recording of the actions around the dog, possibility of pre-recorded commands  sending</p>
               @if(Session('user') && Session('user')->type !== 'government')
-              	<button data-toggle="modal" data-target="#gover-info-modal">Request for access</button>
+              	<button data-toggle="modal" data-target="#gover-info-modal">Запросить доступ</button>
               @elseif(!Session('user'))
-				<button data-toggle="modal" data-target="#gover-info-modal">Request for access</button>
+				<button data-toggle="modal" data-target="#gover-info-modal">Запросить доступ</button>
               @endif
-              
           </div>
       </div>
       <!-- description close -->
-
   </div>
 
-
-
-
 <!-- Этот контент виден только тем, кто прошел аутистификацию на документы от Эдика, Начало -->
-
-
-<!-- opportunities open -->
-	
+<!-- opportunities open --> 
   
   @if(Session('user') && Session('user')->type === 'government')
 	<div class="opportunities text-center">
 	<div class="container">
-	    <h2>Opportunities</h2>
-	    <h3>The Voin complex provides</h3>
-
+	    <h2>Возможности</h2>
+	    <h3>Какие возможности предоставляет комплекс</h3>
 	    <div class="row d-flex justify-content-around align-items-start">
 	        @foreach ($petGover[0]->capabilities as $cap)
 	            <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 flex-column d-flex justify-content-center align-items-center icon-block">
 					<div class="image">
 						<img src="{{asset('storage/'.$cap->icon)}}" alt="record">
 					</div>
-	               
 	                <p>{{$cap->desc}}</p>
 	            </div>
 	        @endforeach	
@@ -64,25 +49,19 @@
 	<!-- feedback open -->
 	<div id="feedback" class="feedback text-center">
 	<div class="container">
-	    <h2>Feed back</h2>
-	    <h3>Leave your email below, we will contact you</h3>
+	    <h2>Обратная связь</h2>
+	    <h3>Оставьте свой email в контактной форме ниже и мы свяжемся с вами</h3>
 	    <form method="POST" action="/send-mail">
 	              {{ csrf_field() }}
 	        <input type="email" required placeholder="example@gmail.com" name="mail" class="mail">
-	        <button type="submit" class="btn-submit">Send</button>
+	        <button type="submit" class="btn-submit">Отправить</button>
 	    </form>
-	    <h2 class="text-center msg" style="display: none;">Your email has been successfuly sent!</h2>
+	    <h2 class="text-center msg" style="display: none;">Ваш email успешно отправлен!</h2>
 	</div>
 	</div>
   @endif
-
-
-
-
 <!-- feedback close -->
 <!-- Этот контент виден только тем, кто прошел аутистификацию на документы от Эдика, КОНЕЦ -->
-
-
 
 
   <!-- footer open -->
@@ -93,12 +72,12 @@
                   <div class="links d-flex">
 
                       <div class="left-block d-flex flex-column">
-                          <a href="/">Main</a>
-                          <a href="/about-us">About Us</a>
-                          <a href="/materials">Materials</a>
-                          <a href="/home-pets">Home dogs</a>
-                          <a href="/pet-workers">Duty dogs</a>
-                          <a href="/gover-pets">Government structures</a>
+                          <a href="/">Главная</a>
+                          <a href="/about-us">О нас</a>
+                          <a href="/materials">Материалы</a>
+                          <a href="/home-pets">Домашние собаки</a>
+                          <a href="/pet-workers">Военные собаки</a>
+                          <a href="/gover-pets">Государственные структуры</a>
                       </div>
 
                       <div class="right-block d-flex flex-column justify-content-end mx-3">
@@ -120,7 +99,6 @@
       </div>
   </footer>
   <!-- footer close -->
-
 </div>
 
 <!-- gover info modal -->
@@ -129,7 +107,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="complex-modalLabel">Request for access</h5>
+                <h5 class="modal-title" id="complex-modalLabel">Запрос доступа</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
@@ -138,28 +116,27 @@
               {{ csrf_field() }}
                 <div class="modal-body">
                     @if(Session('user') && Session('user')->type === 'pending')
-                    	<p>Your request is being processing</p>
+                    	<p>Ваша заявка находится на рассмотрении</p>
                     @elseif(Session('user'))
 						<p>Для получения доступа к данному разделу нужно прикрепить 2 файла: сопроводительное письмо и карту партнера.</p>
 						<div class="input-group">
 							<div class="input-group-prepend">
-								<span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+								<span class="input-group-text" id="inputGroupFileAddon01">Загрузить</span>
 							</div>
 							<div class="custom-file">
 								<input type="file"  name="docs[]" multiple=true class="custom-file-input" id="inputGroupFile01"
 								aria-describedby="inputGroupFileAddon01">
-								<label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+								<label class="custom-file-label" for="inputGroupFile01">Выбрать файлы</label>
 							</div>
 						</div>
 					@elseif(!Session('user'))
-						<p>Please sign up.</p>
+						<p>Пожалуйста авторизируйтесь</p>
                     @endif
-  
                 </div>
                 <div class="modal-footer d0flex justify-content-between">
-                    <button type="button" class="btn" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn" data-dismiss="modal">Закрыть</button>
                     @if(session('user'))
-                    <button type="submit" class="btn">Request access</button>
+                    <button type="submit" class="btn">Запросить доступ</button>
                     @endif
                 </div>
             </form>
@@ -171,7 +148,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="complex-modalLabel">Request for access</h5>
+                <h5 class="modal-title" id="complex-modalLabel">Запрос доступа</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
@@ -179,22 +156,15 @@
             <form method="POST" enctype="multipart/form-data">
               {{ csrf_field() }}
                 <div class="modal-body">
-                    	<p>Please sign up</p>
+                    	<p>Пожалуйста авторизируйтесь</p>
                 </div>
                 <div class="modal-footer d0flex justify-content-between">
-                    <button type="button" class="btn" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn" data-dismiss="modal">Закрыть</button>
                 </div>
             </form>
         </div>
     </div>
   </div>
-
 @endif
-
 <!-- gover info modal -->
-
-
-
-
-
 @endsection

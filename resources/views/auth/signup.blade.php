@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Sign Up</title>
+<title>Регистрация</title>
 
 <!-- Adaptive -->
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,8 +26,8 @@
 			<div class="left-block-signup">
 				<img class="logo-signup" src="{{asset('/images/logowhite.png')}}" alt="logo">
 				<div class="text-signup d-flex flex-column">
-					<h1>Sign Up</h1>
-					<h2>Create account to get access</h2>
+					<h1>Регистрация</h1>
+					<h2>Создайте аккаунт, чтобы получить доступ</h2>
 				</div>
 				<p class="name-company-signup">Voice Intercommunication</p>
 			</div>
@@ -41,22 +41,22 @@
 						<div class="alert alert-danger" role="alert">{{Session::get('error')}}</div>
 					@endif
 					<div class="inputs w-100 d-flex flex-column align-items-center justify-content-center">
-						<input class="username" type="text" placeholder="Username" required name="login">
-						<input class="password" type="password" placeholder="Password" required name="password">
-						<input class="name" type="text" placeholder="Name" required name="firstName">
-						<input class="secondname" type="text" placeholder="Second name" required name="secondName">
+						<input class="username" type="text" placeholder="Имя пользователя" required name="login">
+						<input class="password" type="password" placeholder="Пароль" required name="password">
+						<input class="name" type="text" placeholder="Имя" required name="firstName">
+						<input class="secondname" type="text" placeholder="Фамилия" required name="secondName">
 						<input class="email" type="email" placeholder="E-mail" required name="email">
-						<input class="phone" type="phone" placeholder="Phone" required name="phoneNumber">
+						<input class="phone" type="phone" placeholder="Номер телефона" required name="phoneNumber">
 						<div class="radio d-flex">
 							<input id="radio-document-add" type="radio"
 								onMouseDown="this.isChecked=this.checked;" 
 								onClick="this.checked=!this.isChecked; checkRules()">
-							<p>Accept the rules of privacy information</p>
+							<p>Я принимаю правила пользования сайтом</p>
 						</div>
 
 					</div>
 					<button id="accept-rules-button" class="disabled-btn" type="submit" disabled>
-						Sign Up
+						Зарегистрироваться
 					</button>
 				</form>
 			</div>

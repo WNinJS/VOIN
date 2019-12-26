@@ -1,39 +1,32 @@
 @extends('mainLayout')
 
-@section('title', 'About Us')
+@section('title', 'О нас')
 
 
 @section('content')
 
 <div class="container-fluid">
-
   <div class="main-screen-about">
-
-      <!-- navbar open -->
+     <!-- navbar open -->
       @include('partials.header')
       <!-- navbar close -->
-
-
       <!-- description open -->
       <div class="container description d-flex justify-content-between">
           <div class="col-12">
               <h1 class="cursor-default">Voice Intercommunication</h1>
-              <p class="cursor-default">Doers. Dreamers. Creators</p>
-              <a class="anchor" href="#about-info"> <button >See more</button> </a>  
+              <p class="cursor-default">Созидатели. Мечтатели. Создатели</p>
+              <a class="anchor" href="#about-info"> <button >Подробнее</button> </a>  
           </div>
       </div>
       <!-- description close -->
-
   </div>
-
 
 
 <!-- about us open -->
 <div id="about-info" class="aboutus text-center">
     <div class="container">
-        <h2>About Us</h2>
-        <h3>Who we are</h3>
-
+        <h2>О нас</h2>
+        <h3>Кто мы такие?</h3>
         <div class="row d-flex justify-content-around align-items-start">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem sunt earum deserunt beatae veniam laborum architecto culpa, reiciendis dicta quam, iusto et nesciunt. Quaerat saepe consectetur esse similique deleniti eveniet ipsum neque, unde corporis perferendis magni, officiis eius quos harum tenetur dolores reiciendis quae repellat aut modi distinctio inventore optio aspernatur. Laboriosam blanditiis debitis maxime, id earum quae molestias aliquam, pariatur sit repellendus ut ex voluptatum enim soluta rem. Mollitia in quia debitis aliquam eveniet accusantium et, quaerat autem ipsum, aliquid similique vel sit facilis perspiciatis obcaecati ea esse pariatur provident, aperiam! Quod, magnam doloribus sequi accusantium consequuntur inventore culpa.</p>
             <hr>
@@ -46,10 +39,8 @@
 <!-- team open -->
 <div class="team text-center">
     <div class="container">
-        <h2>Project team</h2>
-        <h3>Members</h3>
-
-
+        <h2>Команда проекта</h2>
+        <h3>Члены команды</h3>
         <div class="row d-flex justify-content-around align-items-start">
              <div class="members-of-team d-flex flex-wrap justify-content-around">
                 @foreach ($members as $member)
@@ -70,10 +61,7 @@
 </div>
 <!-- team close -->
 
-
-
-
-  <!-- footer open -->
+<!-- footer open -->
   <footer class="gover-footer">
       <div class="container">
           <div class="row">
@@ -81,12 +69,12 @@
                   <div class="links d-flex">
 
                       <div class="left-block d-flex flex-column">
-                          <a href="/">Main</a>
-                          <a href="/about-us">About Us</a>
-                          <a href="/materials">Materials</a>
-                          <a href="/home-pets">Home dogs</a>
-                          <a href="/pet-workers">Duty dogs</a>
-                          <a href="/gover-pets">Government structures</a>
+                          <a href="/">Главная</a>
+                          <a href="/about-us">О нас</a>
+                          <a href="/materials">Материалы</a>
+                          <a href="/home-pets">Домашние собаки</a>
+                          <a href="/pet-workers">Военные собаки</a>
+                          <a href="/gover-pets">Государственные структуры</a>
                       </div>
 
                       <div class="right-block d-flex flex-column justify-content-end mx-3">
@@ -108,13 +96,5 @@
       </div>
   </footer>
   <!-- footer close -->
-
 </div>
-
-
-
-
-
-
-
 @endsection

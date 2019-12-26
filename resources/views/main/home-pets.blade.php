@@ -1,25 +1,20 @@
 @extends('mainLayout')
 
-@section('title', 'Home dogs')
+@section('title', 'Домашние собаки')
     
-
 @section('content')
 
-<div class="container-fluid">
-		
+<div class="container-fluid">		
 		<div class="main-screen-home">
-
 			<!-- navbar open -->
 			@include('partials.header')
-			<!-- navbar close -->
-				
-
+			<!-- navbar close -->				
 			<!-- description open -->
 			<div class="container description d-flex justify-content-between">	
 				<div class="col-12">
-					<h1 class="cursor-default">Home dogs</h1>
-					<p class="cursor-default">Created specially for your home pets</p>
-					<a class="anchor" href="#feedback"> <button >Contact us</button> </a>
+					<h1 class="cursor-default">Домашние собаки</h1>
+					<p class="cursor-default">Специально для ваших домашних петомцев</p>
+					<a class="anchor" href="#feedback"> <button >Связаться с нами</button> </a>
 				</div>
 			</div>
 			<!-- description close -->
@@ -29,15 +24,14 @@
 		<!-- opportunities open -->
 		<div class="opportunities text-center">
 			<div class="container">
-				<h2>Opportunities</h2>
-				<h3>The Voin complex provides</h3>
+				<h2>Возможности</h2>
+				<h3>Какие возможности предоставляет комплекс</h3>
 				<div class="row d-flex justify-content-around align-items-start">
                     @foreach ($homeCap[0]->capabilities as $cap)
                         <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 flex-column d-flex justify-content-center align-items-center icon-block">
 							<div class="image">
 								<img src="{{asset('storage/'.$cap->icon)}}" alt="voice">
 							</div>
-                            
                             <p>{{$cap->desc}}</p>
                         </div>
                     @endforeach
@@ -48,32 +42,22 @@
 		<!-- opportunities close -->
 
 
-
-
-
 		<!-- feedback open -->
-
 		<div id="feedback" class="feedback text-center">
 			<div class="container">
-				<h2>Feed back</h2>
-				<h3>Leave your email below, we will contact you</h3>
+				<h2>Обратная связь</h2>
+				<h3>Оставьте свой email в контактной форме ниже и мы свяжемся с вами</h3>
                 <form method="POST">
 					{{ csrf_field() }}
 					<input type="email" required placeholder="example@gmail.com" name="mail" class="mail">
-					<button type="submit" class="btn-submit">Send</button>
+					<button type="submit" class="btn-submit">Отправить</button>
 				</form>
-				<h2 class="text-center msg" style="display: none">Your email has been successfuly sent!</h2>
+				<h2 class="text-center msg" style="display: none">Ваш email успешно отправлен!</h2>
 			</div>
 		</div>	
 		<!-- feedback close -->
 
 
-
-
-
-
-
-		
 		<!-- footer open -->
 		<footer>
 			<div class="container">
@@ -109,9 +93,5 @@
 			</div>
 		</footer>
 		<!-- footer close -->
-
-	</div>
-
-
-	
+	</div>	
 @endsection

@@ -1,6 +1,6 @@
 @extends('mainLayout')
 
-@section('title', 'Materials')
+@section('title', 'Материалы')
 
 
 @section('content')
@@ -17,10 +17,9 @@
       <!-- description open -->
       <div class="container description d-flex justify-content-between">
           <div class="col-12">
-              <h1 class="cursor-default">Materials</h1>
-              <p class="cursor-default">Articles about dog, how to train it and care it. 
-              Presentation materials of the complex</p>
-              <a class="anchor" href="#articles"> <button >See more</button> </a>          
+              <h1 class="cursor-default">Материалы</h1>
+              <p class="cursor-default">Статьи о собаках, о том, как триенировать и заботиться о них. Презентационные материалы комплекса</p>
+              <a class="anchor" href="#articles"> <button >Подробнее</button> </a>          
             </div>
       </div>
       <!-- description close -->
@@ -32,8 +31,8 @@
   <!-- articles open -->
   <div id="articles" class="articles text-center">
       <div class="container">
-          <h2>Articles</h2>
-          <h3>Information about dogs for homie</h3>
+          <h2>Статьи</h2>
+          <h3>Информация о собаках и уходе за ними</h3>
 
           <div class="row d-flex justify-content-around align-items-start">
               <div class="general-articles d-flex flex-wrap justify-content-between w-100">
@@ -42,8 +41,8 @@
 	                      <div class="article-block">
 	                          <h4>{{$article->name}}</h4>
 	                          <h5>{{mb_substr($article->created_at,0,10)}}</h5>
-	                          <p>{{$article->description}}</p>
-	                          <a data-toggle="modal" data-target="#article-modal-{{$article->id}}">See more</a>
+	                          <p>{{mb_substr($article->description,0,150)}}...</p>
+	                          <a data-toggle="modal" data-target="#article-modal-{{$article->id}}">Подробнее</a>
 	                      </div>
 	                  </div>
                   	@endforeach
@@ -58,15 +57,15 @@
   <!-- documentation open -->
   <div class="documentation text-center">
       <div class="container">
-          <h2>Documentation</h2>
-          <h3>Presentation documents</h3>
+          <h2>Документация</h2>
+          <h3>Презентационные доукументы</h3>
           <div class="row d-flex justify-content-around align-items-start">
                <div class="general-docs d-flex flex-wrap justify-content-around w-100">
                		@foreach($documents as $document)
 	                  <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 doc-block d-flex flex-column justify-content-center align-items-center">
 	                      <img class="doc-icon" src="images/docs.png" alt="docs_png">
 	                      <h4>{{$document->name}}</h4>
-	                      <a href="{{asset('storage/'.$document->file)}}" download>Save</a>
+	                      <a href="{{asset('storage/'.$document->file)}}" download>Сохранить</a>
 	                  </div>
                		@endforeach
               </div>
@@ -74,9 +73,6 @@
       </div>
   </div>
   <!-- documentation close -->
-
-
-
 
 
 
@@ -88,12 +84,12 @@
                   <div class="links d-flex">
 
                       <div class="left-block d-flex flex-column">
-                          <a href="/">Main</a>
-                          <a href="/about-us">About Us</a>
-                          <a href="/materials">Materials</a>
-                          <a href="/home-pets">Home dogs</a>
-                          <a href="/pet-workers">Duty dogs</a>
-                          <a href="/gover-pets">Government structures</a>
+                          <a href="/">Главная</a>
+                          <a href="/about-us">О нас</a>
+                          <a href="/materials">Материалы</a>
+                          <a href="/home-pets">Домашние собаки</a>
+                          <a href="/pet-workers">Военные собаки</a>
+                          <a href="/gover-pets">Государственные структуры</a>
                       </div>
 
                       <div class="right-block d-flex flex-column justify-content-end mx-3">
@@ -135,10 +131,10 @@
 	          <div class="modal-body">
 	              <p class="article-modal-desc">{{$article->description}}</p>
 	              <img class="article-modal-img" src="{{asset('storage/'.$article->img)}}" alt="article_img">
-	              <h5 class="article-modal-date">Public date: {{mb_substr($article->created_at,0,10)}}</h5>
+	              <h5 class="article-modal-date">Дата публикации: {{mb_substr($article->created_at,0,10)}}</h5>
 	          </div>
 	          <div class="modal-footer">
-	              <button type="button" class="btn" data-dismiss="modal">Close</button>
+	              <button type="button" class="btn" data-dismiss="modal">Закрыть</button>
 	          </div>
 	        </div>
 	    </div>

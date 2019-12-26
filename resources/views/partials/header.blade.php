@@ -10,18 +10,18 @@
         <div class="adaptive d-flex">
             <div class="navbar-link">
                 <ul class="navbar-nav d-flex flex-row nav-links">
-                    <li class="nav-item"> <a class="nav-link " href="/">Main</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="/about-us">About Us</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="/materials">Materials</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="/home-pets">Home dogs</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="/pet-workers">Duty dogs</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="/gover-pets">Government structures</a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="/">Дом</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="/about-us">О нас</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="/materials">Материалы</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="/home-pets">Домашние собаки</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="/pet-workers">Военные собаки</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="/gover-pets">Государственные структуры</a> </li>
 
                     <!-- Это если не вошел в личный кабинет -->
                     @if(!session('login'))
                         <div class="signin-signup d-flex justify-content-center align-items-center">
                         <li class="d-flex justify-content-center align-items-center"> <a class="login-icon" href="/login"></a> </li>
-                        <li class="nav-item signup-text"><a class="nav-link" href="/signup">SignUp</a></li>
+                        <li class="nav-item signup-text"><a class="nav-link" href="/signup">Начать</a></li>
                         </div> 
                     @endif
                 <!-- Это если не вошел в личный кабинет -->
@@ -36,8 +36,8 @@
                 <div class="btn-group d-flex flex-column">
                     <button class="btn dropdown-toggle account-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{Session::get('user')->name}}</button>
                     <div class="dropdown-menu dropdown-menu-left">
-                        <a class="dropdown-item" data-toggle="modal" data-target="#account-info-modal">Account info</a>
-                        <a class="dropdown-item" href="/logout">Logout</a>
+                        <a class="dropdown-item" data-toggle="modal" data-target="#account-info-modal">Информация об аккаунте</a>
+                        <a class="dropdown-item" href="/logout">Выйти</a>
                     </div> 
                 </div>
             </div>
